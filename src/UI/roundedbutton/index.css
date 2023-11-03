@@ -1,10 +1,16 @@
-.btn-div {
+ .btn-div {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content:flex-end;
+  justify-content: flex-end;
   margin-top: 10px;
   margin-right: 124px;
+}
+
+.btn-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap to the next line if necessary */
+  align-items: center;
 }
 
 .btn {
@@ -21,6 +27,7 @@
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right: 1px solid #d4dde3;
+ 
 }
 
 .btn:hover{
@@ -35,15 +42,22 @@
 
 .btn-right{
     border-radius: 500px;
-    background-color: #2046cf;
+   
     padding: 10px 0px;
     height: 43px;
-    width: 45px;
-    outline: none;
+   
+
+  min-width: 45px; /* Set a minimum width to ensure button stays within the container */
+  outline: none;
+  text-align: center;
+  color: #fff;
+ 
+   
+  background-color: #2046cf;
+
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    text-align: center;
-    color: #fff;
+   
 }
 
 .btn:hover{
@@ -55,3 +69,12 @@
     background-color: #1937a3;
 }
 
+.btn-right:hover {
+  background-color: #1937a3;
+}
+
+@media (max-width: 600px) {
+  .btn-container {
+    justify-content: center; /* Center the buttons on smaller screens */
+  }
+}
