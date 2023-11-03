@@ -1,0 +1,53 @@
+.invoice-header{
+    display: flex;
+    flex-direction: column;
+   padding-right: 58px;
+    background: #fff;
+    overflow: auto;
+}
+
+.frame_content_body{
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+.advisor_content{
+    margin-top: 10px;
+}
+
+.frame_body_side{
+    display: none;
+    box-sizing: border-box;
+    margin-left: 30px;
+    padding: 16px;
+    background: #fff;
+    flex-shrink: 136;
+   
+    
+}
+
+.frame_body_main{
+    width: 100%;
+    overflow-y: auto;
+    box-sizing: border-box;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding:24px;
+   
+}
+
+.frame_body{
+    width: 1008px;
+   padding-left: 30px;
+     
+}
+.add_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add_header_title{
+    flex-grow: 1;
+}

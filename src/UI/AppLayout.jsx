@@ -1,20 +1,29 @@
-import {  Layout } from 'antd'
-import Navbar from '../components/Navbar'
+import Layout, { Content } from 'antd/es/layout/layout'
+import HeroSection from '../components/CONTENTS/HeroSection'
+import Sidebar from '../components/SIDEBAR/Sidebar'
+import Sider from 'antd/es/layout/Sider'
 
-const {  Content, Footer, Sider } = Layout
 const AppLayout = () => {
   return (
-    <Layout>
-    <Navbar/>
-    <Layout style={{
-        margin:"40px"
-    }}>
-      <Sider>left sidebar</Sider>
-      <Content>main content</Content>
-      
-    </Layout>
-    <Footer>footer</Footer>
-  </Layout>
+    <div className='container'>
+      <Layout>
+        <Sider
+          style={{
+            backgroundColor: 'red',
+            height: '400px'
+          }}
+        >
+          <Sidebar />
+        </Sider>
+        <Content
+          style={{
+            marginLeft: '60px'
+          }}
+        >
+          <HeroSection />
+        </Content>
+      </Layout>
+    </div>
   )
 }
 

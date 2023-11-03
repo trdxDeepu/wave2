@@ -1,0 +1,105 @@
+.add_body{
+    margin-top: 12px;
+    padding-right: 40px;
+    width: 1088px;
+}
+
+.add_info{
+    border: 1px solid #d4dde3;
+    border-radius: 8px;
+    margin: 24px 0;
+    width: 100%;
+}
+
+.add-info-section{
+    background: #ecf0f3;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: border-radius 0s;
+    
+}
+
+.add-info-section_button{
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    margin: 0;
+    padding: 12px 16px;
+    text-decoration: none;
+    border: none;
+}
+
+.add-info_title{
+    color: #1c252c;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+}
+
+.add_info_content{
+    background: #fff;
+    border-radius: 0 0 8px 8px;
+    border-top: 1px solid #d4dde3;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.add_content_logo{
+    min-height: 200px;
+    min-width: 300px;
+}
+
+.add_presentation{
+    background: #fff;
+    border: 1px dashed #2046cf;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+    width: 300px;
+}
+
+.add_content_info{
+    text-align: right; 
+}
+
+.content_info_invoice{
+    
+    padding: 0 8px;
+}
+
+.input_text{
+    text-align: right;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 4px 0;
+    font-size: 18px;
+    vertical-align: text-bottom;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    border: 1px solid #a6c8e7;
+    border-radius: 8px;
+    cursor: text;
+    padding: 8px 10px 6px 14px;
+    transition: border .1s linear;
+    min-height: 40px;
+    width: 100%;
+    min-width: 160px;
+    max-width: 320px
+}
+
+
+
+.info_bussiness{
+      
+    margin-top: 12px;
+}
+
+.hover_button:hover{
+    text-decoration: underline;
+    color: #0a37da;
+}

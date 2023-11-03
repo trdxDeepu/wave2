@@ -15,7 +15,7 @@ const Navbar = () => {
     >
       <Flex align='center' justify='space-between' className='navbar'>
         <div className=''>
-          <a href='#'>
+          <a href="">
             <img src={WaveLogo} alt='Logo' className='logoImage' />
           </a>
         </div>
