@@ -1,12 +1,15 @@
-.box-container {
-    height: auto;
-    box-shadow: 0 8px 32px rgba(71, 84, 92, 0.35);
-    border-radius: 12px;
-    border-color: rgba(0, 0, 0, 0);
-    margin-right: 102px;
+ .box-container {
+        height: auto;
+        box-shadow: 0 8px 32px rgba(71, 84, 92, 0.35);
+        border-radius: 12px;
+        border-color: rgba(0, 0, 0, 0);
+        margin-right: 10%; /* Adjust margin to a percentage for responsiveness */
+        padding: 2%; /* Add padding for responsiveness */
+      
   }
   .box-container-2 {
     display: flex;
+    flex-wrap: wrap;
     align-items: start;
     justify-content: space-between;
     padding: 48px;
@@ -46,12 +49,12 @@
   
   @keyframes blob {
     0% {
-      transform: scale(1); /* Initial scale */
+      transform: scale(1); 
     }
     100% {
-      transform: scale(1.1); /* Slightly larger scale at the end of animation */
-    }
+      transform: scale(1.1); 
   }
+}
   
   .inner-circle-dot {
     background: #23c770;
@@ -82,7 +85,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 34px;
+    margin-bottom: 14px;
   }
   
   .box-container-form-date {
@@ -96,6 +99,7 @@
     vertical-align: top;
     position: relative;
     box-sizing: border-box;
+    margin-bottom: 2%;
   }
   
   .label-text {
@@ -105,9 +109,9 @@
   }
   
   .input-field {
-    width: 51%;
-    margin-left: auto;
+    width: 200px; 
     text-align: left;
+    padding: 2%;
   }
   
   .input-text {
@@ -115,11 +119,13 @@
     box-sizing: border-box;
     text-decoration: none;
     vertical-align: middle;
-    width: 180px;
+    width: 100%; 
     min-height: 40px;
     border: 1px solid #a6c8e7;
     border-radius: 8px;
     cursor: text;
-    padding: 8px 10px 6px;
+    padding: 2%;
     transition: border 0.1s linear;
   }
+ 
+   
