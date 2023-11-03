@@ -31,7 +31,7 @@
   .circle {
     position: absolute;
     top: 40%;
-    left: 94%;
+    left: 95%;
   }
   
   .circle-dot {
@@ -75,6 +75,7 @@
   .user-icon-text {
     color: #2046cf;
     font-weight: 700;
+    font-family: 14px;
   }
   
   .box-container-form {

@@ -3,6 +3,7 @@ import './style.css'
 
 import { DatePicker, Space } from 'antd'
 import { Input } from 'antd'
+import {UserAddOutlined} from '@ant-design/icons'
 
 
 const InvoicePersonInfo = () => {
@@ -17,7 +18,7 @@ const InvoicePersonInfo = () => {
           </div>
           <div className='profile-section'>
             <div className='user-icon'>
-              <span size={45} style={{ fill: 'lightgray' }} ></span>
+              <UserAddOutlined   style={{ fill: 'lightgray',fontSize:"26px" }}/>
               <span className='user-icon-text'>Add a coustomer</span>
             </div>
           </div>
