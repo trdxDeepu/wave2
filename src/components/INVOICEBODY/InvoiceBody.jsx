@@ -20,7 +20,7 @@ const InvoiceBody = () => {
               </span>
               <span
                 style={{
-                  marginTop: '2px'
+                 
                 }}
               >
                 <DownOutlined
@@ -32,7 +32,7 @@ const InvoiceBody = () => {
             </div>
           </button>
         </div>
-        <div className='invoice_add_content'>
+        <div className='invoice_add_/*  */content'>
           <div></div>
           <div className='add_info_content'>
             <div className='add_content_logo'>
