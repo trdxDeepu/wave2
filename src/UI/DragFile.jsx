@@ -39,7 +39,7 @@ const App = () => {
   const uploadButton = (
     <div
     style={{
-      width: '300px',
+      
       height:"160px",
       textAlign: 'center'
     }}>
