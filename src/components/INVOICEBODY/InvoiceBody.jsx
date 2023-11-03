@@ -56,7 +56,9 @@ const InvoiceBody = () => {
               <div className='info_bussiness'>
                 <strong>Thor Test</strong>
                 <div>
-                  <p style={{color:'#1c252c',fontSize:"16px"}}>United States</p>
+                  <p style={{ color: '#1c252c', fontSize: '16px' }}>
+                    United States
+                  </p>
                 </div>
 
                 <Button

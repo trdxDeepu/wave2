@@ -1,4 +1,5 @@
 import InvoiceBody from '../components/INVOICEBODY/InvoiceBody'
+import InvoiceBodyFrom from '../components/INVOICEFORMBODY/main'
 import '../styles/invoiceheader.css'
 import RoundButton from '../UI/roundedbutton/RoundButton'
 
@@ -27,6 +28,7 @@ const InvoiceHeader = () => {
             </div>
           </div>
           <InvoiceBody/>
+          <InvoiceBodyFrom/>
         </div>
       </div>
     </div>

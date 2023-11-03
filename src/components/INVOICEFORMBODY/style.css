@@ -1,0 +1,124 @@
+.box-container {
+    height: auto;
+    box-shadow: 0 8px 32px rgba(71, 84, 92, 0.35);
+    border-radius: 12px;
+    border-color: rgba(0, 0, 0, 0);
+    margin-right: 102px;
+  }
+  .box-container-2 {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 48px;
+    min-width: auto;
+  }
+  
+  .date-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .box-container-left {
+    text-align: left;
+    display: block;
+    border: 2px solid #dee3e8;
+    border-radius: 20px;
+    height: 200px;
+    min-width: auto;
+    position: relative;
+  }
+  
+  .circle {
+    position: absolute;
+    top: 40%;
+    left: 94%;
+  }
+  
+  .circle-dot {
+    background: #cddb;
+    border-radius: 50%;
+    border: 1px solid #3ba36c;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    animation: blob 2s infinite alternate ease-in-out;
+  }
+  
+  @keyframes blob {
+    0% {
+      transform: scale(1); /* Initial scale */
+    }
+    100% {
+      transform: scale(1.1); /* Slightly larger scale at the end of animation */
+    }
+  }
+  
+  .inner-circle-dot {
+    background: #23c770;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .profile-section {
+    padding: 85px;
+  }
+  .user-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .user-icon-text {
+    color: #2046cf;
+    font-weight: 700;
+  }
+  
+  .box-container-form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+  
+  .box-container-form-date {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-bottom: 23px;
+  }
+  
+  .input-label {
+    vertical-align: top;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .label-text {
+    font-weight: bold;
+    color: #68757d;
+    padding: 4px;
+  }
+  
+  .input-field {
+    width: 51%;
+    margin-left: auto;
+    text-align: left;
+  }
+  
+  .input-text {
+    display: inline-block;
+    box-sizing: border-box;
+    text-decoration: none;
+    vertical-align: middle;
+    width: 180px;
+    min-height: 40px;
+    border: 1px solid #a6c8e7;
+    border-radius: 8px;
+    cursor: text;
+    padding: 8px 10px 6px;
+    transition: border 0.1s linear;
+  }
