@@ -11,7 +11,7 @@
     border: 1px solid #d4dde3;
     border-radius: 8px;
     margin: 2% 0; 
-    padding: 2%; 
+   
   }
   
 .add-info_title{
@@ -75,7 +75,6 @@
     display: inline-block;
     box-sizing: border-box;
     margin: 2% 0; 
-    font-size: 18px;
     vertical-align: text-bottom;
     cursor: pointer;
     outline: none;

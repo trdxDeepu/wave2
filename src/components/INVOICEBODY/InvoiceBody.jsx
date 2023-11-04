@@ -1,7 +1,7 @@
 import './invoicebody.css'
 import { DownOutlined } from '@ant-design/icons'
 import DragFile from '../../UI/DragFile'
-import { Input, Button } from 'antd'
+import { Input } from 'antd'
 
 const InvoiceBody = () => {
   return (
@@ -18,11 +18,7 @@ const InvoiceBody = () => {
               >
                 Business address and contact details, title, summary, and logo
               </span>
-              <span
-                style={{
-                 
-                }}
-              >
+              <span style={{}}>
                 <DownOutlined
                   style={{
                     fontWeight: 'bold'
@@ -45,12 +41,20 @@ const InvoiceBody = () => {
                   className='input_text'
                   size='large'
                   placeholder='Invoice Title'
+                  style={{
+                    fontSize:"20px",
+                    fontStyle:"italic"
+                  }}
+                  
                 />
                 <Input
                   type='text'
                   className='input_text'
                   size='large'
                   placeholder='Summary (e.g. project name, description of invoice)'
+                  style={{
+                    fontSize:"14px"
+                  }}
                 />
               </div>
               <div className='info_bussiness'>
@@ -69,8 +73,7 @@ const InvoiceBody = () => {
                     textDecoration: 'none',
                     fontSize: '15px',
                     fontWeight: 'bold',
-                    cursor:"pointer",
-                   
+                    cursor: 'pointer'
                   }}
                   className='hover_button'
                 >

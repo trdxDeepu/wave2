@@ -1,7 +1,7 @@
 import './style.css'
 
 
-import { DatePicker, Space } from 'antd'
+import { DatePicker } from 'antd'
 import { Input } from 'antd'
 import {UserAddOutlined} from '@ant-design/icons'
 
@@ -29,7 +29,7 @@ const InvoicePersonInfo = () => {
               <span className='label-text'> Invoice number </span>
             </label>
             <div className='input-field'>
-              <Input type='text' className='input-text' size='small' sx={{}} />
+              <Input type='text' className='input-text' size='small'  />
             </div>
           </div>
           <div className='box-container-form'>
@@ -37,7 +37,7 @@ const InvoicePersonInfo = () => {
               <div className='label-text'>P.O./S.O.number.</div>
             </label>
             <div className='input-field'>
-              <Input type='text' className='input-text' size='small' sx={{}} />
+              <Input type='text' className='input-text' size='small'  />
             </div>
           </div>
           <div className='date-container'>
@@ -46,9 +46,11 @@ const InvoicePersonInfo = () => {
                 <div className='label-text'>Invoice date</div>
               </label>
               <div className='input-field'>
-                <Space>
-                  <DatePicker size='large' />
-                </Space>
+               
+                  <DatePicker size='large' style={{
+                    width:"200px"
+                  }} />
+                
               </div>
             </div>
             

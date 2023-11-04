@@ -3,9 +3,8 @@
         box-shadow: 0 8px 32px rgba(71, 84, 92, 0.35);
         border-radius: 12px;
         border-color: rgba(0, 0, 0, 0);
-        margin-right: 9%; /* Adjust margin to a percentage for responsiveness */
+        margin-right: 4%; /* Adjust margin to a percentage for responsiveness */
         padding: 2%; /* Add padding for responsiveness */
-      
   }
   .box-container-2 {
     display: flex;

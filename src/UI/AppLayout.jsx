@@ -17,7 +17,9 @@ const AppLayout = () => {
         </Sider>
         <Content
           style={{
-            marginLeft: '60px'
+            marginLeft: '60px',
+            display:'flex',
+            justifyContent:"center"
           }}
         >
           <HeroSection />
