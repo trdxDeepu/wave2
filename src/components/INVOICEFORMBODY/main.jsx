@@ -19,7 +19,7 @@ const InvoicePersonInfo = () => {
           <div className='profile-section'>
             <div className='user-icon'>
               <UserAddOutlined   style={{ fill: 'lightgray',fontSize:"26px" }}/>
-              <span className='user-icon-text'>Add a coustomer</span>
+              <span className='user-icon-text'>Add a customer</span>
             </div>
           </div>
         </div>

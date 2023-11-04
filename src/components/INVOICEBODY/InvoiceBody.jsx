@@ -61,19 +61,21 @@ const InvoiceBody = () => {
                   </p>
                 </div>
 
-                <Button
+                <span
                   type='text'
                   style={{
                     border: 'none',
                     color: '#2046cf',
                     textDecoration: 'none',
                     fontSize: '15px',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    cursor:"pointer",
+                   
                   }}
                   className='hover_button'
                 >
                   Edit your business address and contact details
-                </Button>
+                </span>
               </div>
             </div>
           </div>
