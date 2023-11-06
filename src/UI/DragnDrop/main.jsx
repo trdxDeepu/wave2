@@ -98,7 +98,7 @@ const DragAndDrop = () => {
             </>
           ) : (
             <div id='img-view'>
-              <img src='public\508-icon.png' alt='icon' id='img' />
+              <img src='/508-icon.png' alt='icon' id='img' />
               <p>
                 Drag and Drop or click here <br /> to upload your logo
               </p>

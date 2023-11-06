@@ -1,8 +1,8 @@
 import './invoicebody.css'
 import { DownOutlined } from '@ant-design/icons'
-import DragFile from '../../UI/DragFile'
+
 import { Input } from 'antd'
-import DragNdrop from '../../UI/DragnDrop/main'
+
 import DragAndDrop from '../../UI/DragnDrop/main'
 
 const InvoiceBody = () => {
