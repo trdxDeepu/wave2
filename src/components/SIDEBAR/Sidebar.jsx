@@ -39,47 +39,53 @@ const items = [
   ),
   getItem('Dashboard', '2', <DashboardOutlined />),
   getItem('Sales and Payment', 'sub1', <CreditCardOutlined />, [
-    getItem('Estimates', '1'),
-    getItem('Invoice', '2'),
-    getItem('Payment Setup', '3'),
-    getItem('Recurring Invoices', '4'),
-    getItem('Checkouts', '5'),
-    getItem('Customer Statements', '6'),
-    getItem('Customers', '7'),
-    getItem('Products & Services', '8')
+    getItem('Estimates', '3'),
+    getItem('Invoice', '4'),
+    getItem('Payment Setup', '5'),
+    getItem('Recurring Invoices', '6'),
+    getItem('Checkouts', '7'),
+    getItem('Customer Statements', '8'),
+    getItem('Customers', '9'),
+    getItem('Products & Services', '10')
   ]),
   getItem('Purchase', 'sub2', <ShoppingCartOutlined />, [
-    getItem('Bills', '1'),
-    getItem('Vendors', '2'),
-    getItem('Product & Services', '3')
+    getItem('Bills', '11'),
+    getItem('Vendors', '12'),
+    getItem('Product & Services', '13')
   ]),
-  getItem('Receipts', '3', <FileTextOutlined />),
+  getItem('Receipts', '14', <FileTextOutlined />),
   getItem('Accounting', 'sub3', <FaBalanceScaleLeft />, [
-    getItem('Transactions', '1'),
-    getItem('Reconciliation', '2'),
-    getItem('Charts of Accounts', '3'),
-    getItem('Hire a Bookkeeper', '4')
+    getItem('Transactions', '15'),
+    getItem('Reconciliation', '16'),
+    getItem('Charts of Accounts', '17'),
+    getItem('Hire a Bookkeeper', '18')
   ]),
   getItem('Banking', 'sub4', <BankOutlined />, [
-    getItem('Connected Accounts', '1'),
-    getItem('Payouts', '2'),
-    getItem('Insurance', '3')
+    getItem('Connected Accounts', '19'),
+    getItem('Payouts', '20'),
+    getItem('Insurance', '21')
   ]),
   getItem('Payroll', 'sub5', <BsClipboard />, [
-    getItem('Run Payroll', '1'),
-    getItem('Employees', '2'),
-    getItem('Timesheets', '3'),
-    getItem('Payroll Transactions', '4'),
-    getItem('Taxes', '5'),
-    getItem('Tax Forms', '6'),
-    getItem('COVID-19', '7')
+    getItem('Run Payroll', '22'),
+    getItem('Employees', '23'),
+    getItem('Timesheets', '24'),
+    getItem('Payroll Transactions', '25'),
+    getItem('Taxes', '26'),
+    getItem('Tax Forms', '27'),
+    getItem('COVID-19', '28')
   ]),
-  getItem('Reports','4',< AiFillSignal/>),
-  getItem('Wave Advisors','5',<FiUsers/>),
-  getItem('Tax Filing','6',<TbReportMoney/>)
+  getItem('Reports','29',< AiFillSignal/>),
+  getItem('Wave Advisors','30',<FiUsers/>),
+  getItem('Tax Filing','31',<TbReportMoney/>)
 ]
+
+
+
 const App = () => {
   const [collapsed, setCollapsed] = useState(false)
+
+  console.log(items)
+
   const {
     token: { colorBgContainer }
   } = theme.useToken()
@@ -101,6 +107,7 @@ const App = () => {
           <div className='demo-logo-vertical' />
           <Menu
             defaultSelectedKeys={['1']}
+            key={items.key}
             mode='inline'
             items={items}
             style={{
