@@ -2,6 +2,8 @@ import './invoicebody.css'
 import { DownOutlined } from '@ant-design/icons'
 import DragFile from '../../UI/DragFile'
 import { Input } from 'antd'
+import DragNdrop from '../../UI/DragnDrop/main'
+import DragAndDrop from '../../UI/DragnDrop/main'
 
 const InvoiceBody = () => {
   return (
@@ -32,7 +34,7 @@ const InvoiceBody = () => {
           <div></div>
           <div className='add_info_content'>
             <div className='add_content_logo'>
-              <DragFile />
+              <DragAndDrop/>
             </div>
             <div className='add_content_info'>
               <div className='content_info_invoice'>

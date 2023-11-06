@@ -13,7 +13,7 @@ const beforeUpload = file => {
   if (!isJpgOrPng) {
     message.error('You can only upload JPG/PNG file!')
   }
-  const isLt2M = file.size / 1024 / 2048 < 4
+  const isLt2M = file.size / 1024 / 1024 < 2
   if (!isLt2M) {
     message.error('Image must smaller than 2MB!')
   }
