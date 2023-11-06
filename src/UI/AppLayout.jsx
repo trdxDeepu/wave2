@@ -9,8 +9,10 @@ const AppLayout = () => {
       <Layout>
         <Sider
           style={{
-            backgroundColor: 'red',
-            height: '400px'
+            backgroundColor: '#fff',
+            height: '100%',
+            width:"100%"
+          
           }}
         >
           <Sidebar />
@@ -18,8 +20,8 @@ const AppLayout = () => {
         <Content
           style={{
             marginLeft: '60px',
-            display:'flex',
-            justifyContent:"center"
+            display: 'flex',
+            justifyContent: 'center'
           }}
         >
           <HeroSection />

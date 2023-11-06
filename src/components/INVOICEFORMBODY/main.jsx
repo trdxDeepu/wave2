@@ -48,12 +48,13 @@ const InvoicePersonInfo = () => {
               <div className='input-field'>
                
                   <DatePicker size='large' style={{
-                    width:"200px"
+                    marginLeft:"28px",
+                    width:"190px"
                   }} />
                 
               </div>
             </div>
-            
+           
           </div>
         </div>
       </div>

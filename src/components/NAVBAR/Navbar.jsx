@@ -1,6 +1,6 @@
 import { Flex, Menu, Dropdown, Button } from 'antd'
 import './navbar.css'
-import WaveLogo from '/waveLogo.png'
+import WaveLogo from '/Logo.png'
 import { DownOutlined } from '@ant-design/icons'
 
 const Navbar = () => {
