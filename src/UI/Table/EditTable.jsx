@@ -82,9 +82,10 @@ const EditTable = () => {
                       <RiDraggable
                         style={{
                           textAlign: 'center',
-                          marginTop: '17px'
+                          marginTop: '17px',
+                          fontSize:"18px"
                         }}
-                        scale='20px'
+                      
                       />
                     </td>
                     <td colSpan='7'>
