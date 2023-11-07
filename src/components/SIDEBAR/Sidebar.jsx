@@ -14,6 +14,7 @@ import { BsClipboard } from 'react-icons/bs'
 import {AiFillSignal} from 'react-icons/ai'
 import {FiUsers} from 'react-icons/fi'
 import {TbReportMoney} from 'react-icons/tb'
+import { render } from 'react-dom'
 
 
 
@@ -98,7 +99,9 @@ const App = () => {
       >
         <Sider
           style={{
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            position: 'fixed',
+            height: '100%',
           }}
           collapsible
           collapsed={collapsed}

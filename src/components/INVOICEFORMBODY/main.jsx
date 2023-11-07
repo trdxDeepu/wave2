@@ -4,6 +4,7 @@ import './style.css'
 import { DatePicker } from 'antd'
 import { Input } from 'antd'
 import {UserAddOutlined} from '@ant-design/icons'
+import InvoiceTable from '../INVOICETABLE/InvoiceTable'
 
 
 const InvoicePersonInfo = () => {
@@ -58,7 +59,7 @@ const InvoicePersonInfo = () => {
           </div>
         </div>
       </div>
-      
+      <InvoiceTable/>
     </div>
   )
 }
