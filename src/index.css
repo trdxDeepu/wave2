@@ -11,3 +11,8 @@
   transition: left 0.2s ease-in-out;
   position: relative;
 }
+
+.ant-layout-sider-trigger{
+  background-color:  #e6f4ff !important;
+  color: #2046cf !important;
+}

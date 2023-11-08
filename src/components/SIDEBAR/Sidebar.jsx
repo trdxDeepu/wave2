@@ -7,14 +7,14 @@ import {
   CreditCardOutlined,
   BankOutlined
 } from '@ant-design/icons'
-import { Layout, Menu, theme } from 'antd'
+import { Layout, Menu } from 'antd'
 import './sidebar.css'
 import { FaBalanceScaleLeft } from 'react-icons/fa'
 import { BsClipboard } from 'react-icons/bs'
 import { AiFillSignal } from 'react-icons/ai'
 import { FiUsers } from 'react-icons/fi'
 import { TbReportMoney } from 'react-icons/tb'
-import { render } from 'react-dom'
+
 
 const { Sider } = Layout
 function getItem (label, key, icon, children) {
@@ -81,16 +81,14 @@ const items = [
 const App = () => {
   const [collapsed, setCollapsed] = useState(false)
 
-  console.log(items)
+ 
 
-  const {
-    token: { colorBgContainer }
-  } = theme.useToken()
   return (
     <div className='sidebar'>
       <Layout
         style={{
-          minHeight: '100vh'
+          minHeight: '100vh',
+        
         }}
       >
         <Sider
@@ -98,7 +96,10 @@ const App = () => {
             backgroundColor: '#fff',
             position: 'fixed',
             height: '100%',
-            overflowY: 'scroll'
+            overflowY: 'scroll',
+            scrollbarColor: '#d1e4f5 #fff',
+            scrollbarWidth: 'auto',
+            
           }}
           collapsible
           collapsed={collapsed}
@@ -111,7 +112,7 @@ const App = () => {
             mode='inline'
             items={items}
             style={{
-              backgroundColor: 'transparent',
+              backgroundColor: '#fff',
               borderRight: '1px solid #d1e4f5',
               fontSize: '16px',
               width: '100%',
