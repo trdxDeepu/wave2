@@ -136,7 +136,7 @@ thead {
 .button_add {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     height: 100%;
     gap: 7px ;
     border: none;
@@ -145,6 +145,8 @@ thead {
     font-size: 17px;
     text-decoration: none;
     font-weight: 600;
+    background-color: transparent;
+    font-size: 16px;
 }
 
 .button_add:hover {

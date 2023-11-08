@@ -202,9 +202,9 @@ const EditTable = () => {
                 <div className='dynamic_button' onClick={handleAddmore}>
                   <button className='button_add' onClick={handleAddmore}>
                     <span>
-                      <AiOutlinePlusCircle />
+                      <AiOutlinePlusCircle  />
                     </span>
-                    <span>Add more</span>
+                    <span style={{fontSize:'16px'}}>Add more</span>
                   </button>
                 </div>
               </td>

@@ -6,27 +6,32 @@ import Navbar from '../components/NAVBAR/Navbar'
 
 const AppLayout = () => {
   return (
-    <Layout>
-      <Sider
-        style={{
-          backgroundColor: '#fff',
-          height: '100%',
-          width: '100%'
-        }}
-      >
-        <Sidebar />
-      </Sider>
-      <Content
-        style={{
-          marginTop: '1px',
-          marginLeft: '60px',
-          display: 'flex',
-          justifyContent: 'center'
-        }}
-      >
-        <HeroSection />
-      </Content>
-    </Layout>
+    <>
+      <Layout>
+        <Navbar />
+        <Layout hasSider>
+          <Sider
+            style={{
+              backgroundColor: '#fff',
+              height: '100%',
+              width: '100%'
+            }}
+          >
+            <Sidebar />
+          </Sider>
+          <Content
+            style={{
+              marginTop: '1px',
+              marginLeft: '60px',
+              display: 'flex',
+              justifyContent: 'center'
+            }}
+          >
+            <HeroSection />
+          </Content>
+        </Layout>
+      </Layout>
+    </>
   )
 }
 
