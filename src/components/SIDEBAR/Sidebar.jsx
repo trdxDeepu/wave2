@@ -9,14 +9,12 @@ import {
 } from '@ant-design/icons'
 import { Layout, Menu, theme } from 'antd'
 import './sidebar.css'
-import { FaBalanceScaleLeft, } from 'react-icons/fa'
+import { FaBalanceScaleLeft } from 'react-icons/fa'
 import { BsClipboard } from 'react-icons/bs'
-import {AiFillSignal} from 'react-icons/ai'
-import {FiUsers} from 'react-icons/fi'
-import {TbReportMoney} from 'react-icons/tb'
+import { AiFillSignal } from 'react-icons/ai'
+import { FiUsers } from 'react-icons/fi'
+import { TbReportMoney } from 'react-icons/tb'
 import { render } from 'react-dom'
-
-
 
 const { Sider } = Layout
 function getItem (label, key, icon, children) {
@@ -75,12 +73,10 @@ const items = [
     getItem('Tax Forms', '27'),
     getItem('COVID-19', '28')
   ]),
-  getItem('Reports','29',< AiFillSignal/>),
-  getItem('Wave Advisors','30',<FiUsers/>),
-  getItem('Tax Filing','31',<TbReportMoney/>)
+  getItem('Reports', '29', <AiFillSignal />),
+  getItem('Wave Advisors', '30', <FiUsers />),
+  getItem('Tax Filing', '31', <TbReportMoney />)
 ]
-
-
 
 const App = () => {
   const [collapsed, setCollapsed] = useState(false)
@@ -99,9 +95,10 @@ const App = () => {
       >
         <Sider
           style={{
-            backgroundColor: 'transparent',
+            backgroundColor: '#fff',
             position: 'fixed',
             height: '100%',
+            overflowY: 'scroll'
           }}
           collapsible
           collapsed={collapsed}
@@ -121,7 +118,6 @@ const App = () => {
               height: '100%',
               color: '#001B66',
               marginTop: '7px'
-              
             }}
           />
         </Sider>

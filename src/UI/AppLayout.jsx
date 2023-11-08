@@ -14,13 +14,15 @@ const AppLayout = () => {
             style={{
               backgroundColor: '#fff',
               height: '100%',
-              width: '100%'
+              width: '100%',
+              
             }}
           >
             <Sidebar />
           </Sider>
           <Content
             style={{
+              backgroundColor:"#fff",
               marginTop: '1px',
               marginLeft: '60px',
               display: 'flex',
