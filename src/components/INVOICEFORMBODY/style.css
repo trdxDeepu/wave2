@@ -69,6 +69,13 @@
   .profile-section {
     padding: 85px;
   }
+
+  .profile-section:hover{
+    cursor: pointer;
+    background-color: #fbdada;
+    border-radius: 20px; 
+    }
+
   .user-icon {
     display: flex;
     justify-content: center;

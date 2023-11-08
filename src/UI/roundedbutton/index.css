@@ -11,6 +11,7 @@
   display: flex;
   flex-wrap: wrap; /* Allow elements to wrap to the next line if necessary */
   align-items: center;
+
 }
 
 .btn {
@@ -41,7 +42,7 @@
 
 
 .btn-right{
-    border-radius: 500px;
+    border-radius: 500px !important;
    
     padding: 10px 0px;
     height: 43px;
@@ -53,7 +54,7 @@
   color: #fff;
  
    
-  background-color: #2046cf;
+  background-color: #2046cf !important;
 
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -61,7 +62,7 @@
 }
 
 .btn:hover{
-    background-color: #1937a3;
+    background-color: #1937a3 !important;
     color: #fff;
 }
 

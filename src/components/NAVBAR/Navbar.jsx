@@ -1,12 +1,13 @@
 import { Flex, Menu } from 'antd'
 import './navbar.css'
 import WaveLogo from '/Logo.png'
-import { DownOutlined } from '@ant-design/icons'
+import { DownOutlined, UpOutlined } from '@ant-design/icons'
 import HeaderModal from '../../UI/modal/HeaderModal'
 import { useState } from 'react'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
+ 
 
   return (
     <Menu
@@ -31,7 +32,19 @@ const Navbar = () => {
             <HeaderModal setOpen={setOpen} open={open}>
               <span>Thor</span>
               <span>
-                <DownOutlined />
+                {open ? (
+                  <UpOutlined
+                    style={{
+                      transition: 'all 0.3s ease-in-out'
+                    }}
+                  />
+                ) : (
+                  <DownOutlined
+                    style={{
+                      transition: 'all 0.5s ease-in-out'
+                    }}
+                  />
+                )}
               </span>
             </HeaderModal>
           </div>

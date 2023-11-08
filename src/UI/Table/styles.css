@@ -134,21 +134,114 @@ thead {
 }
 
 .button_add {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    gap: 7px ;
-    border: none;
-    outline: none;
-    color: #2046cf;
-    font-size: 17px;
-    text-decoration: none;
-    font-weight: 600;
-    background-color: transparent;
-    font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 7px;
+  border: none;
+  outline: none;
+  color: #2046cf;
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: transparent;
+  font-size: 16px;
 }
 
 .button_add:hover {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.invoice-add-totals {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 8px 0;
+}
+
+.invoice-add-totals_amount {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  gap: 4rem;
+}
+.invoice-add-totals_label {
+  max-width: 500px;
+}
+.wv-text--inline {
+  display: inline;
+  font-size: 16px;
+}
+
+.invoice-add-totals_label_amount {
+  margin-left: 1px;
+  overflow-wrap: break-word;
+  width: 143px;
+}
+
+.invoice_btn {
+  gap: 3px !important;
+  display: flex;
+  height: 100%;
+  margin-right: 13rem;
+  border: none;
+  outline: none;
+  color: #2046cf;
+  font-size: 17px;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: transparent;
+  font-size: 16px;
+}
+
+#amount_span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.select_currency {
+  margin-right: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.wv-text-currency {
+  margin-left: 40px;
+}
+
+.invoice-memo {
+  border-top: 1px solid #d4dde3;
+  margin: 0 -16px;
+  padding: 20px;
+}
+
+.invoice-memo-text {
+  color: #68757d;
+  font-weight: bold;
+}
+
+.text-area {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 4px 0;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  border: 1px solid #a6c8e7;
+  border-radius: 8px;
+  cursor: text;
+  padding: 8px 10px 6px;
+  transition: border 0.1s linear;
+  min-height: 40px;
+  width: 100%;
+  min-width: 160px;
+  resize: none;
 }

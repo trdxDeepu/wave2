@@ -4,14 +4,20 @@ import { DownOutlined } from '@ant-design/icons'
 import { Input } from 'antd'
 
 import DragAndDrop from '../../UI/DragnDrop/main'
+import { useState } from 'react'
 
 const InvoiceBody = () => {
+
+  const [showContent , setShowContent] = useState(false)
+
+  
+
   return (
     <div className='add_body'>
       <div className='add_info'>
         <div className='add-info-section'>
-          <button className='add-info-section_button'>
-            <div className='add-info_title'>
+          <button className={`add-info-section_button  `}>
+            <div className='add-info_title' onClick={()=>setShowContent(!showContent)}>
               <span
                 style={{
                   fontSize: '15px',
@@ -23,16 +29,17 @@ const InvoiceBody = () => {
               <span style={{}}>
                 <DownOutlined
                   style={{
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    transform: showContent ? 'rotate(180deg)' : 'rotate(0deg)'
                   }}
                 />
               </span>
             </div>
           </button>
         </div>
-        <div className='invoice_add_/*  */content'>
+        <div className={`invoice_add_content ${showContent?'hide':'show'}`}>
           <div></div>
-          <div className='add_info_content'>
+          <div className={`add_info_content ` }>
             <div className='add_content_logo'>
               <DragAndDrop/>
             </div>

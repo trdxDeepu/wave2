@@ -7,6 +7,7 @@ import {
   AiOutlinePlusCircle
 } from 'react-icons/ai'
 import { useState } from 'react'
+import CurrencySelector from '../../components/currencySelector/CurrencySelector'
 
 const EditTable = () => {
   const [data, setData] = useState([
@@ -83,9 +84,8 @@ const EditTable = () => {
                         style={{
                           textAlign: 'center',
                           marginTop: '17px',
-                          fontSize:"18px"
+                          fontSize: '18px'
                         }}
-                      
                       />
                     </td>
                     <td colSpan='7'>
@@ -202,15 +202,48 @@ const EditTable = () => {
                 <div className='dynamic_button' onClick={handleAddmore}>
                   <button className='button_add' onClick={handleAddmore}>
                     <span>
-                      <AiOutlinePlusCircle  />
+                      <AiOutlinePlusCircle />
                     </span>
-                    <span style={{fontSize:'16px'}}>Add more</span>
+                    <span style={{ fontSize: '16px' }}>Add more</span>
                   </button>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
+        <section className='invoice-add-totals'>
+          <div className='invoice-add-totals_amount'>
+            <div className='invoice-add-totals_label'>
+              <p className='wv-text--inline'> Subtotal</p>
+            </div>
+            <div className='invoice-add-totals_label_amount'>
+              <p className='wv-text--inline'>$0.00</p>
+            </div>
+          </div>
+          <div className='invoice-add-totals_amount invoice_btn'>
+            <span>
+              <AiOutlinePlusCircle />
+            </span>
+            <span style={{ fontSize: '16px' }} id='amount_span'>
+              Add more
+            </span>
+          </div>
+          <div className='select_currency'>
+            Total
+            <CurrencySelector />
+            <p className='wv-text-currency'>$0.00</p>
+          </div>
+        </section>
+        <div className='invoice-memo'>
+          <p className='invoice-memo-text'>Notes / Terms</p>
+          <textarea
+            name=''
+            id=''
+            style={{ width: '100%', border: 'none',fontSize:'15px' }}
+            className='text-area'
+            placeholder='Enter notes or terms of service that are visible to your customer'
+          ></textarea>
+        </div>
       </div>
     </>
   )

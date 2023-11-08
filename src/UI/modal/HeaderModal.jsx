@@ -45,7 +45,7 @@ const HeaderModal = props => {
               </span>
             </a>
           </div>
-          <hr id='hr_line' />
+          <div id='hr_line'></div>
           <div className='setting_menu'>
             <p className='setting_menu_header'>
               <span className='setting_menu_header_icon'>
@@ -63,7 +63,7 @@ const HeaderModal = props => {
               Sign Out
             </a>
           </div>
-          <hr id='hr_line' />
+          <div id='hr_line'></div>
           <div className='setting_menu'>
             <div className='setting_footer'>
               <p className='setting_footer_inline'>

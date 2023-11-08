@@ -1,27 +1,30 @@
 import './style.css'
 
-
 import { DatePicker } from 'antd'
 import { Input } from 'antd'
-import {UserAddOutlined} from '@ant-design/icons'
+import { UserAddOutlined } from '@ant-design/icons'
 import InvoiceTable from '../INVOICETABLE/InvoiceTable'
-
+import CustomerModal from '../../UI/CustomerModal/CustomerModal'
+import { useState } from 'react'
 
 const InvoicePersonInfo = () => {
+  const [open, setOpen] = useState(false)
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <div className='box-container'>
       <div className='box-container-2'>
-        <div className='box-container-left'>
+        <div className='box-container-left'  >
           <div className='circle'>
             <div className='circle-dot'>
               <div className='inner-circle-dot'></div>
             </div>
           </div>
           <div className='profile-section'>
-            <div className='user-icon'>
-              <UserAddOutlined   style={{ fill: 'lightgray',fontSize:"26px" }}/>
-              <span className='user-icon-text'>Add a customer</span>
-            </div>
+            <CustomerModal
+             open={open}
+             setOpen={setOpen}
+            />
           </div>
         </div>
         <div className='box-container-right'>
@@ -30,7 +33,7 @@ const InvoicePersonInfo = () => {
               <span className='label-text'> Invoice number </span>
             </label>
             <div className='input-field'>
-              <Input type='text' className='input-text' size='small'  />
+              <Input type='text' className='input-text' size='small' />
             </div>
           </div>
           <div className='box-container-form'>
@@ -38,7 +41,7 @@ const InvoicePersonInfo = () => {
               <div className='label-text'>P.O./S.O.number.</div>
             </label>
             <div className='input-field'>
-              <Input type='text' className='input-text' size='small'  />
+              <Input type='text' className='input-text' size='small' />
             </div>
           </div>
           <div className='date-container'>
@@ -47,19 +50,19 @@ const InvoicePersonInfo = () => {
                 <div className='label-text'>Invoice date</div>
               </label>
               <div className='input-field'>
-               
-                  <DatePicker size='large' style={{
-                    marginLeft:"28px",
-                    width:"190px"
-                  }} />
-                
+                <DatePicker
+                  size='large'
+                  style={{
+                    marginLeft: '28px',
+                    width: '190px'
+                  }}
+                />
               </div>
             </div>
-           
           </div>
         </div>
       </div>
-      <InvoiceTable/>
+      <InvoiceTable />
     </div>
   )
 }
