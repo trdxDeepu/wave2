@@ -137,7 +137,7 @@ const EditTable = () => {
                               textAlign: 'right'
                             }}
                           >
-                            $0.00
+                           ${item.price}
                           </span>
                           <AiOutlineDelete
                             size='20px'
@@ -217,7 +217,7 @@ const EditTable = () => {
               <p className='wv-text--inline'> Subtotal</p>
             </div>
             <div className='invoice-add-totals_label_amount'>
-              <p className='wv-text--inline'>$0.00</p>
+              <p className='wv-text--inline'></p>
             </div>
           </div>
           <div className='invoice-add-totals_amount invoice_btn'>

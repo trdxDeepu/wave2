@@ -2,7 +2,7 @@ import InvoiceBody from '../components/INVOICEBODY/InvoiceBody'
 import InvoiceBodyFrom from '../components/INVOICEFORMBODY/main'
 import '../styles/invoiceheader.css'
 import RoundButton from '../UI/roundedbutton/RoundButton'
-
+import Footer from './Footer/Footer'
 
 const InvoiceHeader = () => {
   return (
@@ -28,13 +28,12 @@ const InvoiceHeader = () => {
               </div>
             </div>
           </div>
-  
-           <InvoiceBody/> 
+          <InvoiceBody />
           <InvoiceBodyFrom />
+          <Footer/>
         </div>
       </div>
     </div>
   )
 }
-
 export default InvoiceHeader
