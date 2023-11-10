@@ -8,7 +8,7 @@ import './headerModal.css'
 const HeaderModal = props => {
   // eslint-disable-next-line no-unused-vars
   const { items, children, open, setOpen } = props
-  console.log(children)
+  
   return (
     <div className='dropdown'>
       <div

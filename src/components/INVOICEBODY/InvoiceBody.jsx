@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './invoicebody.css'
 import { DownOutlined } from '@ant-design/icons'
 
@@ -5,16 +6,27 @@ import { Input } from 'antd'
 
 import DragAndDrop from '../../UI/DragnDrop/main'
 import { useState } from 'react'
-import TextArea from 'antd/es/input/TextArea'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateForm } from '../../store/formSlice'
 
 const InvoiceBody = ({ showTextArea = false }) => {
   const [showContent, setShowContent] = useState(false)
+
+  const dispatch = useDispatch()
+
+  const formData = useSelector(state => state.users.formData)
+  console.log(formData)
+
+  function handleInputChange (e) {
+    const { name, value } = e.target
+    dispatch(updateForm({ ...formData, [name]: value }))
+  }
 
   return (
     <div className='add_body'>
       <div className='add_info'>
         <div className='add-info-section'>
-          <button className={`add-info-section_button  `}>
+          <div className={`add-info-section_button  `}>
             <div
               className='add-info_title'
               onClick={() => setShowContent(!showContent)}
@@ -42,7 +54,7 @@ const InvoiceBody = ({ showTextArea = false }) => {
                 />
               </span>
             </div>
-          </button>
+          </div>
         </div>
         <div className={`invoice_add_content ${showContent ? 'hide' : 'show'}`}>
           <div></div>
@@ -63,6 +75,7 @@ const InvoiceBody = ({ showTextArea = false }) => {
                 <div className='content_info_invoice'>
                   <Input
                     type='text'
+                    name='title'
                     className='input_text'
                     size='large'
                     placeholder='Invoice Title'
@@ -70,15 +83,20 @@ const InvoiceBody = ({ showTextArea = false }) => {
                       fontSize: '20px',
                       fontStyle: 'italic'
                     }}
+                    value={formData.title}
+                    onChange={handleInputChange}
                   />
                   <Input
                     type='text'
                     className='input_text'
+                    name='summary'
                     size='large'
                     placeholder='Summary (e.g. project name, description of invoice)'
                     style={{
                       fontSize: '14px'
                     }}
+                    value={formData.summary}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className='info_bussiness'>

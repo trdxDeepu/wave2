@@ -5,12 +5,9 @@ import InvoiceHeader from '../../UI/InvoiceHeader'
 const HeroSection = () => {
   return (
     <>
-   <InvoiceHeader/>
-   
+      <InvoiceHeader />
     </>
-    
   )
 }
 
 export default HeroSection
-       

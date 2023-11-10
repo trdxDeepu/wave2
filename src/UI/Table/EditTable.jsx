@@ -9,7 +9,10 @@ import {
 import { useState } from 'react'
 import CurrencySelector from '../../components/currencySelector/CurrencySelector'
 
+
 const EditTable = () => {
+ 
+
   const [data, setData] = useState([
     {
       key: '1',
@@ -25,7 +28,6 @@ const EditTable = () => {
     let newData = [...data]
     newData[index][field] = e.target.value
     setData(newData)
-    console.log(data)
   }
 
   function handleAddmore () {
@@ -37,8 +39,9 @@ const EditTable = () => {
       price: 0,
       amount: 0
     })
-
     setData(newData)
+    dispatch(updateTableData(data))
+    console.log(data)
   }
 
   const handleDeleteRow = key => {
@@ -137,7 +140,7 @@ const EditTable = () => {
                               textAlign: 'right'
                             }}
                           >
-                           ${item.price}
+                            ${item.price}
                           </span>
                           <AiOutlineDelete
                             size='20px'
@@ -217,7 +220,7 @@ const EditTable = () => {
               <p className='wv-text--inline'> Subtotal</p>
             </div>
             <div className='invoice-add-totals_label_amount'>
-              <p className='wv-text--inline'></p>
+              <p className='wv-text--inline'>$0.00</p>
             </div>
           </div>
           <div className='invoice-add-totals_amount invoice_btn'>
@@ -239,7 +242,7 @@ const EditTable = () => {
           <textarea
             name=''
             id=''
-            style={{ width: '100%', border: 'none',fontSize:'15px' }}
+            style={{ width: '100%', border: 'none', fontSize: '15px' }}
             className='text-area'
             placeholder='Enter notes or terms of service that are visible to your customer'
           ></textarea>

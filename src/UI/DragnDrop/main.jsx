@@ -1,23 +1,34 @@
+/* eslint-disable react/prop-types */
 import './styles.css'
 import { Progress } from 'antd'
 import { useState } from 'react'
 import {  Modal } from 'antd'
+import { useDispatch, useSelector } from 'react-redux'
+import { updateForm } from '../../store/formSlice'
 
 const DragAndDrop = () => {
   const [image, setImage] = useState(null)
   const [loading, setLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [progress, setProgress] = useState(0)
+  const dispatch = useDispatch()
+  
+  const userData = useSelector(state => state.users.formData)
 
   const handleImageUpload = event => {
     const file = event.target.files[0]
     const reader = new FileReader()
+   const {name,value} = event.target
+   dispatch(updateForm({...userData,[name]:value}))
     reader.readAsDataURL(file)
     setLoading(true)
+
     reader.onloadend = () => {
       setImage(reader.result)
       setLoading(false)
       setProgress(100)
+   
+      
     }
     reader.onprogress = progressEvent => {
       setProgress((progressEvent.loaded / progressEvent.total) * 100)
@@ -73,6 +84,7 @@ const DragAndDrop = () => {
                     id='img'
                     width={200}
                     height={100}
+                    
                   />
                   <p id='text-show' onClick={showModal}>
                     Remove logo
@@ -112,7 +124,10 @@ const DragAndDrop = () => {
         accept='image/*'
         id='input-file'
         hidden
+        name='image'
+        value={userData.image}
         onChange={handleImageUpload}
+        
       />
     </>
   )

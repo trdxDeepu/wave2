@@ -15,6 +15,9 @@ const RoundButton = () => {
     }
   ]
 
+
+  
+
   return (
     <div className='btn-div'>
       <div className='btn-container'>
@@ -22,6 +25,7 @@ const RoundButton = () => {
           size='large'
           type='primary'
           trigger={['click']}
+          htmlType='submit'
           icon={<CaretDownFilled />}
           menu={{
             items
@@ -30,6 +34,7 @@ const RoundButton = () => {
             borderRadius: '8px !important',
             padding: '10px 0'
           }}
+          
         >
           Save and continue
         </Dropdown.Button>
