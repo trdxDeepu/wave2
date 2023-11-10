@@ -3,7 +3,7 @@ import './index.css'
 
 import { CaretDownFilled } from '@ant-design/icons'
 
-const RoundButton = () => {
+const DropDownButton = () => {
   const items = [
     {
       key: '1',
@@ -15,14 +15,10 @@ const RoundButton = () => {
     }
   ]
 
-
-  
-
   return (
     <div className='btn-div'>
       <div className='btn-container'>
         <Dropdown.Button
-          size='large'
           type='primary'
           trigger={['click']}
           htmlType='submit'
@@ -31,10 +27,8 @@ const RoundButton = () => {
             items
           }}
           style={{
-            borderRadius: '8px !important',
-            padding: '10px 0'
+            borderRadius: '8px !important'
           }}
-          
         >
           Save and continue
         </Dropdown.Button>
@@ -43,4 +37,4 @@ const RoundButton = () => {
   )
 }
 
-export default RoundButton
+export default DropDownButton

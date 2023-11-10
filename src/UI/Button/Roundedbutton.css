@@ -1,0 +1,42 @@
+.rounded-button.large {
+  background-color: #2046cf;
+  font-size: 16px !important;
+  min-width: 100px !important;
+  border-radius: 500px !important;
+  cursor: pointer;
+  border: 1px solid #2046cf !important;
+  color: #fff;
+  padding: 16px 32px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.rounded-button.large:hover {
+  background-color: #1a3eab;
+ 
+}
+
+.rounded-button.large:active {
+  transform: scale(0.98);
+}
+
+.small {
+  background-color: #2046cf;
+  height: 50px;
+  width: 110px;
+  font-size: 16px;
+  border-radius: 500px !important;
+  cursor: pointer;
+  border: 1px solid #2046cf !important;
+  color: #fff;
+  padding: 16px 32px;
+  text-align: center;
+}
+
+.rounded-button.small:hover {
+  background-color: #1a3eab;
+}
+
+.rounded-button.small:active {
+  transform: scale(0.98);
+}

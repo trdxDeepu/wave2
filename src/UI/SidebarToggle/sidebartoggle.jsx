@@ -6,7 +6,7 @@ const SideBarToggle = () => {
     <div className='sidebar_toggle'>
         <div className="toggle_button">
         <LeftOutlined />
-        wefwefwef
+       
         </div>
     </div>
   )
