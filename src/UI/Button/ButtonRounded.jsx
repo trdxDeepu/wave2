@@ -7,6 +7,8 @@ const ButtonRounded = ({ children, size, ...restProps }) => {
         return 'large'
       case 'small':
         return 'small'
+      case 'medium':
+        return 'medium'
       default:
         return ''
     }
