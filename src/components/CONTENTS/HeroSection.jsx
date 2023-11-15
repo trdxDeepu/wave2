@@ -1,11 +1,10 @@
 import './styles.css'
-
-import InvoiceHeader from '../../UI/InvoiceHeader'
+import Invoices from '../../UI/Invoices'
 
 const HeroSection = () => {
   return (
     <>
-      <InvoiceHeader />
+      <Invoices />
     </>
   )
 }

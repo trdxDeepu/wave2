@@ -24,17 +24,16 @@
 .rounded-button.small {
   text-align: center;
   background-color: #2046cf;
-  min-height: 50px;
-  min-width: 70px;
+  min-height: 45px;
+  min-width: 50px;
   font-size: 16px;
   border-radius: 500px !important;
   cursor: pointer;
   border: 1px solid #2046cf !important;
   color: #fff;
-  padding: 16px 32px;
+  padding: 8px 32px;
   text-align: center;
   font-weight: 600;
-  
 }
 
 .rounded-button.small:hover {
@@ -46,19 +45,20 @@
 }
 .rounded-button.medium {
   color: #2046cf;
-    background-color: rgba(0, 0, 0, 0);
-    height: 45px;
-    min-width: 50px;
-    border-radius: 500px !important;
-    cursor: pointer;
-    border: 1px solid #2046cf !important;
-    padding: 12px 25px;
-    text-align: center;
-    font-weight: 600;
-    display: block;
-    margin: 1rem 0;
+  background-color: rgba(0, 0, 0, 0);
+  height: 45px;
+  min-width: 50px;
+  border-radius: 500px !important;
+  cursor: pointer;
+  border: 1px solid #2046cf !important;
+  padding: 12px 32px;
+  text-align: center;
+  font-weight: 600;
+  display: block;
+  margin: 1rem 0;
+  font-size: 16px;
 }
 
-.medium:hover{
+.medium:hover {
   background-color: #e6f1ff;
 }

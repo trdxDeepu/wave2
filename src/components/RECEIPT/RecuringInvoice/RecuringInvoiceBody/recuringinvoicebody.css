@@ -1,0 +1,153 @@
+.recuring_invoice_body {
+  margin: 20px auto;
+  width: 820px;
+}
+.wv-box {
+  display: block;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #b4c2cb;
+  background-color: #fff;
+}
+
+.wv-workflow::after {
+  z-index: auto;
+  content: '';
+  position: absolute;
+  left: 35px;
+  border: 2px solid #b4c2cb;
+  height: 20px;
+  top: calc(100% + 1px);
+  z-index: auto;
+}
+
+.wv-box_content {
+  margin-bottom: 0px;
+  padding: 8px;
+}
+.wv-workflow__task {
+  display: block;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #b4c2cb;
+  background-color: #fff;
+  position: relative;
+}
+
+.recuring_invoice_create_box_info {
+  flex: 1;
+}
+.recuring_invoice_create_box_option {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 34px;
+}
+.wv-heading--subtitle {
+  color: #68757d;
+  font-weight: normal;
+  font-size: 20px;
+}
+.recuring_invoice_create_box_info_button {
+  margin-left: 10px;
+}
+.recuring_invoice_create_content {
+  padding-left: 70px;
+}
+.wv-text-strong {
+  font-weight: bold;
+  columns: black;
+}
+.recuring_invoice_create_content_box {
+  margin-bottom: 20px;
+}
+.is-highlighted {
+  box-shadow: 0 8px 32px rgba(71, 84, 92, 0.35);
+  border-radius: 12px;
+  border-color: rgba(0, 0, 0, 0);
+}
+.wv-box > :first-child {
+  margin-top: 0;
+}
+
+.recuring_invoice-section {
+  padding-bottom: 10px;
+}
+
+.wv-content {
+  display: flex;
+  justify-content: center;
+}
+
+.wv-content_primary {
+  flex: 1;
+}
+.schedule_setting_container {
+  display: block;
+}
+.schedule_setting_row {
+  display: flex;
+  flex: 1;
+  margin-bottom: 10px;
+}
+.setting_row_label {
+  padding-right: 14px;
+  position: relative;
+  text-align: right;
+  top: 13px;
+  font-size: 17px;
+  width: 200px;
+}
+.setting_row_label_inputs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  gap: 3px;
+}
+
+#text_week {
+  color: #1c252c;
+  font-size: 16px;
+}
+
+/* 
+
+display: inline-block;
+    box-sizing: border-box;
+    margin: 4px 0;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    border: 1px solid #a6c8e7;
+    border-radius: 8px;
+    cursor: text;
+    padding: 8px 10px 6px;
+    transition: border .1s linear;
+    min-height: 40px;
+    width: 100%;
+    max-width: none;
+    box-shadow: none;
+    position: relative;
+    cursor: pointer;
+    color: #b4c2cb;
+    font-style: italic;
+    padding-right: 26px;
+    background: #fff;
+    margin: 0;
+
+
+*/
+.ant-select {
+  height: 40px !important;
+  border: 1px solid #a6c8e7 !important;
+  border-radius: 8px;
+  border-color: #a6c8e7;
+}
+.ant-select-selector {
+  padding: 0px 32px !important;
+  width: 100%;
+}

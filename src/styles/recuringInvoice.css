@@ -65,7 +65,7 @@
   outline: none;
 }
 
-.wv-text{
+.wv-text {
   margin: 16px 0;
   font-size: 16px;
 }
@@ -77,14 +77,13 @@
   text-align: center;
 }
 
-
-.recuring_list_wrapper_column_heading{
+.recuring_list_wrapper_column_heading {
   color: #1c252c;
   margin-bottom: 8px;
   font-size: 19px;
 }
 
-.recuring_list_context{
+.recuring_list_context {
   background-color: #e0f4fb;
   border-radius: 1rem;
   margin-top: 3.5rem;
@@ -93,28 +92,28 @@
   justify-content: center;
 }
 
-.content-right{
+.content-right {
   flex: 1 1 auto;
 }
 
-.text_primary{
+.text_primary {
   color: #001b66;
   font-size: 16px;
 }
 
-.text_primary_name{
+.text_primary_name {
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
-.secondary-left{
+.secondary-left {
   flex: 0 0 220px;
   order: -1;
   margin-right: 40px;
   display: flex;
   align-items: center;
-  
 }
-.secondary-left-image{
+.secondary-left-image {
   margin-left: 2.5rem;
   height: 120px;
   width: 120px;
@@ -122,7 +121,7 @@
   border: 2px solid #9451e4;
 }
 
-.recuring_list_wrapper2{
+.recuring_list_wrapper2 {
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -130,18 +129,21 @@
   text-align: left;
 }
 
-.recuring_list_wrapper2_icon{
+.recuring_list_wrapper2_icon {
   margin-top: 1.5rem;
 }
 
-.recuring_list_wrapper_column_title{
-  font-size: 19px;
-  color: #1c252c;
-    margin-bottom: 8px;
+.recuring_list_wrapper_column {
+  width: 236px;
 }
 
+.recuring_list_wrapper_column_title {
+  font-size: 19px;
+  color: #1c252c;
+  margin-bottom: 8px;
+}
 
-.internal_link{
+.internal_link {
   background-image: url(images/icon--external-link.svg);
   background-repeat: no-repeat;
   background-position: center right;
@@ -156,12 +158,12 @@
   cursor: pointer;
 }
 
-.internal_link:hover{
+.internal_link:hover {
   text-decoration: underline;
-  color: #2046cf; 
+  color: #2046cf;
 }
 
-.recuring_list_footer{
+.recuring_list_footer {
   background-color: #dbc6f6;
   border-radius: 1rem;
   display: flex;
@@ -171,15 +173,17 @@
   padding: 1rem 3rem;
 }
 
-.wv-text_inline{
+.wv-text_inline {
   font-size: 19px;
 }
-.strong_text{
+.strong_text {
   color: #001b66;
 }
-.recuring_list_secondary{
+.recuring_list_secondary {
   margin: 0.7rem 0;
-} 
+}
 
-
-
+.wv-text-column {
+  color: #1c252c;
+  letter-spacing: 0.02em;
+}

@@ -1,4 +1,4 @@
- .btn-div {
+.btn-div {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -9,7 +9,16 @@
 
 .btn-container {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   align-items: center;
+  border-radius: 500px !important;
+}
 
+.ant-btn {
+  background-color: #2046cf;
+  color: #fff !important;
+}
+
+.ant-btn:hover {
+  background-color: #697fcf !important;
 }

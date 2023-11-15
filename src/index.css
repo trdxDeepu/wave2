@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Work Sans', sans-serif;
-  
 }
 
 .container {
@@ -16,7 +15,23 @@
   position: relative;
 }
 
-.ant-layout-sider-trigger{
-  background-color:  #e6f4ff !important;
+.ant-layout-sider-trigger {
+  background-color: #e6f4ff !important;
   color: #2046cf !important;
+}
+
+.invoice-header {
+  display: flex;
+  flex-direction: column;
+  /* padding-right: 58px; */
+  background: #fff;
+  overflow: auto;
+  /* margin-right: 2%; */
+  width: 80%;
+}
+
+.frame_content_body {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }

@@ -36,14 +36,14 @@ const RecuringInvoice = () => {
           </div>
         </div>
         <div className='recuring_list_wrapper'>
-          <div className='recuring_list_wrapper_column wv-text'>
+          <div className='recuring_list_wrapper_column '>
             <img
               src={credtCard}
               alt='A credi card Svg'
               width={120}
               height={90}
             />
-            <h3 className='recuring_list_wrapper_column_heading wv-text '>
+            <h3 className='recuring_list_wrapper_column_heading '>
               Automatic payments
             </h3>
             <p className='recuring_list_wrapper_column_para'>
@@ -52,7 +52,7 @@ const RecuringInvoice = () => {
           </div>
           <div className='recuring_list_wrapper_column wv-text'>
             <img src={jar} alt='A Money Svg' width={80} height={90} />
-            <h3 className='recuring_list_wrapper_column_heading wv-text'>
+            <h3 className='recuring_list_wrapper_column_heading '>
               Customizable scheduling
             </h3>
             <p className='recuring_list_wrapper_column_para'>
@@ -62,7 +62,7 @@ const RecuringInvoice = () => {
           </div>
           <div className='recuring_list_wrapper_column wv-text'>
             <img src={money} alt='A credi card Svg' width={130} height={90} />
-            <h3 className='recuring_list_wrapper_column_heading wv-text '>
+            <h3 className='recuring_list_wrapper_column_heading '>
               Automated accounting
             </h3>
             <p className='recuring_list_wrapper_column_para'>
@@ -73,15 +73,15 @@ const RecuringInvoice = () => {
         </div>
         <div className='recuring_list_context'>
           <div className='content-right'>
-            <p className='wv-text text_primary'>
+            <p className=' text_primary'>
               I can set up a recurring invoice and literally just send the link,
               and they pay it on the spot. It’s helping me run my business and
               it’s painless for clients. It’s a win-win.
             </p>
-            <p className='wv-text text_primary text_primary_name'>
+            <p className='text_primary text_primary_name'>
               <strong>Sharukh Khan</strong>
             </p>
-            <p className='wv-text text_primay text_primay_text'>
+            <p className=' text_primay text_primay_name'>
               Continue, Digital Marketing
             </p>
           </div>
@@ -98,14 +98,14 @@ const RecuringInvoice = () => {
           <div className='recuring_list_icon'>
             <img src={tube} alt='Tube image' width={64} height={64} />
           </div>
-          <div className='recuring_list_wrapper_column'>
+          <div className=''>
             <h3 className='recuring_list_wrapper_column_title'>
               Support when you need it
             </h3>
-            <p className='wv-text'>
+            <p className='wv-text-column'>
               When you activate Payments, you get access to a real, live
-              customer support agent. Chat or email
-              <strong> Monday to Friday from 9 AM to 5 PM EST.</strong>
+              customer support agent. Chat or email.
+              <strong>Monday to Friday from 9 AM to 5 PM EST.</strong>
             </p>
             <ButtonRound size='medium'>Contact Support</ButtonRound>
             <a href='#' target='_blank' className='internal_link'>
@@ -119,11 +119,11 @@ const RecuringInvoice = () => {
           <div className='recuring_list_icon'>
             <img src={bulb} alt='Tube image' width={64} height={64} />
           </div>
-          <div className='recuring_list_wrapper_column'>
+          <div>
             <h3 className='recuring_list_wrapper_column_title'>
               Advisors at your service
             </h3>
-            <p className='wv-text'>
+            <p className='wv-text-column'>
               Our bookkeeping and accounting experts can coach you—or do the
               work for you—during the year, when you’re closing year-end, or at
               tax time.
