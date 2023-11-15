@@ -50,7 +50,7 @@ const RecuringInvoice = () => {
               Securely save your customer’s credit card to get paid instantly.
             </p>
           </div>
-          <div className='recuring_list_wrapper_column wv-text'>
+          <div className='recuring_list_wrapper_column '>
             <img src={jar} alt='A Money Svg' width={80} height={90} />
             <h3 className='recuring_list_wrapper_column_heading '>
               Customizable scheduling
@@ -60,7 +60,7 @@ const RecuringInvoice = () => {
               you want them to.
             </p>
           </div>
-          <div className='recuring_list_wrapper_column wv-text'>
+          <div className='recuring_list_wrapper_column'>
             <img src={money} alt='A credi card Svg' width={130} height={90} />
             <h3 className='recuring_list_wrapper_column_heading '>
               Automated accounting
@@ -105,7 +105,7 @@ const RecuringInvoice = () => {
             <p className='wv-text-column'>
               When you activate Payments, you get access to a real, live
               customer support agent. Chat or email.
-              <strong>Monday to Friday from 9 AM to 5 PM EST.</strong>
+              <strong> Monday to Friday from 9 AM to 5 PM EST.</strong>
             </p>
             <ButtonRound size='medium'>Contact Support</ButtonRound>
             <a href='#' target='_blank' className='internal_link'>
