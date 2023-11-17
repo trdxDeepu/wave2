@@ -153,31 +153,6 @@
   overflow: hidden;
 }
 
-.google-btn {
-  text-align: center;
-  background-image: url('/googlelogo.png');
-  background-repeat: no-repeat;
-  background-position: 2.2px;
-  background-size: 34px;
-  outline: none;
-  width: 100%;
-  margin-top: 10px;
-  color: #fff;
-  background-color: #4285f4;
-  border: none;
-  height: 42px;
-  font-weight: 600;
-  font-size: 14px;
-  border-radius: 20px;
-  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25);
-}
-
-.google-btn a {
-  text-decoration: none;
-  color: #fff;
-  text-align: center;
-}
-
 .google-btn:hover {
   cursor: pointer;
   background-color: #1b6cf2;

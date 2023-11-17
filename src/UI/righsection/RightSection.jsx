@@ -1,5 +1,6 @@
-import { Form, Image, Input } from 'antd'
+import { Button, Form, Image, Input } from 'antd'
 import { Link } from 'react-router-dom'
+import { FcGoogle } from 'react-icons/fc'
 
 const RightSection = () => {
   return (
@@ -48,20 +49,56 @@ const RightSection = () => {
               />
 
               <div className='anchor-div'>
-                <a href='#' className='anchor-link'>
+                <a href='#' className='forgot-link'>
                   Forgot it?
                 </a>
               </div>
-              <button className='submit-btn'>Sign in</button>
+              <Button
+                htmlType='submit'
+                size='large'
+                shape='round'
+                style={{
+                  marginTop: '15px',
+                  width: '100%',
+                  boxShadow:
+                    '0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25)'
+                }}
+              >
+                Sign in
+              </Button>
             </div>
             <div className='line'>
               <span className='line-line'></span>
               <span id='text'>or</span>
               <span className='line-line'></span>
             </div>
-            <button className='google-btn'>
-              <span>Sign in with Google</span>
-            </button>
+            <Button
+              style={{
+                width: '100%',
+                backgroundColor: '#1b6cf2',
+                textAlign: 'center',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background-color 0.3s'
+              }}
+              className='google-btn'
+              size='large'
+              shape='round'
+              icon={
+                <FcGoogle
+                  style={{
+                    marginRight: '12px',
+                    textAlign: 'left',
+                    backgroundColor: '#fff',
+                    borderRadius: '50%'
+                  }}
+                  size={27}
+                />
+              }
+            >
+              <span style={{ flex: 1 }}>Sign in with Google</span>
+            </Button>
           </Form>
         </div>
 

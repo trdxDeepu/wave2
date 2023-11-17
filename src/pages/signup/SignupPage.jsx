@@ -4,6 +4,7 @@ import { Form, Input } from 'antd'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useFormContext } from '../../hooks/FormContext'
+import { FcGoogle } from 'react-icons/fc'
 
 const SignupPage = () => {
   const { user, setUser, onFinish } = useFormContext()
@@ -182,9 +183,32 @@ const SignupPage = () => {
                 <span id='text'>or</span>
                 <span className='line-line'></span>
               </div>
-              <button className='google-btn'>
-                <span>Sign in with Google</span>
-              </button>
+              <Button
+                style={{
+                  width: '100%',
+                  backgroundColor: '#1b6cf2',
+                  textAlign: 'center',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'background-color 0.3s'
+                }}
+                size='large'
+                shape='round'
+                icon={
+                  <FcGoogle
+                    style={{
+                      marginRight: '12px',
+                      textAlign: 'left',
+                      backgroundColor: '#fff',
+                      borderRadius: '50%'
+                    }}
+                    size={27}
+                  />
+                }
+              >
+                <span style={{ flex: 1 }}>Sign in with Google</span>
+              </Button>
             </Form>
           </div>
 
