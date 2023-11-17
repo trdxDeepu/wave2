@@ -7,10 +7,16 @@ import { useState } from 'react'
 const SignupPage = () => {
   const [passwordVisible, setPasswordVisible] = useState(false)
 
-  function handleSubmit (e) {
-    e.preventDefault()
-    alert('work')
+  // function handleSubmit (e) {
+  //   e.preventDefault()
+  //   alert('work')
+  // }
+
+  const onFinish = values => {
+    console.log('submit')
+    console.log('Received values of form: ', values)
   }
+
   return (
     <>
       <div className='signup-container'>
@@ -25,44 +31,67 @@ const SignupPage = () => {
           </h2>
 
           <div className='signup-form'>
-            <Form onFinish={handleSubmit}>
+            <Form onFinish={onFinish}>
               <div className='text-email'>
-                <Input
-                  style={{
-                    marginTop: '5px',
-                    width: '100%',
-                    fontStyle: 'italic',
-                    fontWeight: '600'
-                  }}
-                  type='text'
-                  size='large'
-                  placeholder='Email'
+                <Form.Item
+                  name='email'
+                  rules={[
+                    {
+                      type: 'email',
+                      message: 'The input is not valid E-mail!'
+                    },
+                    {
+                      required: true,
+                      message: 'Please input your E-mail!'
+                    }
+                  ]}
+                >
+                  <Input
+                    style={{
+                      marginTop: '5px',
+                      marginBottom: '1px',
+                      width: '100%',
+                      fontStyle: 'italic',
+                      fontWeight: '600'
+                    }}
+                    type='text'
+                    size='large'
+                    placeholder='Email'
+                  />
+                </Form.Item>
+              </div>
+              <div className='text-password'>
+                <Form.Item
+                  name='password'
                   rules={[
                     {
                       required: true,
-                      message: 'Please input your username!'
+                      message: 'Please input your password!'
                     }
                   ]}
-                />
-              </div>
-              <div className='text-password'>
-                <Input.Password
-                  style={{
-                    marginTop: '5px',
-                    width: '100%',
-                    fontStyle: 'italic',
-                    fontWeight: '600'
-                  }}
-                  type='text'
-                  size='large'
-                  placeholder='Password'
-                  visibilityToggle={{
-                    visible: passwordVisible,
-                    onVisibleChange: setPasswordVisible
-                  }}
-                />
+                >
+                  <Input.Password
+                    style={{
+                      marginTop: '-6px',
+                      width: '100%',
+                      fontStyle: 'italic',
+                      fontWeight: '600'
+                    }}
+                    type='text'
+                    size='large'
+                    placeholder='Password'
+                    visibilityToggle={{
+                      visible: passwordVisible,
+                      onVisibleChange: setPasswordVisible
+                    }}
+                  />
+                </Form.Item>
 
                 <div className='anchor-div_span'>
+                  <span className='anchor-text--span'>
+                    {' '}
+                    At least 8 characters, but longer is better.
+                  </span>
                   <span
                     href='#'
                     className='anchor-link'
@@ -72,11 +101,11 @@ const SignupPage = () => {
                   </span>
                 </div>
                 <Button
+                  htmlType='submit'
                   size='large'
                   shape='round'
                   style={{
                     width: '100%',
-                    marginTop: '20px',
                     boxShadow:
                       '0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25)'
                   }}
