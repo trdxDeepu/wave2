@@ -18,18 +18,16 @@ const FormProvider = ({ children }) => {
     setFormData('')
   }
 
-  function handleSignup (e) {
-    e.preventDefault()
-    console.log('working')
+  const onFinish = values => {
+    console.log('Received values of form: ', values)
   }
-
   return (
     <FormContext.Provider
       value={{
         formData,
         setFormData,
         handleSubmit,
-        handleSignup,
+        onFinish,
         user,
         setUser
       }}

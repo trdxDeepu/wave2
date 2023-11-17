@@ -6,12 +6,60 @@ import { useState } from 'react'
 import { useFormContext } from '../../hooks/FormContext'
 
 const SignupPage = () => {
-  const { user, setUser, handleSignup } = useFormContext()
+  const { user, setUser, onFinish } = useFormContext()
 
   const [passwordVisible, setPasswordVisible] = useState(false)
+  const [passwordValidationStatus, setPasswordValidationStatus] = useState('')
 
-  function handleChange (e) {
-    setUser({ ...user, [e.target.name]: e.target.value })
+  const handlePasswordChange = e => {
+    const newPassword = e.target.value
+    setUser({ ...user, password: newPassword })
+    setPasswordValidationStatus(isPasswordValid(newPassword) ? 'green' : 'red')
+  }
+
+  const getPasswordStrength = value => {
+    const re = /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{8,}$/
+
+    if (!value) {
+      return '' // No strength indication if password is empty
+    } else if (re.test(value)) {
+      return 'strong' // Strong password
+    } else if (value.length >= 8) {
+      return 'good' // Good password, but not strong
+    } else {
+      return 'weak' // Weak password
+    }
+  }
+
+  const getPasswordColor = strength => {
+    switch (strength) {
+      case 'strong':
+        return 'green'
+      case 'good':
+        return 'orange'
+      case 'weak':
+        return 'red'
+      default:
+        return ''
+    }
+  }
+
+  const getPasswordStrengthText = strength => {
+    switch (strength) {
+      case 'strong':
+        return 'This is a very strong password!'
+      case 'good':
+        return 'This is a good password, but it could be a bit stronger.'
+      case 'weak':
+        return "Uh oh, this password isn't strong enough."
+      default:
+        return 'At least 8 characters, but longer is better.'
+    }
+  }
+
+  const handleChange = e => {
+    const { name, value } = e.target
+    setUser({ ...user, [name]: value })
   }
 
   return (
@@ -28,7 +76,7 @@ const SignupPage = () => {
           </h2>
 
           <div className='signup-form'>
-            <form onSubmit={handleSignup}>
+            <Form onSubmit={onFinish}>
               <div className='text-email'>
                 <Form.Item
                   name='email'
@@ -66,7 +114,16 @@ const SignupPage = () => {
                     {
                       required: true,
                       message: 'Please input your password!'
-                    }
+                    },
+                    ({ getFieldValue }) => ({
+                      validator (_, value) {
+                        const strength = getPasswordStrength(value)
+                        setPasswordValidationStatus(strength)
+                        if (strength === 'strong') {
+                          return Promise.resolve()
+                        }
+                      }
+                    })
                   ]}
                 >
                   <Input.Password
@@ -84,14 +141,18 @@ const SignupPage = () => {
                       visible: passwordVisible,
                       onVisibleChange: setPasswordVisible
                     }}
-                    onChange={handleChange}
+                    onChange={handlePasswordChange}
                   />
                 </Form.Item>
 
                 <div className='anchor-div_span'>
-                  <span className='anchor-text--span'>
-                    {' '}
-                    At least 8 characters, but longer is better.
+                  <span
+                    className='anchor-text--span'
+                    style={{
+                      color: getPasswordColor(passwordValidationStatus)
+                    }}
+                  >
+                    {getPasswordStrengthText(passwordValidationStatus)}
                   </span>
                   <span
                     href='#'
@@ -125,7 +186,7 @@ const SignupPage = () => {
               <button className='google-btn'>
                 <span>Sign in with Google</span>
               </button>
-            </form>
+            </Form>
           </div>
 
           <div className='footer-text'>
