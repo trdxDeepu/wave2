@@ -3,18 +3,15 @@ import './signup.css'
 import { Form, Input } from 'antd'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import { useFormContext } from '../../hooks/FormContext'
 
 const SignupPage = () => {
+  const { user, setUser, handleSignup } = useFormContext()
+
   const [passwordVisible, setPasswordVisible] = useState(false)
 
-  // function handleSubmit (e) {
-  //   e.preventDefault()
-  //   alert('work')
-  // }
-
-  const onFinish = values => {
-    console.log('submit')
-    console.log('Received values of form: ', values)
+  function handleChange (e) {
+    setUser({ ...user, [e.target.name]: e.target.value })
   }
 
   return (
@@ -31,7 +28,7 @@ const SignupPage = () => {
           </h2>
 
           <div className='signup-form'>
-            <Form onFinish={onFinish}>
+            <form onSubmit={handleSignup}>
               <div className='text-email'>
                 <Form.Item
                   name='email'
@@ -57,6 +54,8 @@ const SignupPage = () => {
                     type='text'
                     size='large'
                     placeholder='Email'
+                    value={user.email}
+                    onChange={handleChange}
                   />
                 </Form.Item>
               </div>
@@ -80,10 +79,12 @@ const SignupPage = () => {
                     type='text'
                     size='large'
                     placeholder='Password'
+                    value={user.password}
                     visibilityToggle={{
                       visible: passwordVisible,
                       onVisibleChange: setPasswordVisible
                     }}
+                    onChange={handleChange}
                   />
                 </Form.Item>
 
@@ -124,7 +125,7 @@ const SignupPage = () => {
               <button className='google-btn'>
                 <span>Sign in with Google</span>
               </button>
-            </Form>
+            </form>
           </div>
 
           <div className='footer-text'>

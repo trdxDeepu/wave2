@@ -9,6 +9,8 @@ const FormProvider = ({ children }) => {
     tableData: []
   })
 
+  const [user, setUser] = useState({})
+
   const handleSubmit = e => {
     e.preventDefault()
     console.log('Form Submit', formData)
@@ -16,8 +18,22 @@ const FormProvider = ({ children }) => {
     setFormData('')
   }
 
+  function handleSignup (e) {
+    e.preventDefault()
+    console.log('working')
+  }
+
   return (
-    <FormContext.Provider value={{ formData, setFormData, handleSubmit }}>
+    <FormContext.Provider
+      value={{
+        formData,
+        setFormData,
+        handleSubmit,
+        handleSignup,
+        user,
+        setUser
+      }}
+    >
       {children}
     </FormContext.Provider>
   )
