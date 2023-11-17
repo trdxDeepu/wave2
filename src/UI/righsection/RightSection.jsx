@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const RightSection = () => {
   return (
-    <div className='right-container'>
+    <div className='right-container--login'>
       <div className='right-container-inside'>
         <div className='right-header'>
           <a className='logo' href='www.google.com' target='_blank'>
@@ -30,6 +30,7 @@ const RightSection = () => {
                 }}
                 type='text'
                 size='large'
+                className='input-text--login'
               />
             </div>
             <div className='text-password'>
@@ -42,6 +43,7 @@ const RightSection = () => {
                 }}
                 type='text'
                 size='large'
+                className='input-text--login'
               />
 
               <div className='anchor-div'>
@@ -74,7 +76,7 @@ const RightSection = () => {
             <p className='footer-p'>
               Don&apos;t have a Wave account yet?
               <Link to='/signup'>
-                <span> Sign up now.</span>
+                <span className='sign_in--span'> Sign up now.</span>
               </Link>
             </p>
           </div>

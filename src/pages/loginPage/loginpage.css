@@ -63,7 +63,7 @@
   color: greenyellow;
 }
 
-.right-container {
+.right-container--login {
   background-color: #e8effd;
   min-height: auto;
   width: 544px;
@@ -119,7 +119,7 @@
   color: #68757d;
 }
 
-.input-text {
+.input-text--login {
   display: block;
   margin: 8px;
   margin-top: 5px;
@@ -132,7 +132,7 @@
   font-size: 16px;
 }
 
-.input-text:focus {
+.input-text--login:focus {
   border: 1px solid #2046cf;
   box-shadow: #3d61e1d2 0px 0px 5px 0px, #3d61e1d2 0px 0px 1px 0px;
   font-size: 17px;
@@ -148,6 +148,7 @@
   text-decoration: none;
   cursor: pointer;
   color: #2046cf;
+  margin-left: 4px;
 }
 .anchor-link:hover {
   text-decoration: underline;
@@ -241,12 +242,13 @@
   text-align: center;
 }
 
-.footer-p span {
+.sign_in--span {
   color: #2046cf;
   font-weight: 600;
+  text-decoration: none;
 }
 
-.footer-p span:hover {
+.sign_in--span:hover {
   text-decoration: underline;
   max-width: fit-content;
   color: #264fe5;

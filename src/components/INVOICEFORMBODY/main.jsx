@@ -39,8 +39,11 @@ const InvoicePersonInfo = () => {
             <div className='input-field'>
               <Input
                 type='text'
-                className='input-text'
-                size='small'
+                style={{
+                  width: '100%'
+                }}
+                size='large'
+                className='input-text_field'
                 name='invoiceNumber'
                 onChange={handleChange}
                 value={formData.invoiceNumber}
@@ -54,8 +57,11 @@ const InvoicePersonInfo = () => {
             <div className='input-field'>
               <Input
                 type='text'
-                className='input-text'
-                size='small'
+                style={{
+                  width: '100%'
+                }}
+                className='input-text_field'
+                size='large'
                 name='posoNumber'
                 onChange={handleChange}
                 value={formData.posoNumber}
