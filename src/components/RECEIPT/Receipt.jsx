@@ -2,9 +2,9 @@ import { useState } from 'react'
 import InvoiceHeader from '../../UI/InvoiceHeader'
 import { GrCircleInformation } from 'react-icons/gr'
 import './receipt.css'
-import Tippy from '@tippyjs/react'
-import RecuringInvoiceSummary from './RecuringInvoice/RecuringInvoiceSummary'
-import RecuringInvoiceBody from './RecuringInvoice/RecuringInvoiceBody/RecuringInvoiceBody'
+
+import RecuringInvoiceSummary from '../../UI/RecuringInvoice/RecuringInvoiceSummary'
+import RecuringInvoiceBody from '../../UI/RecuringInvoiceBody/RecuringInvoiceBody'
 
 const Receipt = () => {
   const [show, setShow] = useState(true)

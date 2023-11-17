@@ -2,7 +2,6 @@ import { Dropdown } from 'antd'
 import './index.css'
 
 import { CaretDownFilled } from '@ant-design/icons'
-import ButtonRounded from '../Button/ButtonRounded'
 
 const DropDownButton = ({ children }) => {
   const items = [
@@ -21,6 +20,7 @@ const DropDownButton = ({ children }) => {
       <div className='btn-container'>
         <Dropdown.Button
           trigger={['click']}
+          htmlType='submit'
           icon={<CaretDownFilled />}
           menu={{ items }}
           size='large'

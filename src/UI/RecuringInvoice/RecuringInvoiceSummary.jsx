@@ -1,4 +1,3 @@
-import React from 'react'
 import { GrCircleInformation } from 'react-icons/gr'
 
 const RecuringInvoiceSummary = () => {
@@ -14,7 +13,7 @@ const RecuringInvoiceSummary = () => {
           </div>
         </div>
         <div className='recuring_summary_container_customer'>
-          <div style={{ margin: '10px 4px' }}>
+          <div style={{ margin: '12px 4px' }}>
             <p className='wv-text'>Customer</p>
           </div>
           <div>

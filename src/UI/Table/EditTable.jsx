@@ -1,4 +1,6 @@
 import { Input, Select } from 'antd'
+import { v4 as uuidv4 } from 'uuid'
+
 import './styles.css'
 import { RiDraggable } from 'react-icons/ri'
 import {
@@ -6,16 +8,16 @@ import {
   AiOutlineMinus,
   AiOutlinePlusCircle
 } from 'react-icons/ai'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import CurrencySelector from '../../components/currencySelector/CurrencySelector'
-
+import { useFormContext } from '../../hooks/FormContext'
 
 const EditTable = () => {
- 
+  const { formData, setFormData } = useFormContext()
 
   const [data, setData] = useState([
     {
-      key: '1',
+      key: uuidv4(),
       item: '',
       description: '',
       quantity: 1,
@@ -28,20 +30,32 @@ const EditTable = () => {
     let newData = [...data]
     newData[index][field] = e.target.value
     setData(newData)
+
+    // Update formData
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      tableData: newData
+    }))
   }
 
   function handleAddmore () {
-    const newData = [...data]
-    newData.push({
-      key: `${data.length + 1}`,
-      item: '',
-      quantity: 0,
-      price: 0,
-      amount: 0
-    })
+    const newData = [
+      ...data,
+      {
+        key: uuidv4(),
+        item: '',
+        quantity: 0,
+        price: 0,
+        amount: 0
+      }
+    ]
     setData(newData)
-    dispatch(updateTableData(data))
-    console.log(data)
+
+    // Update formData
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      tableData: newData
+    }))
   }
 
   const handleDeleteRow = key => {
@@ -49,6 +63,12 @@ const EditTable = () => {
     const index = newData.findIndex(item => key === item.key)
     newData.splice(index, 1)
     setData(newData)
+
+    // Update formData
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      tableData: newData
+    }))
   }
 
   return (
@@ -223,14 +243,18 @@ const EditTable = () => {
               <p className='wv-text--inline'>$0.00</p>
             </div>
           </div>
-          <div className='invoice-add-totals_amount invoice_btn'>
+          <button
+            type='button'
+            className='invoice-add-totals_amount invoice_btn'
+          >
             <span>
               <AiOutlinePlusCircle />
             </span>
             <span style={{ fontSize: '16px' }} id='amount_span'>
               Add more
             </span>
-          </div>
+          </button>
+
           <div className='select_currency'>
             Total
             <CurrencySelector />
@@ -240,9 +264,11 @@ const EditTable = () => {
         <div className='invoice-memo'>
           <p className='invoice-memo-text'>Notes / Terms</p>
           <textarea
-            name=''
+            name='notes'
             id=''
             style={{ width: '100%', border: 'none', fontSize: '15px' }}
+            value={formData.notes}
+            onChange={e => setFormData({ ...formData, notes: e.target.value })}
             className='text-area'
             placeholder='Enter notes or terms of service that are visible to your customer'
           ></textarea>

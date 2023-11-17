@@ -3,21 +3,20 @@ import './style.css'
 
 import { DatePicker } from 'antd'
 import { Input } from 'antd'
-
+import dayjs from 'dayjs'
 import InvoiceTable from '../INVOICETABLE/InvoiceTable'
 import CustomerModal from '../../UI/CustomerModal/CustomerModal'
 import { useState } from 'react'
-
+import { useFormContext } from '../../hooks/FormContext'
 
 const InvoicePersonInfo = () => {
-  const [open, setOpen] = useState(false)
-  
-  // function handleInputChange (e) {
-  //   const { name, value } = e.target
-  //   setUserData({ ...userData, [name]: value })
-  // }
+  const { formData, setFormData } = useFormContext()
 
- 
+  const [open, setOpen] = useState(false)
+
+  const handleChange = (name, value) => {
+    setFormData({ ...formData, [name]: value })
+  }
 
   return (
     <div className='box-container'>
@@ -38,13 +37,13 @@ const InvoicePersonInfo = () => {
               <span className='label-text'> Invoice number </span>
             </label>
             <div className='input-field'>
-              <Input 
-              type='text' 
-              className='input-text' 
-              size='small' 
-              name='invoiceNumber'
-              // onChange={handleInputChange}
-              // value={userData.invoiceNumber}
+              <Input
+                type='text'
+                className='input-text'
+                size='small'
+                name='invoiceNumber'
+                onChange={handleChange}
+                value={formData.invoiceNumber}
               />
             </div>
           </div>
@@ -53,13 +52,13 @@ const InvoicePersonInfo = () => {
               <div className='label-text'>P.O./S.O.number.</div>
             </label>
             <div className='input-field'>
-              <Input 
-              type='text' 
-              className='input-text' 
-              size='small'
-              name='posoNumber'
-              // onChange={handleInputChange}
-              // value={userData.posoNumber}
+              <Input
+                type='text'
+                className='input-text'
+                size='small'
+                name='posoNumber'
+                onChange={handleChange}
+                value={formData.posoNumber}
               />
             </div>
           </div>
@@ -76,9 +75,8 @@ const InvoicePersonInfo = () => {
                     width: '190px'
                   }}
                   name='date'
-                  // onChange={(date, dateString) =>
-                  //   setUserData({ ...userData, date: dateString })
-                  // }
+                  value={dayjs(formData.date)}
+                  onChange={handleChange}
                 />
               </div>
             </div>

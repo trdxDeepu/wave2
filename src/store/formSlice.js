@@ -1,19 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit'
+// import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  formData: []
-}
+// const initialState = {
+//   formData: []
+// }
 
-export const formSlice = createSlice({
-  name: 'form',
-  initialState,
-  reducers: {
-    updateForm: (state, action) => {
-      state.formData = action.payload
-    }
-  }
-})
+// export const formSlice = createSlice({
+//   name: 'form',
+//   initialState,
+//   reducers: {
+//     updateForm: (state, action) => {
+//       state.formData = action.payload
+//     }
+//   }
+// })
 
-export const { updateForm } = formSlice.actions
+// export const { updateForm } = formSlice.actions
 
-export default formSlice.reducer
+// export default formSlice.reducer

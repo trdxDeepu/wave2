@@ -6,20 +6,16 @@ import { Input } from 'antd'
 
 import DragAndDrop from '../../UI/DragnDrop/main'
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { updateForm } from '../../store/formSlice'
+import { useFormContext } from '../../hooks/FormContext'
 
 const InvoiceBody = ({ showTextArea = false }) => {
   const [showContent, setShowContent] = useState(false)
 
-  const dispatch = useDispatch()
+  const { formData, setFormData } = useFormContext()
 
-  const formData = useSelector(state => state.users.formData)
-  console.log(formData)
-
-  function handleInputChange (e) {
+  const handleChange = e => {
     const { name, value } = e.target
-    dispatch(updateForm({ ...formData, [name]: value }))
+    setFormData({ ...formData, [name]: value })
   }
 
   return (
@@ -60,8 +56,10 @@ const InvoiceBody = ({ showTextArea = false }) => {
           <div></div>
           {showTextArea ? (
             <textarea
-              name=''
+              name='footer'
               id=''
+              onChange={handleChange}
+              value={formData.footer}
               style={{ width: '100%', border: 'none', fontSize: '15px' }}
               className='text-area'
               placeholder='Enter a footer for this invoice (e.g. tax information, thank you note)'
@@ -84,7 +82,7 @@ const InvoiceBody = ({ showTextArea = false }) => {
                       fontStyle: 'italic'
                     }}
                     value={formData.title}
-                    onChange={handleInputChange}
+                    onChange={handleChange}
                   />
                   <Input
                     type='text'
@@ -96,7 +94,7 @@ const InvoiceBody = ({ showTextArea = false }) => {
                       fontSize: '14px'
                     }}
                     value={formData.summary}
-                    onChange={handleInputChange}
+                    onChange={handleChange}
                   />
                 </div>
                 <div className='info_bussiness'>

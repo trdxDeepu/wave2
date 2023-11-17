@@ -1,63 +1,19 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
+import { useState } from 'react'
 import { Select } from 'antd'
 
 const RecurringSelection = ({ data, setData }) => {
-  const selectCalender = [
-    {
-      value: 'daily',
-      label: 'Daily'
-    },
-    {
-      value: 'weekly',
-      label: 'Weekly'
-    },
-    {
-      value: 'monthly',
-      label: 'Monthly'
-    },
-    {
-      value: 'yearly',
-      label: 'Yearly'
-    }
-  ]
+  const [selectedDate, setSelectedDate] = useState('')
 
-  const selectWeek = [
-    {
-      value: 'monday',
-      label: 'Monday'
-    },
-    {
-      value: 'tuesday',
-      label: 'Tuesday'
-    },
-    {
-      value: 'wednesday',
-      label: 'Wednesday'
-    },
-    {
-      value: 'thursday',
-      label: 'Thursday'
-    },
-    {
-      value: 'friday',
-      label: 'Friday'
-    },
-    {
-      value: 'saturday',
-      label: 'Saturday'
-    },
-    {
-      value: 'sunday',
-      label: 'Sunday'
-    }
+  const selectCalender = [
+    { value: 'monthly', label: 'Monthly' },
+    { value: '3months', label: 'Every 3 Months' },
+    { value: '6months', label: 'Evert 6 months' },
+    { value: 'yearly', label: 'Yearly' }
   ]
 
   const selectMonth = [
-    {
-      value: 'first',
-      label: 'First'
-    },
+    { value: 'first', label: 'First' },
     { value: 'last', label: 'Last' },
     { value: '2nd', label: '2nd' },
     { value: '3rd', label: '3th' },
@@ -105,18 +61,24 @@ const RecurringSelection = ({ data, setData }) => {
     { value: 'december', label: 'December' }
   ]
 
-  const handleChange = value => {
-    setData(value)
-  }
+  // const handleSelectWeek = value => {
+  //   console.log(value)
+  //   setSelectedDate(value) // Reset selectedDate when the recurring option changes
+  // }
 
-  const handleSelectWeek = value => {
-    console.log(value)
-  }
+  console.log('this is selected date', selectedDate.label)
+
   const handleSelectMonth = value => {
     console.log(value)
+    setSelectedDate(value)
+    // Reset selectedDate when the recurring option changes
   }
   const handleSelectYearly = value => {
     console.log(value)
+  }
+
+  const handleChange = value => {
+    setData(value)
   }
 
   return (
@@ -130,28 +92,33 @@ const RecurringSelection = ({ data, setData }) => {
             onChange={handleChange}
             options={selectCalender}
             size='large'
-            defaultValue={selectCalender[0].label}
+            defaultValue='Select here'
           />
         </div>
         <div>
-          {data && data.value === 'weekly' && (
+          {data && (data.value === '3months' || data.value === '6months') && (
             <>
               <span
                 style={{
                   fontSize: '16px',
                   color: '#1c252c',
-                  marginTop: '10px'
+                  marginTop: '10px',
+                  marginLeft: '-5px'
                 }}
               >
-                every
+                on the
               </span>
               <Select
                 labelInValue
-                onChange={handleSelectWeek}
-                options={selectWeek}
+                onChange={handleSelectMonth}
+                options={selectMonth}
                 size='large'
-                defaultValue={selectWeek[0].label}
+                defaultValue={selectMonth[0].label}
               />
+              <span style={{ fontSize: '16px', color: '#1c252c' }}>
+                {' '}
+                {selectedDate.label} day of every month{' '}
+              </span>
             </>
           )}
         </div>
@@ -196,7 +163,7 @@ const RecurringSelection = ({ data, setData }) => {
               />
               <div
                 style={{
-                  marginLeft: '-95px',
+                  marginLeft: '-142px',
                   marginTop: '4px'
                 }}
               >
@@ -206,6 +173,7 @@ const RecurringSelection = ({ data, setData }) => {
                   options={selectMonth}
                   defaultValue={selectMonth[0].label}
                   size='large'
+                  style={{ width: 134 }}
                 />
                 <span style={{ fontSize: '16px', color: '#1c252c' }}>
                   {' '}

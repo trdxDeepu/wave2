@@ -2,24 +2,22 @@
 import './styles.css'
 import { Progress } from 'antd'
 import { useState } from 'react'
-import {  Modal } from 'antd'
-import { useDispatch, useSelector } from 'react-redux'
-import { updateForm } from '../../store/formSlice'
+import { Modal } from 'antd'
+import { useFormContext } from '../../hooks/FormContext'
 
 const DragAndDrop = () => {
   const [image, setImage] = useState(null)
   const [loading, setLoading] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [progress, setProgress] = useState(0)
-  const dispatch = useDispatch()
-  
-  const userData = useSelector(state => state.users.formData)
+
+  const { formData, setFormData } = useFormContext()
 
   const handleImageUpload = event => {
     const file = event.target.files[0]
     const reader = new FileReader()
-   const {name,value} = event.target
-   dispatch(updateForm({...userData,[name]:value}))
+    const { name } = event.target
+
     reader.readAsDataURL(file)
     setLoading(true)
 
@@ -27,13 +25,15 @@ const DragAndDrop = () => {
       setImage(reader.result)
       setLoading(false)
       setProgress(100)
-   
-      
+
+      setFormData({ ...formData, [name]: reader.result })
     }
+
     reader.onprogress = progressEvent => {
       setProgress((progressEvent.loaded / progressEvent.total) * 100)
     }
   }
+
   const handleDrop = event => {
     event.preventDefault()
     const file = event.dataTransfer.files[0]
@@ -84,7 +84,6 @@ const DragAndDrop = () => {
                     id='img'
                     width={200}
                     height={100}
-                    
                   />
                   <p id='text-show' onClick={showModal}>
                     Remove logo
@@ -125,9 +124,7 @@ const DragAndDrop = () => {
         id='input-file'
         hidden
         name='image'
-        value={userData.image}
         onChange={handleImageUpload}
-        
       />
     </>
   )

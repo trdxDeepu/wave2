@@ -43,13 +43,11 @@
 }
 
 .recuring_invoice_customer_name {
-  display: inline-block;
-  font-size: 23px;
-  max-width: 360px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  margin-top: -8px;
+  font-size: 23px;
 }
 
 .recuring_invoice_customer_name:hover {

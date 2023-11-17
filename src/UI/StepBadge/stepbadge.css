@@ -24,7 +24,11 @@
   margin: 0 6px;
   width: 40px;
 }
-
+.step-badge__inner--disabled {
+  background: #fff; /* Set background color for the disabled state */
+  border-color: #b4c2cb; /* Set border color for the disabled state */
+  color: #b4c2cb; /* Set text color for the disabled state */
+}
 .step-badge__inner--checked {
   background: #2046cf;
   border-color: #2046cf;

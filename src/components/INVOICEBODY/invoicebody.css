@@ -1,22 +1,19 @@
+.add_body {
+  margin-top: 0px;
+  padding-right: 5%;
+  max-width: 1080px;
+  width: 100%;
+}
 
-
- .add_body {
-    margin-top: 0px;
-    padding-right: 5%; 
-    max-width: 1080px; 
-    width: 100%; 
-  }
-  
-  .add_info {
-    border: 1px solid #d4dde3;
-    border-radius: 8px;
-    margin: 2% 0; 
-   
-  }
+.add_info {
+  border: 1px solid #d4dde3;
+  border-radius: 8px;
+  margin: 2% 0;
+}
 
 /* CSS for showing and hiding animation within the button */
 .add-info-section_button {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.1s ease-in-out;
 }
 
 .add-info-section_button.show-content {
@@ -44,7 +41,7 @@
 
 .show-content {
   display: block;
-  max-height: 500px; 
+  max-height: 500px;
 }
 
 .hide-content {
@@ -52,94 +49,90 @@
   max-height: 0;
 }
 
-  
-.add-info_title{
-    color: #1c252c;
-   display: flex;
-   flex-wrap: wrap;
-   align-items: center;
-   justify-content: space-between;
+.add-info_title {
+  color: #1c252c;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.add-info-section {
+  background: #ecf0f3;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  transition: border-radius 0s;
+}
 
+.add-info-section_button {
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  margin: 0;
+  padding: 2% 3%;
+  text-decoration: none;
+  border: none;
 }
-.add-info-section{
-    background: #ecf0f3;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    transition: border-radius 0s;
-    
+
+.add_info_content {
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  border-top: 1px solid #d4dde3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 2%;
 }
-  
-  .add-info-section_button {
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    margin: 0;
-    padding: 2% 3%; 
-    text-decoration: none;
-    border: none;
-  }
-  
-  .add_info_content {
-    background: #fff;
-    border-radius: 0 0 8px 8px;
-    border-top: 1px solid #d4dde3;
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    padding: 2%; 
-  }
-  
-  .add_content_logo {
-    min-height: 200px;
-    min-width: 45%; 
-  }
-  
-  .add_presentation {
-    background: #fff;
-    border: 1px dashed #2046cf;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 0 auto;
-    padding: 2% 0; 
-    text-align: center;
-    width: 45%;
-  }
-  
-  .add_content_info {
-    text-align: right;
-  }
-  
-  .input_text {
-    text-align: right;
-    display: inline-block;
-    box-sizing: border-box;
-    margin: 2% 0; 
-    vertical-align: text-bottom;
-    cursor: pointer;
-    outline: none;
-    appearance: none;
-    border: 1px solid #a6c8e7;
-    border-radius: 8px;
-    cursor: text;
-    padding: 2% 3%; 
-    transition: border 0.1s linear;
-    min-height: 40px;
-    width: 100%; 
-    min-width: 160px;
-    max-width: 100%; 
-  }
-  
-  .info_bussiness {
-    margin-top: 12px;
-  }
-  
-  .hover_button:hover {
-    text-decoration: underline;
-    color: #0a37da;
-  }
-  
-  .hover_button:focus {
-    text-decoration: underline;
-    color: #0a37da;
-  }
-  
+
+.add_content_logo {
+  min-height: 200px;
+  min-width: 45%;
+}
+
+.add_presentation {
+  background: #fff;
+  border: 1px dashed #2046cf;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 2% 0;
+  text-align: center;
+  width: 45%;
+}
+
+.add_content_info {
+  text-align: right;
+}
+
+.input_text {
+  text-align: right;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 2% 0;
+  vertical-align: text-bottom;
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  border: 1px solid #a6c8e7;
+  border-radius: 8px;
+  cursor: text;
+  padding: 2% 3%;
+  transition: border 0.1s linear;
+  min-height: 40px;
+  width: 100%;
+  min-width: 160px;
+  max-width: 100%;
+}
+
+.info_bussiness {
+  margin-top: 12px;
+}
+
+.hover_button:hover {
+  text-decoration: underline;
+  color: #0a37da;
+}
+
+.hover_button:focus {
+  text-decoration: underline;
+  color: #0a37da;
+}
