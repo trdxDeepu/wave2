@@ -14,7 +14,6 @@ const SignupPage = () => {
   const handlePasswordChange = e => {
     const newPassword = e.target.value
     setUser({ ...user, password: newPassword })
-    setPasswordValidationStatus(isPasswordValid(newPassword) ? 'green' : 'red')
   }
 
   const getPasswordStrength = value => {

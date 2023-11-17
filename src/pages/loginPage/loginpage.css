@@ -119,26 +119,8 @@
   color: #68757d;
 }
 
-.input-text--login {
-  display: block;
-  margin: 8px;
-  margin-top: 5px;
-  line-height: 24px;
-  border: 1px solid #a6c8e7;
-  height: 40px;
-  width: 496px;
-  border-radius: 8px;
-  outline: none;
-  font-size: 16px;
-}
-
-.input-text--login:focus {
-  border: 1px solid #2046cf;
-  box-shadow: #3d61e1d2 0px 0px 5px 0px, #3d61e1d2 0px 0px 1px 0px;
-  font-size: 17px;
-}
 .text-password {
-  margin-top: 20px;
+  margin-top: 0px;
 }
 .anchor-div {
   font-size: 14px;

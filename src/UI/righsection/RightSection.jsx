@@ -26,24 +26,25 @@ const RightSection = () => {
               <Input
                 style={{
                   marginTop: '5px',
-                  width: '100%'
+                  width: '100%',
+                  border: '2px solid #a6c8e7',
+                  fontSize: '17px'
                 }}
                 type='text'
                 size='large'
-                className='input-text--login'
               />
             </div>
             <div className='text-password'>
               <label className='label-text'>Password</label>
 
-              <Input
+              <Input.Password
                 style={{
                   marginTop: '5px',
-                  width: '100%'
+                  width: '100%',
+                  border: '2px solid #a6c8e7'
                 }}
                 type='text'
                 size='large'
-                className='input-text--login'
               />
 
               <div className='anchor-div'>
