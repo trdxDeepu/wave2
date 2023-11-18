@@ -5,7 +5,6 @@ import Sidebar from '../components/SIDEBAR/Sidebar'
 import Sider from 'antd/es/layout/Sider'
 import Navbar from '../components/NAVBAR/Navbar'
 
-
 const AppLayout = ({ content }) => {
   return (
     <Layout>

@@ -1,47 +1,71 @@
-.sidebar{
-    height: 100%;
-    width: 220px;
-    position: relative;
-    z-index: 2;
-    box-sizing: border-box;
-    display: flex;
+/* CustomSider.css */
 
-    flex-direction: column;
-    transition: width .3s;
+.custom-sider {
+  background-color: #fff;
+  position: fixed;
+  height: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
-
-.sidebar_header{
-    border-right:1px solid #d1e4f5;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-right: 24px;
-    align-items: center;
-    background: rgba(0,0,0,0);
-    font-size: inherit;
-    font-family: inherit;
-    border: none;
-    padding: 8px;
-    color: #2046cf;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 500px;
-    white-space: nowrap;
-    overflow: hidden;
-
+.custom-sider::-webkit-scrollbar {
+  width: 4px;
 }
 
-.sidebar_header_text{
-    margin: 0 8px;
-        font-size: 17px;
-        color: #2046cf;
-        font-weight: 600;
+.custom-sider::-webkit-scrollbar-thumb {
+  background-color: #d1e4f5;
 }
 
-
-.sidebar_header:hover{
-    background: #e6f3ff;
-    box-shadow: 0 0 0 3px rgba(155, 166, 208, 0.35);
+.custom-sider::-webkit-scrollbar-track {
+  background-color: #fff;
 }
 
+.custom-sider.collapsed {
+  width: 0px;
+
+  /* Custom styles for when Sider is collapsed */
+}
+
+.sidebar {
+  height: 100%;
+  width: 220px;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  display: flex;
+
+  flex-direction: column;
+  transition: width 0.3s;
+}
+
+.sidebar_header {
+  border-right: 1px solid #d1e4f5;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-right: 24px;
+  align-items: center;
+  background: rgba(0, 0, 0, 0);
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  padding: 8px;
+  color: #2046cf;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 500px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar_header_text {
+  margin: 0 8px;
+  font-size: 17px;
+  color: #2046cf;
+  font-weight: 600;
+}
+
+.sidebar_header:hover {
+  background: #e6f3ff;
+  box-shadow: 0 0 0 3px rgba(155, 166, 208, 0.35);
+}
