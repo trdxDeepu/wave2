@@ -1,4 +1,4 @@
-import { Button, Image, Typography } from 'antd'
+import { Button, Image } from 'antd'
 import './signup.css'
 import { Form, Input } from 'antd'
 import { Link } from 'react-router-dom'
@@ -21,13 +21,13 @@ const SignupPage = () => {
     const re = /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{8,}$/
 
     if (!value) {
-      return '' // No strength indication if password is empty
+      return ''
     } else if (re.test(value)) {
-      return 'strong' // Strong password
+      return 'strong'
     } else if (value.length >= 8) {
-      return 'good' // Good password, but not strong
+      return 'good'
     } else {
-      return 'weak' // Weak password
+      return 'weak'
     }
   }
 
@@ -66,7 +66,7 @@ const SignupPage = () => {
     <>
       <div className='signup-container'>
         <div className='signup-logo'>
-          <Image preview={false} src='/waveLogo.png' height={35} width={120} />
+          <Image preview={false} src='/Logo.png' height={60} width={200} />
         </div>
         <div className='signup-header'>
           <h1 className='signup-header-title'>Check out Wave — it’s free!</h1>
@@ -115,7 +115,7 @@ const SignupPage = () => {
                       required: true,
                       message: 'Please input your password!'
                     },
-                    ({ getFieldValue }) => ({
+                    () => ({
                       validator (_, value) {
                         const strength = getPasswordStrength(value)
                         setPasswordValidationStatus(strength)
@@ -174,9 +174,6 @@ const SignupPage = () => {
                 >
                   Sign in
                 </Button>
-                {/*   <Button className='submit-btn' type='submit'>
-                  Sign in
-                </Button> */}
               </div>
               <div className='line'>
                 <span className='line-line'></span>

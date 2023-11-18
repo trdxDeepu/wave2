@@ -10,9 +10,11 @@ const RightSection = () => {
           <a className='logo' href='www.google.com' target='_blank'>
             <Image
               preview={false}
-              src='/waveLogo.png'
+              src='/Logo.png'
               alt='logoicon'
               id='logoImage'
+              height={45}
+              width={120}
             />
           </a>
         </div>
