@@ -4,11 +4,14 @@ import { RightOutlined } from '@ant-design/icons'
 import { HiUserCircle } from 'react-icons/hi'
 
 import './headerModal.css'
+import { useFormContext } from '../../hooks/FormContext'
+import { Link } from 'react-router-dom'
 
 const HeaderModal = props => {
   // eslint-disable-next-line no-unused-vars
   const { items, children, open, setOpen } = props
-  
+  const { onSignout } = useFormContext()
+
   return (
     <div className='dropdown'>
       <div
@@ -59,9 +62,9 @@ const HeaderModal = props => {
             <a className='busines_class' id='businesInter'>
               Profile Settings
             </a>
-            <a className='busines_class' id='businesInter3'>
-              Sign Out
-            </a>
+            <Link className='busines_class' id='businesInter3'>
+              <span onClick={onSignout}>Sign out</span>
+            </Link>
           </div>
           <div id='hr_line'></div>
           <div className='setting_menu'>

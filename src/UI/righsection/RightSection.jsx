@@ -1,8 +1,11 @@
 import { Button, Form, Image, Input } from 'antd'
 import { Link } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
+import { useFormContext } from '../../hooks/FormContext'
 
 const RightSection = () => {
+  const { setUser, user, onSignin } = useFormContext()
+
   return (
     <div className='right-container--login'>
       <div className='right-container-inside'>
@@ -22,33 +25,54 @@ const RightSection = () => {
           <div className='text-signin'>
             <h2 style={{ fontWeight: '700' }}>Sign in</h2>
           </div>
-          <Form>
+          <Form
+            onFinish={onSignin}
+            onValuesChange={changedValues => {
+              console.log(changedValues)
+              setUser({ ...user, ...changedValues })
+            }}
+          >
             <div className='text-email'>
               <label className='label-text'>Email</label>
-
-              <Input
-                style={{
-                  marginTop: '5px',
-                  width: '100%',
-                  border: '2px solid #a6c8e7',
-                  fontSize: '17px'
-                }}
-                type='text'
-                size='large'
-              />
+              <Form.Item
+                name='email'
+                rules={[{ required: true, message: 'Please input your email' }]}
+              >
+                <Input
+                  style={{
+                    marginTop: '5px',
+                    width: '100%',
+                    border: '2px solid #a6c8e7',
+                    fontSize: '17px'
+                  }}
+                  type='text'
+                  size='large'
+                  name='email'
+                />
+              </Form.Item>
             </div>
             <div className='text-password'>
               <label className='label-text'>Password</label>
-
-              <Input.Password
-                style={{
-                  marginTop: '5px',
-                  width: '100%',
-                  border: '2px solid #a6c8e7'
-                }}
-                type='text'
-                size='large'
-              />
+              <Form.Item
+                name='password'
+                rules={[
+                  {
+                    required: true,
+                    message: 'Please input your password!'
+                  }
+                ]}
+              >
+                <Input.Password
+                  style={{
+                    marginTop: '5px',
+                    width: '100%',
+                    border: '2px solid #a6c8e7'
+                  }}
+                  type='text'
+                  size='large'
+                  name='password'
+                />
+              </Form.Item>
 
               <div className='anchor-div'>
                 <a href='#' className='forgot-link'>
@@ -75,6 +99,7 @@ const RightSection = () => {
               <span className='line-line'></span>
             </div>
             <Button
+              htmlType='submit'
               style={{
                 width: '100%',
                 backgroundColor: '#1b6cf2',

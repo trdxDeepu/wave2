@@ -4,11 +4,13 @@ import { createContext, useContext, useState } from 'react'
 import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  signOut
 } from 'firebase/auth'
 import { auth } from '../Firebase'
 import { message } from 'antd'
 import { useForm } from 'antd/es/form/Form'
+import { useNavigate } from 'react-router-dom'
 
 const FormContext = createContext()
 
@@ -21,6 +23,7 @@ const FormProvider = ({ children }) => {
   const [user, setUser] = useState({})
   const [passwordVisible, setPasswordVisible] = useState(false)
   const [passwordValidationStatus, setPasswordValidationStatus] = useState('')
+  const navigate = useNavigate()
 
   const onFinish = async values => {
     try {
@@ -29,30 +32,50 @@ const FormProvider = ({ children }) => {
         values.email,
         values.password
       )
-
       const currentUser = userCredential.user
       console.log(currentUser)
-
-      // Reset specific fields
       form.resetFields(['email', 'password'])
-
-      // Send email verification
       await sendEmailVerification(currentUser)
-
       if (currentUser.emailVerified) {
-        // User email is verified, sign them in
-
-        // Set user state or perform any other necessary actions
         setUser({})
         setPasswordValidationStatus('')
-        message.success('Account created and verified. You are now signed in!')
+        message.success(
+          'Verification email has been sent. Please check your inbox.'
+        )
         console.log('user', currentUser)
       } else {
         message.warning('Please verify your email before signing in.')
       }
     } catch (error) {
-      console.error(error)
+      console.log(error)
     }
+  }
+
+  const onSignin = async values => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        values.email,
+        values.password
+      )
+      const currentUser = userCredential.user
+      console.log(currentUser)
+      message.success('Sign in successful.')
+      navigate('/')
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
+  const onSignout = async () => {
+    signOut(auth)
+      .then(() => {
+        navigate('/login')
+        message.success('Sign out successful.')
+      })
+      .catch(error => {
+        console.log(error.message)
+      })
   }
 
   return (
@@ -67,7 +90,9 @@ const FormProvider = ({ children }) => {
         onFinish,
         passwordVisible,
         passwordValidationStatus,
-        form
+        form,
+        onSignin,
+        onSignout
       }}
     >
       {children}

@@ -10,19 +10,17 @@ import SignupPage from './pages/signup/SignupPage'
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<AppLayout content={<HeroSection />} />} />
-        <Route
-          path='/recurring-invoices'
-          element={<AppLayout content={<RecuringInvoice />} />}
-        />
-        <Route path='/receipts' element={<AppLayout content={<Receipt />} />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/signup' element={<SignupPage />} />
-        <Route path='*' element={<ErrorPage />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path='/' element={<AppLayout content={<HeroSection />} />} />
+      <Route
+        path='/recurring-invoices'
+        element={<AppLayout content={<RecuringInvoice />} />}
+      />
+      <Route path='/receipts' element={<AppLayout content={<Receipt />} />} />
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='/signup' element={<SignupPage />} />
+      <Route path='*' element={<ErrorPage />} />
+    </Routes>
   )
 }
 
