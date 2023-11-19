@@ -2,20 +2,22 @@ import { Button, Image } from 'antd'
 import './signup.css'
 import { Form, Input } from 'antd'
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { useFormContext } from '../../hooks/FormContext'
+
 import { FcGoogle } from 'react-icons/fc'
 
+import { useFormContext } from '../../hooks/FormContext'
+
 const SignupPage = () => {
-  const { user, setUser, onFinish } = useFormContext()
-
-  const [passwordVisible, setPasswordVisible] = useState(false)
-  const [passwordValidationStatus, setPasswordValidationStatus] = useState('')
-
-  const handlePasswordChange = e => {
-    const newPassword = e.target.value
-    setUser({ ...user, password: newPassword })
-  }
+  const {
+    user,
+    setUser,
+    passwordVisible,
+    setPasswordVisible,
+    passwordValidationStatus,
+    setPasswordValidationStatus,
+    onFinish,
+    form
+  } = useFormContext()
 
   const getPasswordStrength = value => {
     const re = /^(?=\S*[a-z])(?=\S*[A-Z])(?=\S*\d)(?=\S*[^\w\s])\S{8,}$/
@@ -57,11 +59,6 @@ const SignupPage = () => {
     }
   }
 
-  const handleChange = e => {
-    const { name, value } = e.target
-    setUser({ ...user, [name]: value })
-  }
-
   return (
     <>
       <div className='signup-container'>
@@ -76,14 +73,21 @@ const SignupPage = () => {
           </h2>
 
           <div className='signup-form'>
-            <Form onSubmit={onFinish}>
+            <Form
+              form={form}
+              onFinish={onFinish}
+              onValuesChange={changedValues => {
+                console.log(changedValues)
+                setUser({ ...user, ...changedValues })
+              }}
+            >
               <div className='text-email'>
                 <Form.Item
                   name='email'
                   rules={[
                     {
                       type: 'email',
-                      message: 'The input is not valid E-mail!'
+                      message: 'The input is not a valid E-mail!'
                     },
                     {
                       required: true,
@@ -101,9 +105,8 @@ const SignupPage = () => {
                     }}
                     type='text'
                     size='large'
+                    name='email'
                     placeholder='Email'
-                    value={user.email}
-                    onChange={handleChange}
                   />
                 </Form.Item>
               </div>
@@ -115,15 +118,17 @@ const SignupPage = () => {
                       required: true,
                       message: 'Please input your password!'
                     },
-                    () => ({
-                      validator (_, value) {
+                    {
+                      validator: async (_, value) => {
                         const strength = getPasswordStrength(value)
                         setPasswordValidationStatus(strength)
                         if (strength === 'strong') {
                           return Promise.resolve()
+                        } else {
+                          return Promise.reject('Password is not strong enough')
                         }
                       }
-                    })
+                    }
                   ]}
                 >
                   <Input.Password
@@ -133,15 +138,14 @@ const SignupPage = () => {
                       fontStyle: 'italic',
                       fontWeight: '600'
                     }}
-                    type='text'
+                    type='password'
                     size='large'
+                    name='password'
                     placeholder='Password'
-                    value={user.password}
                     visibilityToggle={{
                       visible: passwordVisible,
                       onVisibleChange: setPasswordVisible
                     }}
-                    onChange={handlePasswordChange}
                   />
                 </Form.Item>
 
