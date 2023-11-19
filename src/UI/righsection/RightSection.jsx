@@ -4,7 +4,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { useFormContext } from '../../hooks/FormContext'
 
 const RightSection = () => {
-  const { setUser, user, onSignin } = useFormContext()
+  const { setUser, user, onFinish, onSignin } = useFormContext()
 
   return (
     <div className='right-container--login'>
