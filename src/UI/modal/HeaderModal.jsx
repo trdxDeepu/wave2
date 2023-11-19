@@ -62,9 +62,13 @@ const HeaderModal = props => {
             <a className='busines_class' id='businesInter'>
               Profile Settings
             </a>
-            <Link className='busines_class' id='businesInter3'>
-              <span onClick={onSignout}>Sign out</span>
-            </Link>
+            <span
+              onClick={onSignout}
+              className='busines_class'
+              id='businesInter3'
+            >
+              Sign out
+            </span>
           </div>
           <div id='hr_line'></div>
           <div className='setting_menu'>
