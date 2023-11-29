@@ -9,7 +9,7 @@ import CustomerModal from '../../UI/CustomerModal/CustomerModal'
 import { useState } from 'react'
 import { useFormContext } from '../../hooks/FormContext'
 
-const InvoicePersonInfo = () => {
+const InvoiceFormBody = () => {
   const { formData, setFormData } = useFormContext()
 
   const [open, setOpen] = useState(false)
@@ -94,4 +94,4 @@ const InvoicePersonInfo = () => {
   )
 }
 
-export default InvoicePersonInfo
+export default InvoiceFormBody
