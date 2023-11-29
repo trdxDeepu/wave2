@@ -1,4 +1,4 @@
-import AppLayout from './UI/AppLayout'
+/* import AppLayout from './UI/AppLayout'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import HeroSection from './components/CONTENTS/HeroSection'
 
@@ -25,3 +25,37 @@ const App = () => {
 }
 
 export default App
+ */
+
+import { lazy, Suspense } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+const AppLayout = lazy(() => import('./UI/AppLayout'));
+const HeroSection = lazy(() => import('./components/CONTENTS/HeroSection'));
+const RecurringInvoice = lazy(() => import('./pages/RecuringInvoice'));
+const ErrorPage = lazy(() => import('./pages/ErrorPage'));
+const Receipt = lazy(() => import('./components/RECEIPT/Receipt'));
+const LoginPage = lazy(() => import('./pages/loginPage/LoginPage'));
+const SignupPage = lazy(() => import('./pages/signup/SignupPage'));
+
+const App = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<AppLayout content={<HeroSection />} />} />
+          <Route
+            path='/recurring-invoices'
+            element={<AppLayout content={<RecurringInvoice />} />}
+          />
+          <Route path='/receipts' element={<AppLayout content={<Receipt />} />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/signup' element={<SignupPage />} />
+          <Route path='*' element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
+  );
+};
+
+export default App;
