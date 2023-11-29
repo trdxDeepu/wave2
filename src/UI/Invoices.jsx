@@ -1,9 +1,13 @@
-import InvoiceBody from '../components/INVOICEBODY/InvoiceBody'
-import InvoiceBodyFrom from '../components/INVOICEFORMBODY/main'
-import Footer from '../UI/Footer/Footer'
-import InvoiceHeader from './InvoiceHeader'
+import React from 'react'
+const InvoiceBody = React.lazy(() =>
+  import('../components/INVOICEBODY/InvoiceBody')
+)
+const InvoiceBodyFrom = React.lazy(() =>
+  import('../components/INVOICEBODY/InvoiceBody')
+)
+const Footer = React.lazy(() => import('../components/INVOICEBODY/Footer'))
+const InvoiceHeader = React.lazy(() => import('./components/InvoiceHeader'))
 import '../styles/invoices.css'
-
 
 const Invoices = () => {
   // const { handleSubmit } = useFormContext()
@@ -12,7 +16,7 @@ const Invoices = () => {
     <div className='invoice-header'>
       <div className='frame_content_body'></div>
       <div className='frame_body_main'>
-        <form >
+        <form>
           <div className='frame-body'>
             <div className='invoice_add'>
               {/* we can put modal also in this div */}
