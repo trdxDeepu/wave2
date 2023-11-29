@@ -1,13 +1,9 @@
-import React from 'react'
-const InvoiceBody = React.lazy(() =>
-  import('../components/INVOICEBODY/InvoiceBody')
-)
-const InvoiceBodyFrom = React.lazy(() =>
-  import('../components/INVOICEFORMBODY/InvoiceFormBody')
-)
-const Footer = React.lazy(() => import('../components/../UI/Footer/Footer'))
-const InvoiceHeader = React.lazy(() => import('./InvoiceHeader'))
+
 import '../styles/invoices.css'
+import InvoiceHeader from './InvoiceHeader'
+import InvoiceBody from '../components/INVOICEBODY/InvoiceBody'
+import InvoiceFormBody from '../components/INVOICEFORMBODY/InvoiceFormBody'
+import { Footer } from 'antd/es/layout/layout'
 
 const Invoices = () => {
   // const { handleSubmit } = useFormContext()
@@ -25,7 +21,7 @@ const Invoices = () => {
           </div>
 
           <InvoiceBody />
-          <InvoiceBodyFrom />
+          <InvoiceFormBody/>
           <Footer />
         </form>
       </div>
