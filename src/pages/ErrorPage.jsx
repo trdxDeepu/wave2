@@ -1,6 +1,6 @@
-import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
-import svg from '../assets/404.svg';
+import svg from '/404.svg';
 
 const ErrorPage = () => {
   const navigate = useNavigate();

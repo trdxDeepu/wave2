@@ -1,11 +1,11 @@
 import '../styles/recuringInvoice.css'
 import ButtonRound from '../UI/Button/ButtonRounded'
-import credtCard from '../assets/creditcard.svg'
-import jar from '../assets/jar.svg'
-import money from '../assets/money.svg'
-import SRK from '../assets/SRK.jpg'
-import tube from '../assets/tube.svg'
-import bulb from '../assets/bulb.svg'
+import credtCard from '/creditcard.svg'
+import jar from '/jar.svg'
+import money from '/money.svg'
+import SRK from '/SRK.jpg'
+import tube from '/tube.svg'
+import bulb from '/bulb.svg'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 
 const RecuringInvoice = () => {
