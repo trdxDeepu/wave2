@@ -5,7 +5,7 @@ const InvoiceBody = React.lazy(() =>
 const InvoiceBodyFrom = React.lazy(() =>
   import('../components/INVOICEBODY/InvoiceBody')
 )
-const Footer = React.lazy(() => import('../components/INVOICEBODY/Footer'))
+const Footer = React.lazy(() => import('../components/../UI/Footer/Footer'))
 const InvoiceHeader = React.lazy(() => import('./components/InvoiceHeader'))
 import '../styles/invoices.css'
 
