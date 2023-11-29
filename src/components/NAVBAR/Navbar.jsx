@@ -2,7 +2,7 @@ import { Flex, Menu } from 'antd'
 import './navbar.css'
 import WaveLogo from '/Logo.png'
 import { DownOutlined, UpOutlined } from '@ant-design/icons'
-import HeaderModal from '../../UI/modal/HeaderModal'
+import HeaderModal from '../../UI/HeaderModal/HeaderModal'
 import { useState } from 'react'
 import { useFormContext } from '../../hooks/FormContext'
 

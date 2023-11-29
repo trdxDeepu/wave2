@@ -2,7 +2,7 @@
 import { BsFillBuildingFill } from 'react-icons/bs'
 import { RightOutlined } from '@ant-design/icons'
 import { HiUserCircle } from 'react-icons/hi'
-import './headerModal.css'
+import './headermodal.css'
 import { useFormContext } from '../../hooks/FormContext'
 
 
