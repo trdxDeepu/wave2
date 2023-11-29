@@ -2,15 +2,15 @@
 import { BsFillBuildingFill } from 'react-icons/bs'
 import { RightOutlined } from '@ant-design/icons'
 import { HiUserCircle } from 'react-icons/hi'
-
 import './headerModal.css'
 import { useFormContext } from '../../hooks/FormContext'
-import { Link } from 'react-router-dom'
+
+
 
 const HeaderModal = props => {
-  // eslint-disable-next-line no-unused-vars
-  const { items, children, open, setOpen } = props
-  const { onSignout } = useFormContext()
+ 
+  const { open, setOpen, } = props
+  const { onSignout,userDataDB } = useFormContext()
 
   return (
     <div className='dropdown'>
@@ -19,7 +19,8 @@ const HeaderModal = props => {
           display: 'flex',
           alignItems: 'center',
           padding: '12px',
-          gap: '9rem'
+          gap: '53px',
+          
         }}
         onClick={() => setOpen(!open)}
       >
@@ -55,8 +56,8 @@ const HeaderModal = props => {
                 <HiUserCircle size={'30px'} />
               </span>
               <span className='user_class'>
-                <span className='setting_menu_header_title'>User name</span>
-                <span id='user_email'>useremail@gmail.com</span>
+                <span className='setting_menu_header_title'>{userDataDB.name}</span>
+                <span id='user_email'>{userDataDB.email}</span>
               </span>
             </p>
             <a className='busines_class' id='businesInter'>

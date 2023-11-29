@@ -6,8 +6,11 @@ import { Link } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 
 import { useFormContext } from '../../hooks/FormContext'
+import { useState } from 'react'
 
 const SignupPage = () => {
+  const [showPasswordText, setShowPasswordText] = useState(true)
+
   const {
     user,
     setUser,
@@ -16,7 +19,8 @@ const SignupPage = () => {
     passwordValidationStatus,
     setPasswordValidationStatus,
     onFinish,
-    form
+    form,
+    onGoogleSignIn
   } = useFormContext()
 
   const getPasswordStrength = value => {
@@ -59,6 +63,8 @@ const SignupPage = () => {
     }
   }
 
+  console.log(user)
+
   return (
     <>
       <div className='signup-container'>
@@ -77,7 +83,7 @@ const SignupPage = () => {
               form={form}
               onFinish={onFinish}
               onValuesChange={changedValues => {
-                console.log(changedValues)
+                
                 setUser({ ...user, ...changedValues })
               }}
             >
@@ -125,7 +131,7 @@ const SignupPage = () => {
                         if (strength === 'strong') {
                           return Promise.resolve()
                         } else {
-                          return Promise.reject('Password is not strong enough')
+                          return Promise.reject('')
                         }
                       }
                     }
@@ -150,14 +156,18 @@ const SignupPage = () => {
                 </Form.Item>
 
                 <div className='anchor-div_span'>
-                  <span
-                    className='anchor-text--span'
-                    style={{
-                      color: getPasswordColor(passwordValidationStatus)
-                    }}
-                  >
-                    {getPasswordStrengthText(passwordValidationStatus)}
-                  </span>
+                  {showPasswordText ? (
+                    <span
+                      className='anchor-text--span'
+                      style={{
+                        color: getPasswordColor(passwordValidationStatus)
+                      }}
+                    >
+                      {getPasswordStrengthText(passwordValidationStatus)}
+                    </span>
+                  ) : (
+                    <span className='anchor-text--span'>{''}</span>
+                  )}
                   <span
                     href='#'
                     className='anchor-link'
@@ -165,6 +175,7 @@ const SignupPage = () => {
                   >
                     {passwordVisible ? 'Hide' : 'Show'}
                   </span>
+                 
                 </div>
                 <Button
                   htmlType='submit'
@@ -175,8 +186,11 @@ const SignupPage = () => {
                     boxShadow:
                       '0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25)'
                   }}
+                  onClick={prevState => {
+                    setShowPasswordText(!prevState)
+                  }}
                 >
-                  Sign in
+                  Get started
                 </Button>
               </div>
               <div className='line'>
@@ -207,6 +221,7 @@ const SignupPage = () => {
                     size={27}
                   />
                 }
+                onClick={onGoogleSignIn}
               >
                 <span style={{ flex: 1 }}>Sign in with Google</span>
               </Button>

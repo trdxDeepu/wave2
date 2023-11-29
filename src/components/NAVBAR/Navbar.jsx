@@ -4,10 +4,11 @@ import WaveLogo from '/Logo.png'
 import { DownOutlined, UpOutlined } from '@ant-design/icons'
 import HeaderModal from '../../UI/modal/HeaderModal'
 import { useState } from 'react'
+import { useFormContext } from '../../hooks/FormContext'
 
 const Navbar = () => {
   const [open, setOpen] = useState(false)
- 
+  const { userDataDB } = useFormContext()
 
   return (
     <Menu
@@ -30,7 +31,7 @@ const Navbar = () => {
         <div>
           <div className='navbar-button'>
             <HeaderModal setOpen={setOpen} open={open}>
-              <span>Thor</span>
+              <span>{userDataDB.name}</span>
               <span>
                 {open ? (
                   <UpOutlined

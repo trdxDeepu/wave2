@@ -4,7 +4,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { useFormContext } from '../../hooks/FormContext'
 
 const RightSection = () => {
-  const { setUser, user, onFinish, onSignin } = useFormContext()
+  const { setUser, user, onSignin,onGoogleSignIn } = useFormContext()
 
   return (
     <div className='right-container--login'>
@@ -99,7 +99,7 @@ const RightSection = () => {
               <span className='line-line'></span>
             </div>
             <Button
-              htmlType='submit'
+             
               style={{
                 width: '100%',
                 backgroundColor: '#1b6cf2',
@@ -123,6 +123,7 @@ const RightSection = () => {
                   size={27}
                 />
               }
+              onClick={onGoogleSignIn}
             >
               <span style={{ flex: 1 }}>Sign in with Google</span>
             </Button>
