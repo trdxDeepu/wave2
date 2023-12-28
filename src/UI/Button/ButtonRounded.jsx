@@ -52,7 +52,7 @@ const ButtonRounded = ({
 
   return (
     <button
-      className={`rounded-button ${getSizeClassName()} ${getTypeClassName()}`}
+      className={`rounded-button ${getSizeClassName()} ${getTypeClassName()} `}
       {...restProps}
     >
       {children}

@@ -7,6 +7,8 @@ import ErrorPage from './pages/ErrorPage'
 import Receipt from './components/RECEIPT/Receipt'
 import LoginPage from './pages/loginPage/LoginPage'
 import SignupPage from './pages/signup/SignupPage'
+import OnBoarding from './pages/onboarding/OnBoarding'
+import Checkout from './pages/checkouts/Checkout'
 
 const App = () => {
   return (
@@ -17,8 +19,11 @@ const App = () => {
         element={<AppLayout content={<RecuringInvoice />} />}
       />
       <Route path='/receipts' element={<AppLayout content={<Receipt />} />} />
+      <Route path='/checkouts' element={<AppLayout content={<Checkout />} />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/signup' element={<SignupPage />} />
+      <Route path='/onboarding' element={<OnBoarding/>} />
+     
       <Route path='*' element={<ErrorPage />} />
     </Routes>
   )

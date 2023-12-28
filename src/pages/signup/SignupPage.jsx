@@ -83,7 +83,6 @@ const SignupPage = () => {
               form={form}
               onFinish={onFinish}
               onValuesChange={changedValues => {
-                
                 setUser({ ...user, ...changedValues })
               }}
             >

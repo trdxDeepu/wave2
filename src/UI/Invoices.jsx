@@ -3,7 +3,7 @@ import '../styles/invoices.css'
 import InvoiceHeader from './InvoiceHeader'
 import InvoiceBody from '../components/INVOICEBODY/InvoiceBody'
 import InvoiceFormBody from '../components/INVOICEFORMBODY/InvoiceFormBody'
-import { Footer } from 'antd/es/layout/layout'
+import Footer from '../UI/Footer/Footer'
 
 const Invoices = () => {
   // const { handleSubmit } = useFormContext()

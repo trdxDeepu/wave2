@@ -3,7 +3,7 @@ import './styles.css'
 import { Progress } from 'antd'
 import { useState } from 'react'
 import { Modal } from 'antd'
-import { useFormContext } from '../../hooks/FormContext'
+// import { useFormContext } from '../../hooks/FormContext'
 
 const DragAndDrop = () => {
   const [image, setImage] = useState(null)
@@ -11,12 +11,12 @@ const DragAndDrop = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [progress, setProgress] = useState(0)
 
-  const { formData, setFormData } = useFormContext()
+  // const { formData, setFormData } = useFormContext()
 
   const handleImageUpload = event => {
     const file = event.target.files[0]
     const reader = new FileReader()
-    const { name } = event.target
+    // const { name } = event.target
 
     reader.readAsDataURL(file)
     setLoading(true)
@@ -26,7 +26,7 @@ const DragAndDrop = () => {
       setLoading(false)
       setProgress(100)
 
-      setFormData({ ...formData, [name]: reader.result })
+      // setFormData({ ...formData, [name]: reader.result })
     }
 
     reader.onprogress = progressEvent => {
@@ -101,7 +101,9 @@ const DragAndDrop = () => {
                       Removing your logo will remove it from all existing and
                       future{' '}
                       <span> invoices and estimates. Are you sure you </span>
-                      want to remove your <span>business logo?</span>
+                      want to remove your <span style={{
+                        fontWeight: 'bold'
+                      }}>business logo?</span>
                     </p>
                   </Modal>
                 </>

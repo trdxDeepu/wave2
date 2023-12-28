@@ -11,12 +11,8 @@ import { useFormContext } from '../../hooks/FormContext'
 const InvoiceBody = ({ showTextArea = false }) => {
   const [showContent, setShowContent] = useState(false)
 
-  const { formData, setFormData } = useFormContext()
+  const { formData,handleChange} = useFormContext()
 
-  const handleChange = e => {
-    const { name, value } = e.target
-    setFormData({ ...formData, [name]: value })
-  }
 
   return (
     <div className='add_body'>

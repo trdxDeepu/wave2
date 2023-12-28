@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Layout, Menu } from 'antd'
+// import { Link } from 'react-router-dom'
+import { Layout, Menu, ConfigProvider } from 'antd'
 import {
   DashboardOutlined,
   FileTextOutlined,
@@ -84,14 +84,17 @@ const App = () => {
     <div className='sidebar'>
       <Layout
         style={{
-          minHeight: '100vh'
+          minHeight: '100vh',
+          backgroundColor: '#fff',
+          
         }}
       >
         <Sider
           style={{
             backgroundColor: '#fff',
             position: 'fixed',
-            height: '100%'
+            height: '100%',
+             
           }}
           className={`custom-sider ${collapsed ? 'collapsed' : ''}`}
           collapsible
@@ -99,46 +102,57 @@ const App = () => {
           onCollapse={value => setCollapsed(value)}
         >
           <div className='demo-logo-vertical' />
-          <Menu
-            defaultSelectedKeys={['1']}
-            mode='inline'
-            style={{
-              backgroundColor: '#fff',
-              borderRight: '1px solid #d1e4f5',
-              fontSize: '16px',
-              width: '100%',
-              height: '100%',
-              color: '#001B66',
-              marginTop: '7px'
+          <ConfigProvider
+            theme={{
+              components: {
+                Menu: {
+                  iconSize: 13
+                }
+              }
             }}
           >
-            {items.map(item =>
-              item.children ? (
-                <Menu.SubMenu
-                  key={item.key}
-                  title={
-                    <span>
+            <Menu
+              defaultSelectedKeys={['1']}
+              mode='inline'
+              style={{
+                  borderRight: '1px solid #d1e4f5',
+                height: '100%',
+                color: '#001B66',
+                marginTop: '7px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '2px'
+              }}
+              
+            >
+              {items.map(item =>
+                item.children ? (
+                  <Menu.SubMenu
+                    key={item.key}
+                    title={
+                      <span>
+                        {item.icon}
+                        {collapsed ? null : item.label}
+                      </span>
+                    }
+                  >
+                    {item.children.map(child => (
+                      <Menu.Item key={child.key}>
+                        <a href={child.to}>{child.label}</a>
+                      </Menu.Item>
+                    ))}
+                  </Menu.SubMenu>
+                ) : (
+                  <Menu.Item key={item.key}>
+                    <a to={item.to}>
                       {item.icon}
                       {collapsed ? null : item.label}
-                    </span>
-                  }
-                >
-                  {item.children.map(child => (
-                    <Menu.Item key={child.key}>
-                      <Link to={child.to}>{child.label}</Link>
-                    </Menu.Item>
-                  ))}
-                </Menu.SubMenu>
-              ) : (
-                <Menu.Item key={item.key}>
-                  <Link to={item.to}>
-                    {item.icon}
-                    {collapsed ? null : item.label}
-                  </Link>
-                </Menu.Item>
-              )
-            )}
-          </Menu>
+                    </a>
+                  </Menu.Item>
+                )
+              )}
+            </Menu>
+          </ConfigProvider>
         </Sider>
       </Layout>
     </div>

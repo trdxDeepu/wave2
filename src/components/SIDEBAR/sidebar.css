@@ -6,6 +6,8 @@
   height: 100%;
   overflow-y: scroll;
   scroll-behavior: smooth;
+  padding-left:'20px';
+  
 }
 
 .custom-sider::-webkit-scrollbar {

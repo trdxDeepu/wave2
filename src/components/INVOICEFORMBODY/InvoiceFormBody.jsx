@@ -10,13 +10,11 @@ import { useState } from 'react'
 import { useFormContext } from '../../hooks/FormContext'
 
 const InvoiceFormBody = () => {
-  const { formData, setFormData } = useFormContext()
+  const { formData,handleChange } = useFormContext()
 
   const [open, setOpen] = useState(false)
 
-  const handleChange = (name, value) => {
-    setFormData({ ...formData, [name]: value })
-  }
+
 
   return (
     <div className='box-container'>

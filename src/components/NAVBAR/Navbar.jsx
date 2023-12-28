@@ -1,7 +1,7 @@
 import { Flex, Menu } from 'antd'
 import './navbar.css'
 import WaveLogo from '/Logo.png'
-import { DownOutlined, UpOutlined } from '@ant-design/icons'
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 import HeaderModal from '../../UI/HeaderModal/HeaderModal'
 import { useState } from 'react'
 import { useFormContext } from '../../hooks/FormContext'
@@ -34,16 +34,19 @@ const Navbar = () => {
               <span>{userDataDB.name}</span>
               <span>
                 {open ? (
-                  <UpOutlined
+                  <MdKeyboardArrowUp
                     style={{
-                      transition: 'all 0.3s ease-in-out'
+                      transition: 'all 0.3s ease-in-out',
+                     
                     }}
+                   size={20}
                   />
                 ) : (
-                  <DownOutlined
+                  <MdKeyboardArrowDown
                     style={{
                       transition: 'all 0.5s ease-in-out'
                     }}
+                    size={20}
                   />
                 )}
               </span>

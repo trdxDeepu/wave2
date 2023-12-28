@@ -10,11 +10,12 @@ import {
   signInWithPopup,
   onAuthStateChanged
 } from 'firebase/auth'
-import { setDoc, doc, getDoc } from 'firebase/firestore'
-import { auth, db } from '../Firebase'
+import { setDoc, doc, getDoc, addDoc, collection } from 'firebase/firestore'
+import { auth, db ,storage} from '../Firebase'
 import { message } from 'antd'
 import { useForm } from 'antd/es/form/Form'
 import { useNavigate } from 'react-router-dom'
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'
 
 
 const FormContext = createContext()
@@ -33,19 +34,15 @@ const FormProvider = ({ children }) => {
   const navigate = useNavigate()
 
   /* Function to store the data in data base */
-  const createUserAndAddToFirestore = async (
-    userCredential,
-    additionalData = {}
-  ) => {
+  const createUserAndAddToFirestore = async (userCredential, e) => {
     try {
-      const userData = {
+      const userLogin = {
         name: userCredential.displayName || '', // Handle the possibility of displayName being null
         email: userCredential.email || '',
-        uid: userCredential.uid,
-        ...additionalData
+        uid: userCredential.uid
       }
 
-      await setDoc(doc(db, 'users', userCredential.uid), userData)
+      await setDoc(doc(db, 'users', userCredential.uid), userLogin)
       navigate('/')
       message.success('Sign in successful.')
     } catch (error) {
@@ -64,6 +61,7 @@ const FormProvider = ({ children }) => {
         const userData = userDocSnapshot.data()
         /* Storing data to state to access to all over state as props */
         setUserDataDB(userData)
+        console.log("userData",userData);
       } else {
         console.log('User document does not exist.')
       }
@@ -74,24 +72,21 @@ const FormProvider = ({ children }) => {
   }
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async user => {
       if (user) {
         try {
-          await getUserData(user.uid);
+          await getUserData(user.uid)
         } catch (error) {
-          console.error('Error fetching user data:', error);
+          console.error('Error fetching user data:', error)
         }
       } else {
         // User is signed out
-        setUserDataDB({});
+        setUserDataDB({})
       }
-    });
-  
-    return () => unsubscribe(); // Cleanup on component unmount
-  }, []);
-  
+    })
 
-
+    return () => unsubscribe() // Cleanup on component unmount
+  }, [])
 
   const onFinish = async values => {
     try {
@@ -104,7 +99,8 @@ const FormProvider = ({ children }) => {
       form.resetFields(['email', 'password'])
       const userCredential = result.user
       await createUserAndAddToFirestore(userCredential)
-      
+      await handleSubmit(userCredential)
+
       navigate('/')
     } catch (error) {
       console.error('Error during document addition:', error)
@@ -113,6 +109,7 @@ const FormProvider = ({ children }) => {
     }
   }
 
+  /* Email annd password */
   const onSignin = async values => {
     try {
       const userCredential = await signInWithEmailAndPassword(
@@ -129,6 +126,7 @@ const FormProvider = ({ children }) => {
     }
   }
 
+  /* Sign out */
   const onSignout = async () => {
     signOut(auth)
       .then(() => {
@@ -140,6 +138,7 @@ const FormProvider = ({ children }) => {
       })
   }
 
+  /* Google Sign in */
   const onGoogleSignIn = async () => {
     try {
       const provider = new GoogleAuthProvider()
@@ -148,7 +147,7 @@ const FormProvider = ({ children }) => {
       // Ensure that response.user exists and has a uid property
       if (response.user && response.user.uid) {
         await createUserAndAddToFirestore(response.user)
-       // Use response.user.uid instead of response.uid
+        // Use response.user.uid instead of response.uid
       } else {
         console.error('Google sign-in failed. User data not available.')
         message.error('Something went wrong. Please try again.')
@@ -159,7 +158,65 @@ const FormProvider = ({ children }) => {
     }
   }
 
+  /*  */
+  const handleChange = e => {
+    const { name, value } = e.target
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }))
+  }
 
+  /* handle submit form and storage of images in firebase */
+
+async function handleSubmit (e, userCredential) {
+  e.preventDefault()
+  try {
+    const userId = auth.currentUser?.uid
+
+    // Check if auth.currentUser or userId is undefined
+    if (!userId) {
+      console.error('User ID is undefined.')
+      return
+    }
+
+    const userLogin = {
+      name: auth.currentUser?.displayName || '',
+      email: auth.currentUser?.email || ''
+    }
+
+    const fileInput = document.getElementById('input-file')
+
+   
+    // Check if the file input element exists
+    if (fileInput) {
+      const imageFile = fileInput.files[0]
+
+
+      if (imageFile) {
+        const storage = getStorage()
+        const storageRef = ref(
+          storage,
+          `user_images/${userId}/${imageFile.name}`
+        )
+        await uploadBytes(storageRef, imageFile)
+        const imageUrl = await getDownloadURL(storageRef)
+        userLogin.imageURL = imageUrl
+      }
+    }
+
+
+    const userDocRef = doc(db, 'users', userId)
+    const data = { ...userLogin, ...formData }
+
+    await setDoc(userDocRef, data)
+    setFormData('')
+
+    console.log('User data stored in Firestore successfully!')
+  } catch (error) {
+    console.error(error)
+  }
+}
 
   return (
     <FormContext.Provider
@@ -178,7 +235,9 @@ const FormProvider = ({ children }) => {
         onSignout,
         onGoogleSignIn,
         userDataDB,
-        setUserDataDB
+        setUserDataDB,
+        handleSubmit,
+        handleChange
       }}
     >
       {children}

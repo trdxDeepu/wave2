@@ -9,12 +9,15 @@ const AppLayout = ({ content }) => {
   return (
     <Layout>
       <Navbar />
-      <Layout hasSider>
+      <Layout hasSider
+      style={{
+        backgroundColor:"#fff"
+      }}
+      >
         <Sider
           style={{
             backgroundColor: '#fff',
-            height: '100%',
-            width: '100%'
+           
           }}
         >
           <Sidebar />

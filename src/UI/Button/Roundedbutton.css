@@ -1,16 +1,16 @@
 .rounded-button.large {
-  text-align: center;
-  background-color: #2046cf;
-  min-height: 50px;
-  min-width: 70px;
-  font-size: 16px;
-  border-radius: 500px !important;
-  cursor: pointer;
-  border: 1px solid #2046cf !important;
-  color: #fff;
-  padding: 16px 32px;
-  text-align: center;
-  font-weight: 600;
+    text-align: center;
+    background-color: #2046cf;
+    min-height: 50px;
+    min-width: 70px;
+    font-size: 16px;
+    border-radius: 500px !important;
+    cursor: pointer;
+    border: 1px solid #2046cf !important;
+    color: #fff;
+    padding: 16px 32px;
+    text-align: center;
+    font-weight: 600;
 }
 
 .rounded-button.large:hover {
