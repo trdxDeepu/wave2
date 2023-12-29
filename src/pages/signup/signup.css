@@ -10,7 +10,7 @@
 
 .signup-logo{
   width: 200px;
-  background-color: red;
+  
 }
 
 .signup-header {
@@ -22,14 +22,14 @@
 }
 
 .signup-header-title {
-  font-size: 29px;
+  font-size: 1.8rem;
   font-weight: bold;
   line-height: 1.4;
 }
 
 .signup-header-subtitle {
   margin-top: 5px;
-  font-size: 23px;
+  font-size: 1.2rem;
   font-weight: normal;
   line-height: 1.4;
   color: #68757d;

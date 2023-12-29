@@ -99,13 +99,16 @@ const SignupPage = () => {
                       message: 'Please input your E-mail!'
                     }
                   ]}
+                  style={{
+                    textAlign:'left',
+                    marginBottom:'4px'
+                  }}
                 >
                   <Input
                     style={{
-                      marginTop: '5px',
-                      marginBottom: '1px',
+                      marginTop: '6px',
                       width: '100%',
-                      fontStyle: 'italic',
+                      // fontStyle: 'italic',
                       fontWeight: '600'
                     }}
                     type='text'
@@ -123,6 +126,8 @@ const SignupPage = () => {
                       required: true,
                       message: 'Please input your password!'
                     },
+
+                   
                     {
                       validator: async (_, value) => {
                         const strength = getPasswordStrength(value)
@@ -135,12 +140,14 @@ const SignupPage = () => {
                       }
                     }
                   ]}
+                  style={{
+                    textAlign:'left'
+                  }}
                 >
                   <Input.Password
                     style={{
-                      marginTop: '-6px',
+                      marginTop: '-4px',
                       width: '100%',
-                      fontStyle: 'italic',
                       fontWeight: '600'
                     }}
                     type='password'
@@ -213,8 +220,10 @@ const SignupPage = () => {
                 icon={
                   <FcGoogle
                     style={{
+                      position: 'relative',
+                      left: '65px',
                       marginRight: '12px',
-                      textAlign: 'left',
+                      textAlign: 'center',
                       backgroundColor: '#fff',
                       borderRadius: '50%'
                     }}
