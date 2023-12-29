@@ -116,12 +116,14 @@ const RightSection = () => {
               icon={
                 <FcGoogle
                   style={{
-                    marginRight: '12px',
-                    textAlign: 'left',
-                    backgroundColor: '#fff',
-                    borderRadius: '50%'
+                    position: 'relative',
+                      left: '140px',
+                      marginRight: '12px',
+                      textAlign: 'center',
+                      backgroundColor: '#fff',
+                      borderRadius: '50%'
                   }}
-                  size={27}
+                  size={22}
                 />
               }
               onClick={onGoogleSignIn}

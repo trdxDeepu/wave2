@@ -227,7 +227,7 @@ const SignupPage = () => {
                       backgroundColor: '#fff',
                       borderRadius: '50%'
                     }}
-                    size={27}
+                    size={22}
                   />
                 }
                 onClick={onGoogleSignIn}
