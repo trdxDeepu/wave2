@@ -1,5 +1,5 @@
 import AppLayout from './UI/AppLayout'
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import HeroSection from './components/CONTENTS/HeroSection'
 
 import RecuringInvoice from './pages/RecuringInvoice'

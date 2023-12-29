@@ -9,7 +9,7 @@ const LeftSection = () => {
           alt='credit-card-png'
           className='image-container'
           preview={false}
-          width={200}
+          width={230}
           height={200}
         />
         <div className='text-container'>
@@ -17,51 +17,49 @@ const LeftSection = () => {
         </div>
         <span
           style={{
-            display: 'flex',
-            flexDirection: 'column',
-            fontSize: '19px'
+            fontSize: '19px',
+            marginTop: '10px'
           }}
         >
-          <span>Give your customers every way to pay with</span>
-          <span style={{ textAlign: 'center' }}> Wave Payments.</span>
+          Give your customers every way to pay with Wave Payments.
         </span>
         <div className='ul-parent-div'>
           <ul className='ul-text'>
-            <li>
+            <li className = 'li_text'>
               {' '}
               <Image
                 preview={false}
                 src='/tick.png'
                 alt='tickpng'
                 className='tick-png'
-                height={25}
-                width={25}
+                height={20}
+                width={20}
               />{' '}
-              Add a secure &quot;Pay now&quot; button to invoices.
+              <span>Add a secure &quot;Pay now&quot; button to invoices.</span>
             </li>
-            <li>
+            <li className = 'li_text'>
               {' '}
               <Image
                 preview={false}
                 src='/tick.png'
                 alt='tickpng'
                 className='tick-png'
-                height={25}
-                width={25}
+                height={20}
+                width={20}
               />
-              Accept credit cards, bank transfers, or Apple Pay.
+              <span>Accept credit cards, bank transfers, or Apple Pay.</span>
             </li>
-            <li>
+            <li className='li_text'>
               {' '}
               <Image
                 preview={false}
                 src='/tick.png'
                 alt='tickpng'
                 className='tick-png'
-                height={25}
-                width={25}
+                height={20}
+                width={20}
               />
-              Get paid in 1-2 business days.
+              <span>Get paid in 1-2 business days.</span>
             </li>
           </ul>
         </div>

@@ -1,7 +1,8 @@
 .container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0px 100px;
   overflow: hidden;
   height: 100%;
   width: 100%;
@@ -14,33 +15,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px 100px 0px 100px;
-  animation: easeInFromLeft 300ms ease-in-out;
+
+  /* padding: 0px 10px 0px 10px; */
+  /* animation: easeInFromLeft 300ms ease-in-out; */
 }
 
 .left-container-div {
-  display: block;
-  text-align: center;
-  margin: 70px 20px 0px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  margin: 0px -40px 80px;
   padding: 40px;
-  white-space: nowrap;
-  max-width: 370px;
+  /* white-space: nowrap; */
+  max-width: 520px;
 }
 
 .span-text {
   letter-spacing: 0.28px;
 }
 
-.image-container {
+/* .image-container {
   height: 208px;
   width: 247px;
-}
+} */
 
 .text-container {
   line-height: 1.4;
   font-size: 26px;
   font-weight: 900;
-  margin: 24px 16px;
+  margin-top: 20px;
 }
 
 .ul-parent-div {
@@ -50,17 +55,26 @@
   justify-content: flex-start;
   line-height: 2;
   margin-top: 22px;
+  gap: 2px;
 }
 
 .ul-text {
   font-size: 17px;
-  display: contents;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2px;
   list-style: none;
 }
 .tick-png {
-  height: 22px;
-  width: 22px;
+  /* height: 22px;
+  width: 22px; */
+
   color: greenyellow;
+}
+.li_text {
+  display: flex;
+  gap: 2px;
 }
 
 .right-container--login {
@@ -214,7 +228,7 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: 200ms opacity ease;
   position: absolute;
-  right: 24px;
+  right: 40px;
   bottom: 24px;
   overflow: hidden;
   display: flex;

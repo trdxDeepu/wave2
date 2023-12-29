@@ -69,7 +69,7 @@ const SignupPage = () => {
     <>
       <div className='signup-container'>
         <div className='signup-logo'>
-          <Image preview={false} src='/Logo.png' height={60} width={200} />
+          <Image preview={false} src='/Logo.png'  />
         </div>
         <div className='signup-header'>
           <h1 className='signup-header-title'>Check out Wave — it’s free!</h1>
@@ -181,6 +181,7 @@ const SignupPage = () => {
                   size='large'
                   shape='round'
                   style={{
+                    border:'none',
                     width: '100%',
                     boxShadow:
                       '0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25)'

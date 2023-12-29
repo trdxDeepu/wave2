@@ -2,31 +2,27 @@
 
 import Layout, { Content } from 'antd/es/layout/layout'
 import Sidebar from '../components/SIDEBAR/Sidebar'
-import Sider from 'antd/es/layout/Sider'
+
 import Navbar from '../components/NAVBAR/Navbar'
 
 const AppLayout = ({ content }) => {
   return (
     <Layout>
       <Navbar />
-      <Layout hasSider
-      style={{
-        backgroundColor:"#fff"
-      }}
+      <Layout
+        hasSider
+        style={{
+          backgroundColor: '#fff',
+          width: '100%'
+        }}
       >
-        <Sider
-          style={{
-            backgroundColor: '#fff',
-           
-          }}
-        >
-          <Sidebar />
-        </Sider>
+        <Sidebar />
+
         <Content
           style={{
             backgroundColor: '#fff',
             marginTop: '1px',
-            marginLeft: '60px',
+            marginLeft: '50px',
             display: 'flex',
             justifyContent: 'center'
           }}

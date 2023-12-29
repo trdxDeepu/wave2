@@ -17,7 +17,7 @@ const RightSection = () => {
               alt='logoicon'
               id='logoImage'
               height={45}
-              width={120}
+              width={150}
             />
           </a>
         </div>
@@ -87,7 +87,8 @@ const RightSection = () => {
                   marginTop: '15px',
                   width: '100%',
                   boxShadow:
-                    '0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25)'
+                    '0 -1px 0 rgba(0, 0, 0, 0.04), 0 1px 1px rgba(0, 0, 0, 0.25)',
+                    border: 'none',
                 }}
               >
                 Sign in

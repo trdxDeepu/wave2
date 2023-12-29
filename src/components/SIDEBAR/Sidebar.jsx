@@ -36,7 +36,7 @@ const items = [
     '/create-new'
   ),
   getItem('Dashboard', '2', <DashboardOutlined />, '/dashboard'),
-  getItem('Sales and Payment', 'sub1', <CreditCardOutlined />, null, [
+  getItem('Sales&Payment', 'sub1', <CreditCardOutlined />, null, [
     getItem('Estimates', '3', null, '/estimates'),
     getItem('Invoice', '4', null, '/invoice'),
     getItem('Payment Setup', '5', null, '/payment-setup'),
@@ -81,80 +81,97 @@ const App = () => {
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <div className='sidebar'>
-      <Layout
+    <div
+      className='sidebar'
+      
+    >
+     
+      <Sider
         style={{
-          minHeight: '100vh',
           backgroundColor: '#fff',
-          
+          position: 'fixed',
+          height: '100%'
         }}
+        // className={`custom-sider ${collapsed ? 'collapsed' : ''}`}
+        collapsible
+        collapsed={collapsed}
+        onCollapse={value => setCollapsed(value)}
       >
-        <Sider
-          style={{
-            backgroundColor: '#fff',
-            position: 'fixed',
-            height: '100%',
-             
-          }}
-          className={`custom-sider ${collapsed ? 'collapsed' : ''}`}
-          collapsible
-          collapsed={collapsed}
-          onCollapse={value => setCollapsed(value)}
-        >
-          <div className='demo-logo-vertical' />
-          <ConfigProvider
-            theme={{
-              components: {
-                Menu: {
-                  iconSize: 13
-                }
+        <div className='demo-logo-vertical' />
+        <ConfigProvider
+          theme={{
+            components: {
+              Menu: {
+                iconSize: 15
               }
+            }
+          }}
+        >
+          <Menu
+            defaultSelectedKeys={['1']}
+           
+            style={{
+              borderRight: '1px solid #d1e4f5',
+              height: '100%',
+              color: '#072370',
+              marginTop: '7px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'start',
+              gap: '4px',
+              //  minWidth: '20px',
             }}
           >
-            <Menu
-              defaultSelectedKeys={['1']}
-              mode='inline'
-              style={{
-                  borderRight: '1px solid #d1e4f5',
-                height: '100%',
-                color: '#001B66',
-                marginTop: '7px',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '2px'
-              }}
-              
-            >
-              {items.map(item =>
-                item.children ? (
-                  <Menu.SubMenu
-                    key={item.key}
-                    title={
-                      <span>
-                        {item.icon}
-                        {collapsed ? null : item.label}
-                      </span>
-                    }
-                  >
-                    {item.children.map(child => (
-                      <Menu.Item key={child.key}>
-                        <a href={child.to}>{child.label}</a>
-                      </Menu.Item>
-                    ))}
-                  </Menu.SubMenu>
-                ) : (
-                  <Menu.Item key={item.key}>
-                    <a to={item.to}>
+            {items.map(item =>
+              item.children ? (
+                <Menu.SubMenu
+                  key={item.key}
+                  title={
+                    <span
+                      style={{
+                        display: 'flex',
+                        gap: '10px',
+                        alignItems: 'center',
+                      }}
+                    >
                       {item.icon}
                       {collapsed ? null : item.label}
-                    </a>
-                  </Menu.Item>
-                )
-              )}
-            </Menu>
-          </ConfigProvider>
-        </Sider>
-      </Layout>
+                    </span>
+                  }
+                  // style={{
+                  //   display: 'flex',
+                  //   justifyContent:'space-between'
+                  // }}
+                >
+                  {item.children.map(child => (
+                    <Menu.Item key={child.key}>
+                      <a href={child.to}>{child.label}</a>
+                    </Menu.Item>
+                  ))}
+                </Menu.SubMenu>
+              ) : (
+                <Menu.Item
+                  key={item.key}
+                 
+                >
+                  <a to={item.to}
+                   style={{
+                    display: 'flex',
+                    gap: '10px',
+                    fontSize: '14px',
+                    alignItems: 'center'
+                  }}
+                  >
+                    {item.icon}
+                    {collapsed ? null : item.label}
+                  </a>
+                </Menu.Item>
+              )
+            )}
+          </Menu>
+        </ConfigProvider>
+      </Sider>
+      {/* </Layout> */}
     </div>
   )
 }
