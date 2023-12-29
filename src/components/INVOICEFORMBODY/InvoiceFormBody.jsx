@@ -38,7 +38,8 @@ const InvoiceFormBody = () => {
               <Input
                 type='text'
                 style={{
-                  width: '100%'
+                  width: '100%',
+                  borderColor: '#a6c8e7'
                 }}
                 size='large'
                 className='input-text_field'
@@ -56,7 +57,9 @@ const InvoiceFormBody = () => {
               <Input
                 type='text'
                 style={{
-                  width: '100%'
+                  width: '100%',
+                  borderColor: '#a6c8e7'
+
                 }}
                 className='input-text_field'
                 size='large'
@@ -75,8 +78,10 @@ const InvoiceFormBody = () => {
                 <DatePicker
                   size='large'
                   style={{
-                    marginLeft: '28px',
-                    width: '190px'
+                    marginLeft: '32px',
+                    width: '186px',
+                    borderColor: '#a6c8e7'
+
                   }}
                   name='date'
                   value={dayjs(formData.date)}

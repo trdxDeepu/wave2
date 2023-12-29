@@ -8,7 +8,7 @@ import {
   AiOutlineMinus,
   AiOutlinePlusCircle
 } from 'react-icons/ai'
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import CurrencySelector from '../../components/currencySelector/CurrencySelector'
 import { useFormContext } from '../../hooks/FormContext'
 
@@ -117,7 +117,7 @@ const EditTable = () => {
                           <Input
                             type='text'
                             placeholder='Enter item name'
-                            style={{ width: '185px' }}
+                            style={{ width: '185px', borderColor: '#a6c8e7' }}
                             name='item'
                             value={item.item}
                             size='large'
@@ -126,7 +126,7 @@ const EditTable = () => {
                           <Input
                             type='text'
                             placeholder='Enter item name'
-                            style={{ width: '295px' }}
+                            style={{ width: '295px', borderColor: '#a6c8e7' }}
                             size='large'
                             value={item.description}
                             onChange={e =>
@@ -137,7 +137,11 @@ const EditTable = () => {
                         <div className='quantity_price'>
                           <Input
                             type='text'
-                            style={{ width: '90px', textAlign: 'right' }}
+                            style={{
+                              width: '90px',
+                              textAlign: 'right',
+                              borderColor: '#a6c8e7'
+                            }}
                             size='large'
                             value={item.quantity}
                             onChange={e => handleChange(e, 'quantity', index)}
@@ -145,7 +149,11 @@ const EditTable = () => {
                           />
                           <Input
                             type='text'
-                            style={{ width: '90px', textAlign: 'right' }}
+                            style={{
+                              width: '90px',
+                              textAlign: 'right',
+                              borderColor: '#a6c8e7'
+                            }}
                             size='large'
                             value={item.price}
                             onChange={e => handleChange(e, 'price', index)}
@@ -157,7 +165,8 @@ const EditTable = () => {
                             style={{
                               fontSize: '16px',
                               color: 'black',
-                              textAlign: 'right'
+                              textAlign: 'right',
+                             
                             }}
                           >
                             ${item.price}
@@ -173,7 +182,7 @@ const EditTable = () => {
                   </tr>
 
                   <tr id='second_row'>
-                    <td style={{ width: '40px' }}></td>
+                    <td style={{ width: '40px', }}></td>
                     <td colSpan='7'>
                       <div className='container'>
                         <div className='left-container'>
@@ -186,7 +195,9 @@ const EditTable = () => {
                             <span
                               style={{
                                 fontSize: '16px',
-                                fontWeight: '600'
+                                fontWeight: '600',
+                                borderColor: '#a6c8e7'
+
                               }}
                             >
                               Tax
@@ -196,7 +207,9 @@ const EditTable = () => {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
-                                gap: '20px'
+                                gap: '20px',
+                                borderColor: '#a6c8e7'
+
                               }}
                             >
                               <Select
@@ -206,7 +219,9 @@ const EditTable = () => {
 
                               <p
                                 style={{
-                                  marginLeft: '60px'
+                                  marginLeft: '60px',
+                                  borderColor: '#a6c8e7'
+
                                 }}
                               >
                                 <AiOutlineMinus />
