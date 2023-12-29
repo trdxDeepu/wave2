@@ -109,7 +109,7 @@ const App = () => {
         >
           <Menu
             defaultSelectedKeys={['1']}
-           
+           mode='inline'
             style={{
               borderRight: '1px solid #d1e4f5',
               height: '100%',
@@ -119,7 +119,11 @@ const App = () => {
               flexDirection: 'column',
               justifyContent: 'start',
               gap: '4px',
-              //  minWidth: '20px',
+              // overflowY: 'scroll',
+              // scrollMargin:'2px',
+              // scrollbarColor:'red blue'
+        
+             
             }}
           >
             {items.map(item =>
@@ -132,6 +136,8 @@ const App = () => {
                         display: 'flex',
                         gap: '10px',
                         alignItems: 'center',
+                        
+
                       }}
                     >
                       {item.icon}
