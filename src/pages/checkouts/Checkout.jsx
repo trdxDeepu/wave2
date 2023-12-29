@@ -1,5 +1,7 @@
 import './checkout.css'
 import { FaExternalLinkAlt } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import Title from '../../UI/Title'
 
 const Checkout = () => {
   return (
@@ -13,7 +15,7 @@ const Checkout = () => {
       />
 
       <div className='checkout_right'>
-        <p className='checkout_pretitle'>checkouts</p>
+       <Title>CheckOut</Title>
         <div className='checkout_header'>
           <h1 className='header_title'>
             Accept payments directly from your website.
@@ -40,7 +42,9 @@ const Checkout = () => {
         </div>
       </div>
       <div className='checkout_button'>
+        <Link to='/payment-setup'>
         <button className='btn_round'>Set up online Payment</button>
+        </Link>
         <p className='footer_line'>
           By continuing, you are agreeing to the Wave Payments
           <span className='footer_line_subtitle'> Terms and services </span>

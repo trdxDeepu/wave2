@@ -1,5 +1,5 @@
 import AppLayout from './UI/AppLayout'
-import {  Routes, Route } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 import HeroSection from './components/CONTENTS/HeroSection'
 
 import RecuringInvoice from './pages/RecuringInvoice'
@@ -9,6 +9,7 @@ import LoginPage from './pages/loginPage/LoginPage'
 import SignupPage from './pages/signup/SignupPage'
 import OnBoarding from './pages/onboarding/OnBoarding'
 import Checkout from './pages/checkouts/Checkout'
+import PaymentSetup from './pages/paymentSetups/PaymentSetup'
 
 const App = () => {
   return (
@@ -20,17 +21,20 @@ const App = () => {
       />
       <Route path='/receipts' element={<AppLayout content={<Receipt />} />} />
       <Route path='/checkouts' element={<AppLayout content={<Checkout />} />} />
+      <Route
+        path='/payment-setup'
+        element={<AppLayout content={<PaymentSetup />} />}
+      />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/signup' element={<SignupPage />} />
-      <Route path='/onboarding' element={<OnBoarding/>} />
-     
+      <Route path='/onboarding' element={<OnBoarding />} />
+
       <Route path='*' element={<ErrorPage />} />
     </Routes>
   )
 }
 
 export default App
- 
 
 // import { lazy, Suspense } from 'react';
 // import { BrowserRouter, Routes, Route } from 'react-router-dom';
