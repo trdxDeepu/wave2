@@ -10,9 +10,9 @@ import { useFormContext } from '../../hooks/FormContext'
 const HeaderModal = props => {
  
   const { open, setOpen, } = props
-  const { onSignout,userDataDB } = useFormContext()
+  const { onSignout,userDataDB ,} = useFormContext()
 
-  // console.log(userDataDB.userLogin.name)
+  //  console.log(userDataDB.userLogin.name)
 
   return (
     <div className='dropdown'>
@@ -58,8 +58,8 @@ const HeaderModal = props => {
                 <HiUserCircle size={'30px'} />
               </span>
               <span className='user_class'>
-                 {/* <span className='setting_menu_header_title'>{userDataDB.userLogin.name}</span> 
-                <span id='user_email'>{userDataDB.userLogin.email}</span>  */}
+                 <span className='setting_menu_header_title'>Name</span> 
+                <span id='user_email'>Email@gmail.com</span> 
               </span>
             </p>
             <a className='busines_class' id='businesInter'>
