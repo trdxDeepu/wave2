@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useState,useCallback} from 'react'
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -10,8 +10,8 @@ import {
   signInWithPopup,
   onAuthStateChanged
 } from 'firebase/auth'
-import { setDoc, doc, getDoc, addDoc, collection } from 'firebase/firestore'
-import { auth, db ,storage} from '../Firebase'
+import { setDoc, doc, getDoc, } from 'firebase/firestore'
+import { auth, db } from '../Firebase'
 import { message } from 'antd'
 import { useForm } from 'antd/es/form/Form'
 import { useNavigate } from 'react-router-dom'
@@ -52,41 +52,47 @@ const FormProvider = ({ children }) => {
 
   /* getUSerData */
 
-  const getUserData = async userId => {
+  const getUserData = async (userId) => {
     try {
-      const userDocRef = doc(db, 'users', userId)
-      const userDocSnapshot = await getDoc(userDocRef)
+      const userDocRef = doc(db, 'users', userId);
+      const userDocSnapshot = await getDoc(userDocRef);
 
       if (userDocSnapshot.exists()) {
-        const userData = userDocSnapshot.data()
-        /* Storing data to state to access to all over state as props */
-        setUserDataDB(userData)
-        console.log("userData",userData);
+        const userData = userDocSnapshot.data();
+        setUserDataDB(userData);
+        console.log(userData);
       } else {
-        console.log('User document does not exist.')
+        console.log('User document does not exist.');
       }
     } catch (error) {
-      console.error('Error fetching user data:', error)
-      throw error
+      console.error('Error fetching user data:', error);
+      throw error;
     }
-  }
+  };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async user => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         try {
-          await getUserData(user.uid)
+          await getUserData(user.uid);
         } catch (error) {
-          console.error('Error fetching user data:', error)
+          console.error('Error fetching user data:', error);
         }
       } else {
         // User is signed out
-        setUserDataDB({})
+        setUserDataDB({});
       }
-    })
+    });
 
-    return () => unsubscribe() // Cleanup on component unmount
-  }, [])
+    return () => unsubscribe(); // Cleanup on component unmount
+  }, []); // Empty dependency array for a one-time effect
+
+  // ... (other functions and return statement)
+
+
+
+
+
 
   const onFinish = async values => {
     try {
