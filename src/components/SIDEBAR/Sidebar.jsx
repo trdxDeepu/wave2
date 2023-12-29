@@ -1,5 +1,5 @@
 import { useState } from 'react'
-// import { Link } from 'react-router-dom'
+ import { Link } from 'react-router-dom'
 import { Layout, Menu, ConfigProvider } from 'antd'
 import {
   DashboardOutlined,
@@ -151,7 +151,7 @@ const App = () => {
                 >
                   {item.children.map(child => (
                     <Menu.Item key={child.key}>
-                      <a href={child.to}>{child.label}</a>
+                      <Link to={child.to}>{child.label}</Link>
                     </Menu.Item>
                   ))}
                 </Menu.SubMenu>
@@ -160,7 +160,7 @@ const App = () => {
                   key={item.key}
                  
                 >
-                  <a to={item.to}
+                  <Link to={item.to}
                    style={{
                     display: 'flex',
                     gap: '10px',
@@ -170,7 +170,7 @@ const App = () => {
                   >
                     {item.icon}
                     {collapsed ? null : item.label}
-                  </a>
+                  </Link>
                 </Menu.Item>
               )
             )}
