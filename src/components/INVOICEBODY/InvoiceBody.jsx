@@ -11,8 +11,7 @@ import { useFormContext } from '../../hooks/FormContext'
 const InvoiceBody = ({ showTextArea = false }) => {
   const [showContent, setShowContent] = useState(false)
 
-  const { formData,handleChange} = useFormContext()
-
+  const { formData, handleChange } = useFormContext()
 
   return (
     <div className='add_body'>
@@ -74,8 +73,10 @@ const InvoiceBody = ({ showTextArea = false }) => {
                     size='large'
                     placeholder='Invoice Title'
                     style={{
-                      fontSize: '20px',
-                      fontStyle: 'italic'
+                      fontSize: '21px',
+                      fontStyle: 'italic',
+                      borderColor: '#a6c8e7',
+                      fontWeight: '600'
                     }}
                     value={formData.title}
                     onChange={handleChange}
@@ -87,7 +88,8 @@ const InvoiceBody = ({ showTextArea = false }) => {
                     size='large'
                     placeholder='Summary (e.g. project name, description of invoice)'
                     style={{
-                      fontSize: '14px'
+                      fontSize: '16px',
+                      borderColor: '#a6c8e7'
                     }}
                     value={formData.summary}
                     onChange={handleChange}

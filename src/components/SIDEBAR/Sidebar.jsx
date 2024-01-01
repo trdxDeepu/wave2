@@ -118,7 +118,7 @@ const App = () => {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'start',
-              gap: '4px',
+              gap: '7px',
               // overflowY: 'scroll',
               // scrollMargin:'2px',
               // scrollbarColor:'red blue'
@@ -136,8 +136,6 @@ const App = () => {
                         display: 'flex',
                         gap: '10px',
                         alignItems: 'center',
-                        
-
                       }}
                     >
                       {item.icon}
@@ -150,7 +148,7 @@ const App = () => {
                   // }}
                 >
                   {item.children.map(child => (
-                    <Menu.Item key={child.key}>
+                    <Menu.Item key={child.key} >
                       <Link to={child.to}>{child.label}</Link>
                     </Menu.Item>
                   ))}
