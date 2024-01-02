@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import InvoiceHeader from '../../UI/InvoiceHeader'
-import { GrCircleInformation } from 'react-icons/gr'
+// import { GrCircleInformation } from 'react-icons/gr'
 import './receipt.css'
 
 import RecuringInvoiceSummary from '../../UI/RecuringInvoice/RecuringInvoiceSummary'

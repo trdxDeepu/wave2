@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/prop-types */
+
 import './stepbadge.css'
 import { CheckOutlined } from '@ant-design/icons'
 

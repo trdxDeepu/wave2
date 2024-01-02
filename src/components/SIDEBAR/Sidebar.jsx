@@ -1,5 +1,5 @@
 import { useState } from 'react'
- import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Layout, Menu, ConfigProvider } from 'antd'
 import {
   DashboardOutlined,
@@ -18,6 +18,8 @@ import { TbReportMoney } from 'react-icons/tb'
 
 const { Sider } = Layout
 
+/* Function to call the getitems all children and properties */
+
 function getItem (label, key, icon, to, children) {
   return {
     key,
@@ -27,6 +29,7 @@ function getItem (label, key, icon, to, children) {
     to
   }
 }
+/* Items which is mapping insie the sidebar */
 
 const items = [
   getItem(
@@ -81,11 +84,7 @@ const App = () => {
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <div
-      className='sidebar'
-      
-    >
-     
+    <div className='sidebar'>
       <Sider
         style={{
           backgroundColor: '#fff',
@@ -109,7 +108,7 @@ const App = () => {
         >
           <Menu
             defaultSelectedKeys={['1']}
-           mode='inline'
+            mode='inline'
             style={{
               borderRight: '1px solid #d1e4f5',
               height: '100%',
@@ -119,12 +118,11 @@ const App = () => {
               flexDirection: 'column',
               justifyContent: 'start',
               gap: '7px',
-              // overflowY: 'scroll',
-              // scrollMargin:'2px',
-              // scrollbarColor:'red blue'
-        
-             
+              overflow: 'auto',
+              scrollbarWidth: 'thin',
+              scrollbarColor: '#d1e4f5 #fff'
             }}
+            className='custom-sider'
           >
             {items.map(item =>
               item.children ? (
@@ -135,7 +133,7 @@ const App = () => {
                       style={{
                         display: 'flex',
                         gap: '10px',
-                        alignItems: 'center',
+                        alignItems: 'center'
                       }}
                     >
                       {item.icon}
@@ -148,23 +146,21 @@ const App = () => {
                   // }}
                 >
                   {item.children.map(child => (
-                    <Menu.Item key={child.key} >
+                    <Menu.Item key={child.key}>
                       <Link to={child.to}>{child.label}</Link>
                     </Menu.Item>
                   ))}
                 </Menu.SubMenu>
               ) : (
-                <Menu.Item
-                  key={item.key}
-                 
-                >
-                  <Link to={item.to}
-                   style={{
-                    display: 'flex',
-                    gap: '10px',
-                    fontSize: '14px',
-                    alignItems: 'center'
-                  }}
+                <Menu.Item key={item.key}>
+                  <Link
+                    to={item.to}
+                    style={{
+                      display: 'flex',
+                      gap: '10px',
+                      fontSize: '14px',
+                      alignItems: 'center'
+                    }}
                   >
                     {item.icon}
                     {collapsed ? null : item.label}

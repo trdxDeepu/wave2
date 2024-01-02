@@ -1,5 +1,5 @@
 /* CustomSider.css */
-
+/* 
 .custom-sider {
   background-color: #fff;
   position: fixed;
@@ -8,10 +8,15 @@
   scroll-behavior: smooth;
   padding-left:'20px';
   
-}
+} */
+
+/* .custom-sider:hover{
+  cursor: pointer;
+} */
 
 .custom-sider::-webkit-scrollbar {
   width: 4px;
+  
 }
 
 .custom-sider::-webkit-scrollbar-thumb {
@@ -27,6 +32,7 @@
 
   /* Custom styles for when Sider is collapsed */
 }
+
 
 .sidebar {
   height: 100%;

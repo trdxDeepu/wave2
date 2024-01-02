@@ -12,6 +12,11 @@
   flex-wrap: wrap;
   align-items: center;
   border-radius: 500px !important;
+  
+}
+
+.small-text{
+  font-size:13px ;
 }
 
 .ant-btn {

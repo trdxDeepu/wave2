@@ -73,10 +73,9 @@ const InvoiceBody = ({ showTextArea = false }) => {
                     size='large'
                     placeholder='Invoice Title'
                     style={{
-                      fontSize: '21px',
-                      fontStyle: 'italic',
+                      fontSize: '16px',
                       borderColor: '#a6c8e7',
-                      fontWeight: '600'
+                      fontWeight: '500'
                     }}
                     value={formData.title}
                     onChange={handleChange}
@@ -86,7 +85,7 @@ const InvoiceBody = ({ showTextArea = false }) => {
                     className='input_text'
                     name='summary'
                     size='large'
-                    placeholder='Summary (e.g. project name, description of invoice)'
+                    placeholder='Summary of Invoice'
                     style={{
                       fontSize: '16px',
                       borderColor: '#a6c8e7'

@@ -6,8 +6,7 @@ import { CaretDownFilled } from '@ant-design/icons'
 import { useFormContext } from '../../hooks/FormContext'
 
 const DropDownButton = ({ children }) => {
-
-  const {handleSubmit} = useFormContext()
+  const { handleSubmit } = useFormContext()
   const items = [
     {
       key: '1',
@@ -25,13 +24,26 @@ const DropDownButton = ({ children }) => {
         <Dropdown.Button
           trigger={['click']}
           htmlType='submit'
-          icon={<CaretDownFilled />}
+          icon={
+            <CaretDownFilled
+              style={{
+                fontSize: '15px'
+              }}
+            />
+          }
           menu={{ items }}
           size='large'
           placement='bottomRight'
           onClick={handleSubmit}
+          className='small-text'
         >
-          {children}
+          <span
+            style={{
+              fontSize: '14px'
+            }}
+          >
+            {children}
+          </span>
         </Dropdown.Button>
       </div>
     </div>

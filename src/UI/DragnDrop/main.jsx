@@ -1,9 +1,13 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import './styles.css'
 import { Progress } from 'antd'
 import { useState } from 'react'
 import { Modal } from 'antd'
+import { ExclamationCircleFilled } from '@ant-design/icons'
 // import { useFormContext } from '../../hooks/FormContext'
+
+const { confirm } = Modal
 
 const DragAndDrop = () => {
   const [image, setImage] = useState(null)
@@ -13,10 +17,11 @@ const DragAndDrop = () => {
 
   // const { formData, setFormData } = useFormContext()
 
+  /* To upload image  */
+
   const handleImageUpload = event => {
     const file = event.target.files[0]
     const reader = new FileReader()
-    // const { name } = event.target
 
     reader.readAsDataURL(file)
     setLoading(true)
@@ -24,44 +29,77 @@ const DragAndDrop = () => {
     reader.onloadend = () => {
       setImage(reader.result)
       setLoading(false)
-      setProgress(100)
-
-      // setFormData({ ...formData, [name]: reader.result })
+      // setProgress(50);
     }
 
     reader.onprogress = progressEvent => {
+      console.log(
+        'Progress:',
+        (progressEvent.loaded / progressEvent.total) * 100
+      )
       setProgress((progressEvent.loaded / progressEvent.total) * 100)
     }
+
+    reader.onerror = error => {
+      console.error('Error reading the file:', error)
+      setLoading(false)
+      setProgress(0)
+    }
   }
+
+  /* To drag and drop the image fucntion */
 
   const handleDrop = event => {
     event.preventDefault()
-    const file = event.dataTransfer.files[0]
-    const reader = new FileReader()
-    reader.readAsDataURL(file)
-    setLoading(true)
-    reader.onloadend = () => {
-      setImage(reader.result)
-      setLoading(false)
-      setProgress(100)
+
+    // Check if there are files in the dropped data
+    if (event.dataTransfer.items && event.dataTransfer.items.length > 0) {
+      const file = event.dataTransfer.items[0].getAsFile()
+
+      // Check if the dropped item is a file
+      if (file) {
+        const reader = new FileReader()
+
+        reader.readAsDataURL(file)
+
+        setLoading(true)
+
+        reader.onloadend = () => {
+          setImage(reader.result)
+          setLoading(false)
+          setProgress(100)
+        }
+
+        reader.onprogress = progressEvent => {
+          setProgress((progressEvent.loaded / progressEvent.total) * 100)
+        }
+      } else {
+        console.error('Dropped item is not a file')
+      }
+    } else {
+      console.error('No files dropped')
     }
-    reader.onprogress = progressEvent => {
-      setProgress((progressEvent.loaded / progressEvent.total) * 100)
-    }
   }
 
-  const showModal = () => {
-    setIsModalOpen(true)
-  }
+  /* Delete Modal confirm  */
 
-  const handleOk = () => {
-    setImage(null)
-    setProgress(0)
-    setIsModalOpen(false)
-  }
-
-  const handleCancel = () => {
-    setIsModalOpen(false)
+  const showDeleteConfirm = () => {
+    confirm({
+      title: 'Are you sure delete this task?',
+      icon: <ExclamationCircleFilled />,
+      content: 'Some descriptions',
+      okText: 'Yes',
+      okType: 'danger',
+      cancelText: 'No',
+      onOk () {
+        setImage(null)
+        setProgress(0)
+        setIsModalOpen(false)
+      },
+      onCancel () {
+        setIsModalOpen(false)
+      }
+    })
   }
 
   return (
@@ -75,7 +113,10 @@ const DragAndDrop = () => {
           {image ? (
             <>
               {loading ? (
-                <Progress percent={progress} />
+                <>
+                  <Progress percent={progress} />
+                  <div>Loading...</div>
+                </>
               ) : (
                 <>
                   <img
@@ -85,37 +126,25 @@ const DragAndDrop = () => {
                     width={200}
                     height={100}
                   />
-                  <p id='text-show' onClick={showModal}>
-                    Remove logo
-                  </p>
-                  <Modal
-                    title='Remove invoice logo'
-                    open={isModalOpen}
-                    onOk={handleOk}
-                    onCancel={handleCancel}
-                    keyboard={true}
-                    okText='Remove logo'
-                    cancelText='Cancel'
-                  >
-                    <p className='modal_text'>
-                      Removing your logo will remove it from all existing and
-                      future{' '}
-                      <span> invoices and estimates. Are you sure you </span>
-                      want to remove your <span style={{
-                        fontWeight: 'bold'
-                      }}>business logo?</span>
+                  <div>
+                    <p id='text-show' onClick={showDeleteConfirm}>
+                      Remove logo
                     </p>
-                  </Modal>
+                  </div>
                 </>
               )}
             </>
           ) : (
             <div id='img-view'>
               <img src='/508-icon.png' alt='icon' id='img' />
-              <p>
+              <p
+                style={{
+                  marginTop: '15px'
+                }}
+              >
                 Drag and Drop or click here <br /> to upload your logo
               </p>
-              <span>Upload any image</span>
+              {/* <span>Upload any image</span> */}
             </div>
           )}
         </label>

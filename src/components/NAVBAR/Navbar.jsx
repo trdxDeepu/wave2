@@ -2,7 +2,7 @@ import { Flex, Menu } from 'antd'
 import './navbar.css'
 import WaveLogo from '/Logo.png'
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
-import HeaderModal from '../../UI/HeaderModal/HeaderModal'
+import NavbarModal from '../../UI/HeaderModal/NavbarModal'
 import { useState } from 'react'
 import { useFormContext } from '../../hooks/FormContext'
 
@@ -30,7 +30,7 @@ const Navbar = () => {
         </div>
         <div>
           <div className='navbar-button'>
-            <HeaderModal setOpen={setOpen} open={open}>
+            <NavbarModal setOpen={setOpen} open={open}>
               <span>{userDataDB.name}</span>
               <span>
                 {open ? (
@@ -50,7 +50,7 @@ const Navbar = () => {
                   />
                 )}
               </span>
-            </HeaderModal>
+            </NavbarModal>
           </div>
         </div>
       </Flex>
