@@ -118,7 +118,7 @@ const DragAndDrop = () => {
                   <div>Loading...</div>
                 </>
               ) : (
-                <>
+                <div>
                   <img
                     src={image}
                     alt='uploaded'
@@ -126,12 +126,11 @@ const DragAndDrop = () => {
                     width={200}
                     height={100}
                   />
-                  <div>
-                    <p id='text-show' onClick={showDeleteConfirm}>
-                      Remove logo
-                    </p>
-                  </div>
-                </>
+
+                  <p id='text-show' onClick={showDeleteConfirm}>
+                    Remove logo
+                  </p>
+                </div>
               )}
             </>
           ) : (
