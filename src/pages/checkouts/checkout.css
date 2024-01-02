@@ -83,8 +83,9 @@
 }
 
 .checkout_button {
-  margin-left: 220px;
-  margin-bottom: 120px;
+  /* text-align: center; */
+  margin-left: 260px;
+  margin-top: 40px;
 }
 .btn_round {
   text-align: center;
