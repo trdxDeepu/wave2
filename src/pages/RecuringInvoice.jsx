@@ -7,6 +7,7 @@ import SRK from '/SRK.jpg'
 import tube from '/tube.svg'
 import bulb from '/bulb.svg'
 import { HiOutlineExternalLink } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
 
 const RecuringInvoice = () => {
   return (
@@ -22,8 +23,9 @@ const RecuringInvoice = () => {
               Automate your recurring invoices quickly, easily, and reliably —
               all in one place.
             </p>
-
-            <ButtonRound size='large'>Create a recurring invoice</ButtonRound>
+            <Link to='/receipts'>
+              <ButtonRound size='large'>Create a recurring invoice</ButtonRound>
+            </Link>
           </div>
           <div className='image'>
             <img
@@ -145,7 +147,9 @@ const RecuringInvoice = () => {
             </strong>
           </p>
           <div className='recuring_list_secondary'>
+            <Link to='/receipts'>
             <ButtonRound size='large'>Create a recurring invoice</ButtonRound>
+            </Link>
           </div>
         </div>
       </div>

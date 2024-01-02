@@ -43,13 +43,13 @@
 }
 
 #text-show{
-    font-size: 11px;
-    margin-top: 7px;
-  
+    font-size: 12px;
+    margin-top: 15px;
     font-weight: 700;
     text-align: left;
-    margin-left: 34px;
+    /* margin-left: 34px; */
     color: #2046cf;
+    text-align: center;
     
 }
 
