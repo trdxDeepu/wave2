@@ -41,12 +41,17 @@ const CurrencySelector = () => {
       onSearch={handleSearch}
       filterOption={filterOption}
       searchValue={searchValue}
+      style={{
+        borderColor: '#a6c8e7'
+
+      }}
     >
       {currency.map(currency => (
         <Select.Option
           key={currency.CurrencyCode}
           value={currency.CurrencyCode}
           label={currency.CurrencyName}
+          
         >
           {currency.CurrencyCode}
           {currency.CurrencyName}

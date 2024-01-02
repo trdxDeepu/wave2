@@ -263,7 +263,7 @@ const EditTable = () => {
             className='invoice-add-totals_amount invoice_btn'
           >
             <span>
-              <AiOutlinePlusCircle />
+              <AiOutlinePlusCircle size={15} />
             </span>
             <span style={{ fontSize: '16px' }} id='amount_span'>
               Add more

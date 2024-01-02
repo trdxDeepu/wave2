@@ -1,5 +1,5 @@
 import AppLayout from './UI/AppLayout'
-import { Routes, Route, } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import HeroSection from './components/CONTENTS/HeroSection'
 
 import RecuringInvoice from './pages/RecuringInvoice'
@@ -10,27 +10,42 @@ import SignupPage from './pages/signup/SignupPage'
 import OnBoarding from './pages/onboarding/OnBoarding'
 import Checkout from './pages/checkouts/Checkout'
 import PaymentSetup from './pages/paymentSetups/PaymentSetup'
+import { Elements } from '@stripe/react-stripe-js'
+import { loadStripe } from '@stripe/stripe-js'
 
 const App = () => {
-  return (
-    <Routes>
-      <Route path='/' element={<AppLayout content={<HeroSection />} />} />
-      <Route
-        path='/recurring-invoices'
-        element={<AppLayout content={<RecuringInvoice />} />}
-      />
-      <Route path='/receipts' element={<AppLayout content={<Receipt />} />} />
-      <Route path='/checkouts' element={<AppLayout content={<Checkout />} />} />
-      <Route
-        path='/payment-setup'
-        element={<AppLayout content={<PaymentSetup />} />}
-      />
-      <Route path='/login' element={<LoginPage />} />
-      <Route path='/signup' element={<SignupPage />} />
-      <Route path='/onboarding' element={<OnBoarding />} />
+  // const stripePromise = loadStripe(
+  //   'pk_test_51OSI21SH9Sbo3jwLuSVkSYuKeBmhGGNdeGI9V39GgM7bELVNe5Q8vJKH3ZGUVd5MqdeaFd6FP4c0vQl3CQy678g800qGAlBhZ8'
+  // )
+  // const options = {
+  //   // passing the client secret obtained from the server
+  //   clientSecret: '{{CLIENT_SECRET}}'
+  // }
 
-      <Route path='*' element={<ErrorPage />} />
-    </Routes>
+  return (
+    // <Elements stripe={stripePromise} options={options}>
+      <Routes>
+        <Route path='/' element={<AppLayout content={<HeroSection />} />} />
+        <Route
+          path='/recurring-invoices'
+          element={<AppLayout content={<RecuringInvoice />} />}
+        />
+        <Route path='/receipts' element={<AppLayout content={<Receipt />} />} />
+        <Route
+          path='/checkouts'
+          element={<AppLayout content={<Checkout />} />}
+        />
+        <Route
+          path='/payment-setup'
+          element={<AppLayout content={<PaymentSetup />} />}
+        />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/signup' element={<SignupPage />} />
+        <Route path='/onboarding' element={<OnBoarding />} />
+
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
+    // </Elements>
   )
 }
 

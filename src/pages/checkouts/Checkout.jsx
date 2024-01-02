@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom'
 import Title from '../../UI/Title'
 
 const Checkout = () => {
+
+  function handleSubmit(){
+    console.log("onCLick")
+  }
+
+
   return (
     <article className='checkout_page'>
       <img
@@ -42,9 +48,9 @@ const Checkout = () => {
         </div>
       </div>
       <div className='checkout_button'>
-        <Link to='/payment-setup'>
-        <button className='btn_round'>Set up online Payment</button>
-        </Link>
+        {/* <Link to='/payment-setup'> */}
+        <button className='btn_round' onClick={handleSubmit}>Set up online Payment</button>
+        {/* </Link> */}
         <p className='footer_line'>
           By continuing, you are agreeing to the Wave Payments
           <span className='footer_line_subtitle'> Terms and services </span>

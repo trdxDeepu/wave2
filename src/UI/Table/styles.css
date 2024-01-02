@@ -156,7 +156,7 @@ thead {
 .invoice-add-totals {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: flex-end;
   margin: 8px 0;
 }
@@ -165,7 +165,7 @@ thead {
   display: flex;
   align-items: center;
   padding: 12px 0;
-  gap: 4rem;
+  gap: 3rem;
 }
 .invoice-add-totals_label {
   max-width: 500px;
@@ -173,6 +173,7 @@ thead {
 .wv-text--inline {
   display: inline;
   font-size: 16px;
+ 
 }
 
 .invoice-add-totals_label_amount {
@@ -182,10 +183,11 @@ thead {
 }
 
 .invoice_btn {
+  
   gap: 3px !important;
   display: flex;
   height: 100%;
-  margin-right: 13rem;
+  margin-right: 190px;
   border: none;
   outline: none;
   color: #2046cf;
@@ -194,6 +196,8 @@ thead {
   font-weight: 600;
   background-color: transparent;
   font-size: 16px;
+  align-items: center;
+  justify-content: center;
 }
 
 #amount_span:hover {
@@ -202,11 +206,11 @@ thead {
 }
 
 .select_currency {
-  margin-right: 8rem;
+  margin-right: 92px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap:8px;
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 12px;
@@ -217,13 +221,14 @@ thead {
 
 .invoice-memo {
   border-top: 1px solid #d4dde3;
-  margin: 0 -16px;
-  padding: 20px;
+  margin: 0 -2px;
+  padding: 18px;
 }
 
 .invoice-memo-text {
   color: #68757d;
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .text-area {

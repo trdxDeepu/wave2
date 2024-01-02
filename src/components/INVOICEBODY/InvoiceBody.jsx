@@ -55,7 +55,7 @@ const InvoiceBody = ({ showTextArea = false }) => {
               id=''
               onChange={handleChange}
               value={formData.footer}
-              style={{ width: '100%', border: 'none', fontSize: '15px' }}
+              style={{ width: '100%', border: 'none', fontSize: '14px',marginLeft:'12px' }}
               className='text-area'
               placeholder='Enter a footer for this invoice (e.g. tax information, thank you note)'
             ></textarea>
