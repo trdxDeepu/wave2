@@ -3,12 +3,12 @@
     background-color: #2046cf;
     min-height: 50px;
     min-width: 70px;
-    font-size: 16px;
+    font-size: 15px;
     border-radius: 500px !important;
     cursor: pointer;
     border: 1px solid #2046cf !important;
     color: #fff;
-    padding: 16px 32px;
+    padding: 12px 28px;
     text-align: center;
     font-weight: 600;
 }
@@ -51,7 +51,7 @@
   border-radius: 500px !important;
   cursor: pointer;
   border: 1px solid #2046cf !important;
-  padding: 12px 32px;
+  padding: 10px 28px;
   text-align: center;
   font-weight: 600;
   display: block;

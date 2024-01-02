@@ -1,11 +1,11 @@
 import '../styles/recuringInvoice.css'
 import ButtonRound from '../UI/Button/ButtonRounded'
-import credtCard from '/creditcard.svg'
-import jar from '/jar.svg'
-import money from '/money.svg'
+import credtCard from '/assets/card-payment.svg'
+import jar from '/assets/availability.svg'
+import money from '/assets/invoice.svg'
 import SRK from '/SRK.jpg'
-import tube from '/tube.svg'
-import bulb from '/bulb.svg'
+import tube from '/assets/customer-service.svg'
+import bulb from '/assets/creative-team.svg'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 
@@ -148,7 +148,7 @@ const RecuringInvoice = () => {
           </p>
           <div className='recuring_list_secondary'>
             <Link to='/receipts'>
-            <ButtonRound size='large'>Create a recurring invoice</ButtonRound>
+              <ButtonRound size='large'>Create a recurring invoice</ButtonRound>
             </Link>
           </div>
         </div>
