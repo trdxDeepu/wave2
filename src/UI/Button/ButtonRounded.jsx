@@ -63,13 +63,15 @@ const ButtonRounded = ({
           trigger={['click']}
           menu={{ items }}
           placement='bottomRight'
+          
           icon={<DownOutlined />}
           overlayStyle={{
-            marginTop: '10px'
+            marginTop: '10px',
+            
           }}
         >
           <span className='dropdown-button'>
-            <DownOutlined />
+            <DownOutlined size={12} />
           </span>
         </Dropdown>
       )}

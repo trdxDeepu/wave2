@@ -1,14 +1,12 @@
 import './checkout.css'
 import { FaExternalLinkAlt } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Title from '../../UI/Title'
 
 const Checkout = () => {
-
-  function handleSubmit(){
-    console.log("onCLick")
+  function handleSubmit () {
+    console.log('onCLick')
   }
-
 
   return (
     <article className='checkout_page'>
@@ -21,7 +19,7 @@ const Checkout = () => {
       />
 
       <div className='checkout_right'>
-       <Title>CheckOut</Title>
+        <Title>CheckOut</Title>
         <div className='checkout_header'>
           <h1 className='header_title'>
             Accept payments directly from your website.
@@ -46,16 +44,21 @@ const Checkout = () => {
             <div className='visa'></div>
           </div>
         </div>
-      </div>
-      <div className='checkout_button'>
-        {/* <Link to='/payment-setup'> */}
-        <button className='btn_round' onClick={handleSubmit}>Set up online Payment</button>
-        {/* </Link> */}
-        <p className='footer_line'>
-          By continuing, you are agreeing to the Wave Payments
-          <span className='footer_line_subtitle'> Terms and services </span>
-          <FaExternalLinkAlt size={10} className='footer_link'/>
-        </p>
+        <div className='checkout_button'>
+          {/* <Link to='/payment-setup'> */}
+          <button className='btn_round' onClick={handleSubmit}>
+            Set up online Payment
+          </button>
+          {/* </Link> */}
+          <p className='footer_line'>
+            By continuing, you are agreeing to the Wave Payments
+            <span className='footer_line_subtitle'>
+              {' '}
+              Terms and services{' '}
+              <FaExternalLinkAlt size={10} className='footer_link' />
+            </span>
+          </p>
+        </div>
       </div>
     </article>
   )

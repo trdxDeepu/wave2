@@ -2,7 +2,6 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-
   margin-bottom: 0px;
   max-width: 960px;
   position: relative;
@@ -84,8 +83,8 @@
 
 .checkout_button {
   /* text-align: center; */
-  margin-left: 260px;
-  margin-top: 40px;
+  /* margin-left: 260px; */
+  margin-top: 25px;
 }
 .btn_round {
   text-align: center;
@@ -106,20 +105,20 @@
 }
 
 .footer_line {
-  flex-basis: 100%;
-  margin-top: 20px;
-  text-align: center;
+  /* display: flex;
+  align-items: flex-start; */
+  margin-top: 12px;
+  /* text-align: center; */
 }
 
 .footer_line_subtitle {
   color: #385de0;
-
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
   margin-top: 0;
   margin-bottom: 0;
-  text-align: center;
+  /* text-align: center; */
   cursor: pointer;
   outline: unset;
 }

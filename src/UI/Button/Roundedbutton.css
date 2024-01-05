@@ -24,9 +24,9 @@
 .rounded-button.small {
   text-align: center;
   background-color: #2046cf;
-  min-height: 45px;
+  min-height: 40px;
   min-width: 50px;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 500px !important;
   cursor: pointer;
   border: 1px solid #2046cf !important;
@@ -46,17 +46,17 @@
 .rounded-button.medium {
   color: #2046cf;
   background-color: rgba(0, 0, 0, 0);
-  height: 45px;
+  height: 38px;
   min-width: 50px;
   border-radius: 500px !important;
   cursor: pointer;
   border: 1px solid #2046cf !important;
-  padding: 10px 28px;
+  padding: 8px 26px;
   text-align: center;
   font-weight: 600;
   display: block;
   margin: 1rem 0;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .medium:hover {
