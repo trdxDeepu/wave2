@@ -88,10 +88,11 @@ const RecurringSelection = ({ data, setData }) => {
         <div>
           <Select
             labelInValue
-            className='select_calender_class'
+            // className='select_calender_class'
             onChange={handleChange}
             options={selectCalender}
-            size='large'
+            size='small'
+            style={{ height: '30px', width: '134px' ,marginLeft:'25px'}}
             defaultValue='Select here'
           />
         </div>
@@ -100,10 +101,12 @@ const RecurringSelection = ({ data, setData }) => {
             <>
               <span
                 style={{
-                  fontSize: '16px',
+                  fontSize: '14px',
                   color: '#1c252c',
-                  marginTop: '10px',
-                  marginLeft: '-5px'
+                  // marginTop: '10px',
+                  marginLeft: '5px',
+                  height: '30px',
+                  width: '134px'
                 }}
               >
                 on the
@@ -112,10 +115,21 @@ const RecurringSelection = ({ data, setData }) => {
                 labelInValue
                 onChange={handleSelectMonth}
                 options={selectMonth}
-                size='large'
+                size='small'
                 defaultValue={selectMonth[0].label}
+                style={{
+                  marginLeft: '5px',
+                  height: '30px',
+                  width: '70px'
+                }}
               />
-              <span style={{ fontSize: '16px', color: '#1c252c' }}>
+              <span
+                style={{
+                  fontSize: '14px',
+                  color: '#1c252c',
+                  marginLeft: '5px'
+                }}
+              >
                 {' '}
                 {selectedDate.label} day of every month{' '}
               </span>
@@ -125,17 +139,28 @@ const RecurringSelection = ({ data, setData }) => {
         <div>
           {data && data.value === 'monthly' && (
             <>
-              <span style={{ fontSize: '16px', color: '#1c252c' }}>
+              <span style={{ fontSize: '14px', color: '#1c252c' }}>
                 on the{' '}
               </span>
               <Select
                 labelInValue
                 onChange={handleSelectMonth}
                 options={selectMonth}
-                size='large'
+                size='small'
                 defaultValue={selectMonth[0].label}
+                style={{
+                  height: '30px',
+                  width: '70px'
+                }}
               />
-              <span style={{ fontSize: '16px', color: '#1c252c' }}>
+              <span
+                style={{
+                  fontSize: '14px',
+                  color: '#1c252c',
+                  height: '30px',
+                  width: '134px'
+                }}
+              >
                 {' '}
                 day of every month{' '}
               </span>
@@ -147,9 +172,11 @@ const RecurringSelection = ({ data, setData }) => {
             <div>
               <span
                 style={{
-                  fontSize: '16px',
+                  fontSize: '14px',
                   color: '#1c252c',
-                  marginTop: '10px'
+                  marginTop: '10px',
+                  height: '30px',
+                  width: '134px'
                 }}
               >
                 on the{' '}
@@ -159,12 +186,18 @@ const RecurringSelection = ({ data, setData }) => {
                 onChange={handleSelectYearly}
                 options={selectYearly}
                 defaultValue={selectYearly[0].label}
-                size='large'
+                size='small'
+                style={{
+                  height: '30px',
+                  width: '124px'
+                }}
               />
               <div
                 style={{
-                  marginLeft: '-142px',
+                  marginLeft: '-146px',
                   marginTop: '4px'
+                  // height: '30px',
+                  // width: '134px'
                 }}
               >
                 <Select
@@ -172,10 +205,20 @@ const RecurringSelection = ({ data, setData }) => {
                   onChange={handleSelectMonth}
                   options={selectMonth}
                   defaultValue={selectMonth[0].label}
-                  size='large'
-                  style={{ width: 134 }}
+                  size='small'
+                  style={{
+                    height: '30px',
+                    width: '124px',
+                    marginTop: '10px',
+                    marginRight: '15px',
+                  }}
                 />
-                <span style={{ fontSize: '16px', color: '#1c252c' }}>
+                <span
+                  style={{
+                    fontSize: '14px',
+                    color: '#1c252c'
+                  }}
+                >
                   {' '}
                   day of every month{' '}
                 </span>

@@ -30,14 +30,23 @@
   display: block;
   padding: 12px;
   margin-bottom: 12px;
+  /* margin-left: 20px; */
   border-radius: 8px;
   border: 1px solid #b4c2cb;
   background-color: #fff;
   position: relative;
 }
 
+.wv-heading--schedule {
+  color: #68757d;
+  font-weight: normal;
+  font-size: 16px;
+  margin-left: 17px;
+}
+
 .recuring_invoice_create_box_info {
   flex: 1;
+  margin-left: 13px;
 }
 .recuring_invoice_create_box_option {
   display: flex;
@@ -48,13 +57,14 @@
 .wv-heading--subtitle {
   color: #68757d;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 16px;
 }
 .recuring_invoice_create_box_info_button {
   margin-left: 10px;
 }
 .recuring_invoice_create_content {
   padding-left: 70px;
+  margin-left: 13px;
 }
 .wv-text-strong {
   font-weight: bold;
@@ -85,27 +95,32 @@
   flex: 1;
 }
 .schedule_setting_container {
-  display: block;
+
   margin-top: 12px;
 }
 .schedule_setting_row {
   display: flex;
-  flex: 1;
+  align-items: center;
+  /* justify-content: space-between  ; */
+  gap: 8px;
+  /* flex: 1; */
   margin-bottom: 10px;
+  margin-left: 70px;
 }
 .setting_row_label {
-  padding-right: 14px;
+  margin-left: 20px;
   position: relative;
   text-align: right;
-  top: 13px;
-  font-size: 17px;
-  width: 210px;
+  /* top: 8px; */
+  font-size: 14px;
+
 }
+
 .setting_row_label_inputs {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 5px;
-  gap: 3px;
+  /* margin-top: 5px; */
+  gap: 5px;
 }
 
 #text_week {
@@ -113,16 +128,7 @@
   font-size: 16px;
 }
 
-.ant-select {
-  height: 40px !important;
-  border: 1px solid #a6c8e7 !important;
-  border-radius: 8px;
-  border-color: #a6c8e7;
-}
-.ant-select-selector {
-  padding: 0px 32px !important;
-  width: 100%;
-}
+
 
 .wv-box--grey {
   padding: 16px;
@@ -144,7 +150,7 @@
   color: #68757d;
   text-align: left;
   font-weight: normal;
-  font-size: 23px;
+  font-size: 18px;
 }
 .recurring-invoice-flex-content-area {
   flex: 11;

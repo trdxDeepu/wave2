@@ -5,7 +5,7 @@ const RecuringInvoiceSummary = () => {
     <div className='recuring_invoice_summary'>
       <div className='recuring_summary_container'>
         <div className='recuring_summary_container_rowStatus'>
-          <div style={{ margin: '12px 4px' }}>
+          <div style={{ margin: '12px 0px' }}>
             <p className='wv-text'>Status</p>
           </div>
           <div>
@@ -16,11 +16,10 @@ const RecuringInvoiceSummary = () => {
           <div style={{ margin: '12px 4px' }}>
             <p className='wv-text'>Customer</p>
           </div>
-          <div>
-            <p className='wv-badge-large  recuring_invoice_customer_name'>
-              name <GrCircleInformation className='info_icon' />
-            </p>
-          </div>
+
+          <p className='wv-badge-large  recuring_invoice_customer_name'>
+            name <GrCircleInformation size={13} className='info_icon' />
+          </p>
         </div>
         <div className='recuring_summary_container_amount'>
           <div style={{ margin: '12px 4px' }}>

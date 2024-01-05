@@ -24,7 +24,7 @@ const RecuringInvoice = () => {
               all in one place.
             </p>
             <Link to='/receipts'>
-              <ButtonRound size='large'>Create a recurring invoice</ButtonRound>
+              <ButtonRound type='primary'>Create a recurring invoice</ButtonRound>
             </Link>
           </div>
           <div className='image'>
@@ -148,7 +148,7 @@ const RecuringInvoice = () => {
           </p>
           <div className='recuring_list_secondary'>
             <Link to='/receipts'>
-              <ButtonRound size='large'>Create a recurring invoice</ButtonRound>
+              <ButtonRound type='primary'>Create a recurring invoice</ButtonRound>
             </Link>
           </div>
         </div>

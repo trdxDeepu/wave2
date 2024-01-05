@@ -1,6 +1,7 @@
 .recuring_invoice_summary {
-  margin: 0 auto;
-  width: 820px;
+  /* margin: 0 auto;
+  width: 820px; */
+  margin :0 90px ;
 }
 .hr-line {
   border: 1px solid #b4c2cb;
@@ -25,7 +26,7 @@
 }
 
 .wv-badge-large {
-  font-size: 16px;
+  font-size: 14px;
   padding: 4px 6px;
 }
 
@@ -45,13 +46,18 @@
 .recuring_invoice_customer_name {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: -8px;
-  font-size: 23px;
+  justify-content:center;
+  gap: 5px;
+  margin-top: -6px;
+  font-size: 17px;
 }
 
 .recuring_invoice_customer_name:hover {
   text-decoration: underline;
+}
+
+.info_icon{
+  text-align: center;
 }
 
 .info_icon:hover {
@@ -62,6 +68,6 @@
   margin-left: 18rem;
 }
 .recuring_invoice_customer_amount {
-  font-size: 23px;
+  font-size: 16px;
   max-width: 360px;
 }

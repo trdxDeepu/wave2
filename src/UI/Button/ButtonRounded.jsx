@@ -14,11 +14,11 @@ const ButtonRounded = ({
   ...restProps
 }) => {
   const getSizeClassName = () => {
-    switch (size) {
-      case 'large':
-        return 'large'
-      case 'small':
-        return 'small'
+    switch (type) {
+      case 'primary':
+        return 'primary'
+      case 'ordinary':
+        return 'ordinnary'
       case 'medium':
         return 'medium'
       default:

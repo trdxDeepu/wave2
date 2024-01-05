@@ -11,19 +11,19 @@ const RecuringInvoiceBody = () => {
         <div>
           <div className='wv-box_content'>
             <div className='recuring_invoice_create_section'>
-              <div className='recuring_invoice_create_box'>
+              <div className='  '>
                 <div className='recuring_invoice_create_box_option'>
                   <StepBadge checked='true' boxNumber='2' />
                   {/* creating body here of recuring invoice */}
                   <div className='recuring_invoice_create_box_info'>
-                    <div className='recuring_invoice_create_box_info_label'>
+                    {/* <div className='recuring_invoice_create_box_info_label'> */}
                       <p className='wv-heading--subtitle'>
-                        <span>Create invoice</span>
+                        Create invoice
                       </p>
-                    </div>
+                    {/* </div> */}
                   </div>
                   <span className='recuring_invoice_create_box_info_button'>
-                    <ButtonRounded size='medium'>Edit</ButtonRounded>
+                    <ButtonRounded >Edit</ButtonRounded>
                   </span>
                 </div>
               </div>

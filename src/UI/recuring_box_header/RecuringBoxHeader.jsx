@@ -24,13 +24,11 @@ const RecuringBoxHeader = () => {
             <StepBadge />
             <div className='recuring_invoice_create_box_info'>
               <div className='recuring_invoice_create_box_info_label'>
-                <p className='wv-heading--subtitle'>
-                  <span>Set Schedule</span>
-                </p>
+                <p className='wv-heading--schedule'>Set Schedule</p>
               </div>
             </div>
             <span className='recuring_invoice_create_box_info_button'>
-              <ButtonRounded size='small'>Next</ButtonRounded>
+              <ButtonRounded type='primary'>Next</ButtonRounded>
             </span>
           </div>
           <span>
@@ -47,6 +45,11 @@ const RecuringBoxHeader = () => {
                     <div className='setting_row_label_inputs'>
                       <div>
                         <DatePicker
+                          style={{
+                            marginLeft: '2px',
+                            height: '30px',
+                            width: '124px'
+                          }}
                           presets={[
                             {
                               label: 'First day of month',
@@ -57,12 +60,12 @@ const RecuringBoxHeader = () => {
                               value: dayjs().endOf('month')
                             }
                           ]}
-                          size='large'
+                          size='small'
                           popupClassName='date_picker_popup'
                         />
                         <span
                           style={{
-                            fontSize: '16px',
+                            fontSize: '14px',
                             color: '#1c252c',
                             marginTop: '10px',
                             marginLeft: '5px'
@@ -75,9 +78,12 @@ const RecuringBoxHeader = () => {
                             defaultValue={optionData[0].label}
                             style={{
                               marginLeft: '5px',
-                              fontSize: '16px'
+                              fontSize: '14px',
+                              height: '30px',
+                              width: '75px'
                             }}
                             options={optionData}
+                            size='small'
                             onChange={value => {
                               console.log('this is consolevalue', value)
                               setSelectCalender(value)
@@ -86,7 +92,7 @@ const RecuringBoxHeader = () => {
                           {selectCalender && selectCalender.value === 'after' && (
                             <>
                               <Input
-                                size='large'
+                                size='small'
                                 style={{
                                   width: '70px',
                                   marginTop: '4px',
