@@ -1,0 +1,42 @@
+.sidebar_toggle{
+    position: absolute;
+    width: 16px;
+    height: 100%;
+    top: 0;
+    right: -16px;
+    z-index: 1;
+    pointer-events: none;
+    
+}
+
+.sidebar_toggle::before{
+    content: "";
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+    display: block;
+    width: 16px;
+    height: 100%;
+    clip-path: polygon(0 25%, 0 77%, 90% 50%);
+}
+
+.toggle_button {
+    width: 15px;
+    height: 64px;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #1f66a8;
+    border-left-color: #d1e4f5;
+    border-radius: 0 16px 16px 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s;
+    cursor: pointer;
+    z-index: 2;
+  }

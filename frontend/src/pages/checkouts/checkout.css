@@ -1,0 +1,140 @@
+.checkout_page {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 0px;
+  max-width: 960px;
+  position: relative;
+  margin-bottom: 64px;
+  padding: 20px 40px;
+}
+
+.checkout_right {
+  flex: 1;
+  margin-top: 24px;
+  padding-left: 34px;
+}
+
+.checkout_image {
+  max-width: 380px;
+}
+.checkout_pretitle {
+  display: block;
+  color: #9453e4;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 17px;
+
+  letter-spacing: 0.05em;
+}
+
+.checkout_header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.header_title {
+  margin-top: 6px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.header_para {
+  margin-top: 20px;
+  color: #68757d;
+  font-weight: normal;
+  font-size: 23px;
+}
+
+.subtitle {
+  margin-top: 25px;
+  padding-bottom: 8px;
+}
+.subtitle2 {
+  margin-top: 5px;
+  padding-bottom: 8px;
+}
+.subtitle3 {
+  margin-top: 5px;
+  padding-bottom: 8px;
+}
+
+.payment_icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.visa {
+  background-image: url('/visa.png');
+  border: 1px solid #d4dde3;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 32px;
+  width: 52px;
+}
+
+.checkout_button {
+  /* text-align: center; */
+  /* margin-left: 260px; */
+  margin-top: 25px;
+}
+.btn_round {
+  text-align: center;
+  background-color: #2046cf;
+  min-height: 40px;
+  min-width: 70px;
+  font-size: 15px;
+  border-radius: 500px !important;
+  cursor: pointer;
+  border: 1px solid #2046cf !important;
+  color: #fff;
+  padding: 10px 40px;
+  text-align: center;
+  font-weight: 600;
+}
+.btn_round:hover {
+  background-color: #1a3eab;
+}
+
+.footer_line {
+  /* display: flex;
+  align-items: flex-start; */
+  margin-top: 12px;
+  /* text-align: center; */
+}
+
+.footer_line_subtitle {
+  color: #385de0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+  /* text-align: center; */
+  cursor: pointer;
+  outline: unset;
+}
+.footer_line_subtitle:hover {
+  text-decoration: underline;
+  outline: unset;
+}
+
+.footer_link {
+  color: #68757d;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  cursor: pointer;
+  outline: unset;
+}

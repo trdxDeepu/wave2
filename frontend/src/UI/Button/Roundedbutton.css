@@ -1,0 +1,87 @@
+/* .rounded-button.large {
+    text-align: center;
+    background-color: #2046cf;
+    min-height: 50px;
+    min-width: 70px;
+    font-size: 15px;
+    border-radius: 500px !important;
+    cursor: pointer;
+    border: 1px solid #2046cf !important;
+    color: #fff;
+    padding: 12px 28px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.rounded-button.large:hover {
+  background-color: #1a3eab;
+}
+
+.rounded-button.large:active {
+  transform: scale(0.98);
+}
+
+.rounded-button.small {
+  text-align: center;
+  background-color: #2046cf;
+  min-height: 40px;
+  min-width: 50px;
+  font-size: 14px;
+  border-radius: 500px !important;
+  cursor: pointer;
+  border: 1px solid #2046cf !important;
+  color: #fff;
+  padding: 8px 32px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.rounded-button.small:hover {
+  background-color: #1a3eab;
+}
+
+.rounded-button.small:active {
+  transform: scale(0.98);
+}
+.rounded-button.medium {
+  color: #2046cf;
+  background-color: rgba(0, 0, 0, 0);
+  height: 38px;
+  min-width: 50px;
+  border-radius: 500px !important;
+  cursor: pointer;
+  border: 1px solid #2046cf !important;
+  padding: 8px 26px;
+  text-align: center;
+  font-weight: 600;
+  display: block;
+  margin: 1rem 0;
+  font-size: 14px;
+}
+
+.medium:hover {
+  background-color: #e6f1ff;
+} */
+
+.rounded-button {
+  color: #2046cf;
+  background-color: rgba(0, 0, 0, 0);
+  height: 38px;
+  min-width: 50px;
+  border-radius: 500px !important;
+  cursor: pointer;
+  border: 1px solid #2046cf !important;
+  padding: 8px 26px;
+  text-align: center;
+  font-weight: 600;
+  display: block;
+  margin: 1rem 0;
+  font-size: 15px;
+}
+
+.rounded-button.primary{
+  background-color: #2046cf !important;
+  color: #fff;
+  font-size: 14px;
+ 
+}

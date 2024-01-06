@@ -1,0 +1,39 @@
+.invoice_addItem{
+    margin-top: 10px;
+    position: relative;
+}
+
+.invoice-add_customize-tab {
+    background: #ecf0f3;
+    border-radius: 6px 6px 0 0;
+    display: inline-block;
+    margin-left: 17px;
+    padding: 6px 12px;
+}
+
+#invoice-add-tab{
+    display: flex;
+    gap: 5px;
+    font-size: 16px;
+    align-items: center;
+    color: #2046cf;
+}
+
+#edit_column_text{
+    margin-right: 8px;
+    margin-top: 2px;
+    font-weight: 600;
+}
+
+#edit_column_text:hover{
+    cursor: pointer;
+    color: #385de0;
+    text-decoration: underline;
+}
+
+.invoice-item_table{
+    margin-left: -19px;
+    margin-right: -19px;
+    background: #ecf0f3;
+}
+
