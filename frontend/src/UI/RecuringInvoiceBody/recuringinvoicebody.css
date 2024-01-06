@@ -64,7 +64,7 @@
 }
 .recuring_invoice_create_content {
   padding-left: 70px;
-  margin-left: 13px;
+  margin-left: 16px;
 }
 .wv-text-strong {
   font-weight: bold;
@@ -72,6 +72,7 @@
 }
 .recuring_invoice_create_content_box {
   margin-bottom: 20px;
+ 
 }
 .is-highlighted {
   box-shadow: 0 8px 32px rgba(71, 84, 92, 0.35);
