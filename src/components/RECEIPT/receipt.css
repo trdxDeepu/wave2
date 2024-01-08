@@ -10,7 +10,7 @@
 .recuring_summary_container {
   display: flex;
   padding-top: 35px;
-  gap: 37px;
+  gap: 5px;
 }
 
 .recuring_summary_container_rowStatus {

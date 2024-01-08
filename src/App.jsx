@@ -11,8 +11,8 @@ import SignupPage from './pages/signup/SignupPage'
 import OnBoarding from './pages/onboarding/OnBoarding'
 import Checkout from './pages/checkouts/Checkout'
 import PaymentSetup from './pages/paymentSetups/PaymentSetup'
-import Success from './pages/checkouts/Success'
-import Cancel from './pages/checkouts/Cancel'
+import Success from './pages/paymentSetups/Success'
+import Cancel from './pages/paymentSetups/Cancel'
 
 
 const App = () => {
