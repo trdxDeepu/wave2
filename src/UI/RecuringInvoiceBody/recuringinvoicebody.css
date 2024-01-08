@@ -1,10 +1,12 @@
 .recuring_invoice_body {
   margin: 20px auto;
-  width: 820px;
+  /* margin-right: 20px; */
+  min-width: 820px;
+
 }
 .wv-box {
   display: block;
-  padding: 12px;
+  padding: 8px;
   margin-bottom: 12px;
   border-radius: 8px;
   border: 1px solid #b4c2cb;
@@ -24,7 +26,7 @@
 
 .wv-box_content {
   margin-bottom: 0px;
-  padding: 8px;
+  padding: 5px;
 }
 .wv-workflow__task {
   display: block;
@@ -35,6 +37,7 @@
   border: 1px solid #b4c2cb;
   background-color: #fff;
   position: relative;
+ 
 }
 
 .wv-heading--schedule {

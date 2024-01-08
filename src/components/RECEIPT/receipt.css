@@ -10,7 +10,7 @@
 .recuring_summary_container {
   display: flex;
   padding-top: 35px;
-  gap: 10px;
+  gap: 37px;
 }
 
 .recuring_summary_container_rowStatus {
@@ -39,7 +39,7 @@
 }
 
 .wv-popover__trigger {
-  position: relative;
+  /* position: relative; */
   display: inline-block;
 }
 

@@ -1,7 +1,7 @@
+import '@stripe/stripe-js'
 import AppLayout from './UI/AppLayout'
 import { Routes, Route } from 'react-router-dom'
 import HeroSection from './components/CONTENTS/HeroSection'
-import '@stripe/stripe-js'
 
 import RecuringInvoice from './pages/RecuringInvoice'
 import ErrorPage from './pages/ErrorPage'
