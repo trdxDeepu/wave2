@@ -24,7 +24,7 @@ export default function PaymentSetup () {
     lineItems: [item],
     mode: 'payment',
     successUrl: `${window.location.origin}/success`,
-    cancelUrl: `${window.location.origin}/cancel`
+    cancelUrl: `${window.location.origin}/cancel}`
   }
 
   const redirectToCheckout = async () => {

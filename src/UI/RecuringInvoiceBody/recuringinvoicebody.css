@@ -70,7 +70,7 @@
   margin-left: 16px;
 }
 .wv-text-strong {
-  font-weight: bold;
+  /* font-weight: bold; */
   columns: black;
 }
 .recuring_invoice_create_content_box {

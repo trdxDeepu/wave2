@@ -31,13 +31,13 @@ const RecuringInvoiceBody = () => {
             <div className='recuring_invoice_create_content_box'>
               <div className='recuring_invoice_create_content '>
                 <p>
-                  <strong className='wv-text-strong'>Created on : </strong>
+                  <span className='wv-text-strong'>Created on : </span>
                   <span>14 November 2023</span>
                 </p>
               </div>
               <div className='recuring_invoice_create_content '>
                 <p>
-                  <strong className='wv-text-strong'>Payment terms : </strong>
+                  <span className='wv-text-strong'>Payment terms : </span>
                   <span>On Receipt</span>
                 </p>
               </div>

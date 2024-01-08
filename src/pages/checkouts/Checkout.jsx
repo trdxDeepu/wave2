@@ -1,12 +1,42 @@
 import './checkout.css'
+import { loadStripe } from '@stripe/stripe-js'
+
 import { FaExternalLinkAlt } from 'react-icons/fa'
 // import { Link } from 'react-router-dom'
 import Title from '../../UI/Title'
 
 const Checkout = () => {
-  function handleSubmit () {
-    console.log('onCLick')
+
+  let stripePromise
+
+function getStripe () {
+  if (!stripePromise) {
+    stripePromise = loadStripe(
+      'pk_test_51OWCUBSI8uIfEVFxQeK1CgOJxLAlwCPjzgzXKD5i4wHyiGuUiO82vw1BFXxESXKhMLn62FZlY78DySQWxaoT7Aw300kbFXmdZ7'
+    )
   }
+  return stripePromise
+}
+
+const item = {
+  price: 'price_1OWCVySI8uIfEVFx1JA2F0b1',
+  quantity: 1
+}
+
+const checkoutOptions = {
+  lineItems: [item],
+  mode: 'payment',
+  // payment_method_types: ['card', 'google_pay'],
+  successUrl: `${window.location.origin}/success`,
+  cancelUrl: `${window.location.origin}/cancel`
+}
+
+const redirectToCheckout = async () => {
+  console.log('redirecttoCheckout')
+  const stripe = await getStripe()
+  const { error } = await stripe.redirectToCheckout(checkoutOptions)
+  console.log('stripe checkout error', error)
+}
 
   return (
     <article className='checkout_page'>
@@ -46,7 +76,7 @@ const Checkout = () => {
         </div>
         <div className='checkout_button'>
           {/* <Link to='/payment-setup'> */}
-          <button className='btn_round' onClick={handleSubmit}>
+          <button className='btn_round' onClick={redirectToCheckout}>
             Set up online Payment
           </button>
           {/* </Link> */}
