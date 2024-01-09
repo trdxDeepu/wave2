@@ -70,18 +70,16 @@
   font-size: 17px;
 }
 
-
-
 .busines_class:hover {
   color: #2046cf;
 }
 
-.busines_class:active{
+.busines_class:active {
   outline: none;
   padding: 12px;
   transition: all 0.1s ease-out;
   border-radius: 4px;
-  box-shadow: 0 0 0 3px rgba(32,70,207,.35);
+  box-shadow: 0 0 0 3px rgba(32, 70, 207, 0.35);
 }
 
 #businesInter {
@@ -113,8 +111,6 @@
   border-top: 1px solid #d4dde3;
 }
 
-
-
 .user_class {
   display: flex;
 
@@ -131,25 +127,25 @@
   color: #68757d;
 }
 
-.setting_footer{
-    
-  
-    font-weight: normal;
-    color: #68757d;
-}
-
-.setting_footer_inline{
-    display: flex;
-    gap: 12px;
-    
-}
-
-#link_tag{
-    color: #68757d;
+.setting_footer {
+  font-weight: normal;
+  color: #68757d;
 
 }
 
-#link_tag:hover{
-   text-decoration: underline;
+.setting_footer_inline {
+  margin-top: 10px;
+  margin-left: 45px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  gap: 12px;
 }
 
+#link_tag {
+  color: #68757d;
+}
+
+#link_tag:hover {
+  text-decoration: underline;
+}
