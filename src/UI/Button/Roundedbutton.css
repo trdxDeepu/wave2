@@ -68,10 +68,10 @@
   background-color: rgba(0, 0, 0, 0);
   height: 38px;
   min-width: 50px;
-  border-radius: 500px !important;
+  border-radius: 5px;
   cursor: pointer;
   border: 1px solid #2046cf !important;
-  padding: 8px 26px;
+  padding: 7px 24px;
   text-align: center;
   font-weight: 600;
   display: block;

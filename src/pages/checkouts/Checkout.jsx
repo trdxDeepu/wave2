@@ -4,6 +4,7 @@ import { loadStripe } from '@stripe/stripe-js'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 // import { Link } from 'react-router-dom'
 import Title from '../../UI/Title'
+import ButtonRounded from '../../UI/Button/ButtonRounded'
 
 const Checkout = () => {
 
@@ -76,9 +77,9 @@ const redirectToCheckout = async () => {
         </div>
         <div className='checkout_button'>
           {/* <Link to='/payment-setup'> */}
-          <button className='btn_round' onClick={redirectToCheckout}>
+          <ButtonRounded type='primary'  onClick={redirectToCheckout}>
             Set up online Payment
-          </button>
+          </ButtonRounded>
           {/* </Link> */}
           <p className='footer_line'>
             By continuing, you are agreeing to the Wave Payments

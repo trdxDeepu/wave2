@@ -48,7 +48,8 @@ const RecuringBoxHeader = () => {
                           style={{
                             marginLeft: '2px',
                             height: '30px',
-                            width: '124px'
+                            width: '134px',
+                            borderRadius:"4px"
                           }}
                           presets={[
                             {
