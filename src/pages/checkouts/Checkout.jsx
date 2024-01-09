@@ -2,42 +2,40 @@ import './checkout.css'
 import { loadStripe } from '@stripe/stripe-js'
 
 import { FaExternalLinkAlt } from 'react-icons/fa'
-// import { Link } from 'react-router-dom'
-import Title from '../../UI/Title'
+
 import ButtonRounded from '../../UI/Button/ButtonRounded'
 
 const Checkout = () => {
-
   let stripePromise
 
-function getStripe () {
-  if (!stripePromise) {
-    stripePromise = loadStripe(
-      'pk_test_51OWCUBSI8uIfEVFxQeK1CgOJxLAlwCPjzgzXKD5i4wHyiGuUiO82vw1BFXxESXKhMLn62FZlY78DySQWxaoT7Aw300kbFXmdZ7'
-    )
+  function getStripe () {
+    if (!stripePromise) {
+      stripePromise = loadStripe(
+        'pk_test_51OWCUBSI8uIfEVFxQeK1CgOJxLAlwCPjzgzXKD5i4wHyiGuUiO82vw1BFXxESXKhMLn62FZlY78DySQWxaoT7Aw300kbFXmdZ7'
+      )
+    }
+    return stripePromise
   }
-  return stripePromise
-}
 
-const item = {
-  price: 'price_1OWCVySI8uIfEVFx1JA2F0b1',
-  quantity: 1
-}
+  const item = {
+    price: 'price_1OWCVySI8uIfEVFx1JA2F0b1',
+    quantity: 1
+  }
 
-const checkoutOptions = {
-  lineItems: [item],
-  mode: 'payment',
-  // payment_method_types: ['card', 'google_pay'],
-  successUrl: `${window.location.origin}/success`,
-  cancelUrl: `${window.location.origin}/cancel`
-}
+  const checkoutOptions = {
+    lineItems: [item],
+    mode: 'payment',
+    // payment_method_types: ['card', 'google_pay'],
+    successUrl: `${window.location.origin}/success`,
+    cancelUrl: `${window.location.origin}/cancel`
+  }
 
-const redirectToCheckout = async () => {
-  console.log('redirecttoCheckout')
-  const stripe = await getStripe()
-  const { error } = await stripe.redirectToCheckout(checkoutOptions)
-  console.log('stripe checkout error', error)
-}
+  const redirectToCheckout = async () => {
+    console.log('redirecttoCheckout')
+    const stripe = await getStripe()
+    const { error } = await stripe.redirectToCheckout(checkoutOptions)
+    console.log('stripe checkout error', error)
+  }
 
   return (
     <article className='checkout_page'>
@@ -50,7 +48,8 @@ const redirectToCheckout = async () => {
       />
 
       <div className='checkout_right'>
-        <Title>CheckOut</Title>
+        <p className='title_heading'>Checkouts</p>
+
         <div className='checkout_header'>
           <h1 className='header_title'>
             Accept payments directly from your website.
@@ -69,15 +68,15 @@ const redirectToCheckout = async () => {
             <strong>Bank payments (ACH)</strong>
           </p>
           <div className='payment_icons'>
-            <div className='visa'></div>
-            <div className='visa'></div>
-            <div className='visa'></div>
-            <div className='visa'></div>
+            <img className='visa' alt='image' src='/assets/credit-card.png' />
+            <img className='visa' alt='image' src='/assets/credit-card.png' />
+            <img className='visa' alt='image' src='/assets/credit-card.png' />
+            <img className='visa' alt='image' src='/assets/credit-card.png' />
           </div>
         </div>
         <div className='checkout_button'>
           {/* <Link to='/payment-setup'> */}
-          <ButtonRounded type='primary'  onClick={redirectToCheckout}>
+          <ButtonRounded type='primary' onClick={redirectToCheckout}>
             Set up online Payment
           </ButtonRounded>
           {/* </Link> */}

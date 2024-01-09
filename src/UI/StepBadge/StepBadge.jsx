@@ -30,7 +30,7 @@ const StepBadge = ({ checked, disabled, boxNumber }) => {
 
   const renderValue = () => {
     if (checked) {
-      return <CheckOutlined className='step-badge__icon' />
+      return <CheckOutlined className='step-badge__icon'  />
     } else {
       return (
         <span className='step-badge__value'> {disabled ? boxNumber : '2'}</span>

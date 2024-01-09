@@ -25,7 +25,9 @@ const RecuringInvoice = () => {
               all in one place.
             </p>
             <Link to='/receipts'>
-              <ButtonRound type='primary'>Create a recurring invoice</ButtonRound>
+              <ButtonRound type='primary'>
+                Create a recurring invoice
+              </ButtonRound>
             </Link>
           </div>
           <div className='image'>
@@ -90,14 +92,15 @@ const RecuringInvoice = () => {
           </div>
           <div className='secondary-left'>
             <Image
-             preview={false}
+              preview={false}
               src={SRK}
               alt='SRK image'
               height={100}
               width={100}
               style={{
-                borderRadius:'100px',
-              
+                borderRadius: '100px',
+                border:'1px solid black',
+                objectFit:'fill'
               }}
               // className='secondary-left-image'
             />
@@ -155,7 +158,9 @@ const RecuringInvoice = () => {
           </p>
           <div className='recuring_list_secondary'>
             <Link to='/receipts'>
-              <ButtonRound type='primary'>Create a recurring invoice</ButtonRound>
+              <ButtonRound type='primary'>
+                Create a recurring invoice
+              </ButtonRound>
             </Link>
           </div>
         </div>

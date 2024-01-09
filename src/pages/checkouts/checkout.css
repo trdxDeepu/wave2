@@ -9,6 +9,17 @@
   padding: 20px 40px;
 }
 
+.title_heading{
+  display: block;
+color: #9453e4;
+font-weight: bold;
+text-transform: uppercase;
+margin-top: 0;
+margin-bottom: 16px;
+letter-spacing: 0.05em;
+
+}
+
 .checkout_right {
   flex: 1;
   margin-top: 24px;
@@ -73,11 +84,12 @@
 }
 
 .visa {
-  background-image: url('/visa.png');
+  /* background-image: url('/assets/credit-card.png');
   border: 1px solid #d4dde3;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 32px;
+  background-repeat: no-repeat; */
+  object-fit: cover;
+
+  height: 36px;
   width: 52px;
 }
 
