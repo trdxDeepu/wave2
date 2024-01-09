@@ -115,10 +115,10 @@
 }
 .secondary-left-image {
   margin-left: 2.5rem;
-  height: 120px;
-  width: 120px;
+  height: 110px;
+  width: 110px;
   border-radius: 50%;
-  border: 2px solid #9451e4;
+  /* border: 2px solid #9451e4; */
 }
 
 .recuring_list_wrapper2 {
@@ -164,7 +164,8 @@
 }
 
 .recuring_list_footer {
-  background-color: #dbc6f6;
+  background-color: #e0f4fb;
+
   border-radius: 1rem;
   display: flex;
   align-items: center;

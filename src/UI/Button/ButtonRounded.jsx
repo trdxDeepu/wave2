@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 
 import './Roundedbutton.css'
-import { Dropdown,  } from 'antd'
+import { Dropdown } from 'antd'
 import { DownOutlined } from '@ant-design/icons'
 
 const ButtonRounded = ({
@@ -63,15 +63,13 @@ const ButtonRounded = ({
           trigger={['click']}
           menu={{ items }}
           placement='bottomRight'
-          
-          icon={<DownOutlined />}
+          icon={<DownOutlined  />}
           overlayStyle={{
-            marginTop: '10px',
-            
+            marginTop:"30px"
           }}
         >
           <span className='dropdown-button'>
-            <DownOutlined size={12} />
+            <DownOutlined size={10} />
           </span>
         </Dropdown>
       )}

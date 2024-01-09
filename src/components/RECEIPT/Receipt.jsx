@@ -12,11 +12,13 @@ const Receipt = () => {
   return (
     <>
       <div className='invoice-header'>
-        <div className='frame_content_body'></div>
+        {/* <div className='frame_content_body'></div> */}
         <InvoiceHeader show={show} />
         <div className='hr-line'></div>
-        <RecuringInvoiceSummary />
-        <RecuringInvoiceBody />
+        
+          <RecuringInvoiceSummary />
+          <RecuringInvoiceBody />
+    
       </div>
     </>
   )

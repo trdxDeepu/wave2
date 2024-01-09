@@ -8,6 +8,7 @@ import tube from '/assets/customer-service.svg'
 import bulb from '/assets/creative-team.svg'
 import { HiOutlineExternalLink } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
+import { Image } from 'antd'
 
 const RecuringInvoice = () => {
   return (
@@ -88,11 +89,17 @@ const RecuringInvoice = () => {
             </p>
           </div>
           <div className='secondary-left'>
-            <img
+            <Image
+             preview={false}
               src={SRK}
               alt='SRK image'
-              draggable
-              className='secondary-left-image'
+              height={100}
+              width={100}
+              style={{
+                borderRadius:'100px',
+              
+              }}
+              // className='secondary-left-image'
             />
           </div>
         </div>

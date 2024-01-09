@@ -12,7 +12,7 @@ const InvoiceHeader = ({ show }) => {
         </div>
         <div className='add_header_action'>
           {show ? (
-            <Flex style={{ gap: '10px' }}>
+            <Flex style={{ gap: '20px' }}>
               <ButtonRounded size='medium' dropdown='true'>
                 More Action
               </ButtonRounded>

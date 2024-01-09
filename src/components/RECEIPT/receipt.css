@@ -1,7 +1,12 @@
+.invoice-header{
+ 
+  margin-right: 60px;
+}
+
 .recuring_invoice_summary {
   /* margin: 0 auto;
   width: 820px; */
-  margin :0 90px ;
+margin: 0 90px;
 }
 .hr-line {
   border: 1px solid #b4c2cb;
@@ -10,7 +15,7 @@
 .recuring_summary_container {
   display: flex;
   padding-top: 35px;
-  gap: 5px;
+  gap: 37px;
 }
 
 .recuring_summary_container_rowStatus {

@@ -23,9 +23,9 @@ const RecuringBoxHeader = () => {
           <div className='recuring_invoice_create_box_option'>
             <StepBadge />
             <div className='recuring_invoice_create_box_info'>
-              <div className='recuring_invoice_create_box_info_label'>
+              {/* <div className='get_paid_header'> */}
                 <p className='wv-heading--schedule'>Set Schedule</p>
-              </div>
+              {/* </div> */}
             </div>
             <span className='recuring_invoice_create_box_info_button'>
               <ButtonRounded type='primary'>Next</ButtonRounded>
@@ -49,7 +49,7 @@ const RecuringBoxHeader = () => {
                             marginLeft: '2px',
                             height: '30px',
                             width: '134px',
-                            borderRadius:"4px"
+                            borderRadius: '4px'
                           }}
                           presets={[
                             {

@@ -77,6 +77,10 @@
   display: block;
   margin: 1rem 0;
   font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .rounded-button.primary{
@@ -84,4 +88,9 @@
   color: #fff;
   font-size: 14px;
  
+}
+
+.dropdown-button{
+  margin-top:3.5px;
+  font-size: 14px;
 }
