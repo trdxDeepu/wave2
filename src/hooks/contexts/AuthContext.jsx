@@ -1,7 +1,7 @@
-/* eslint-disable react-refresh/only-export-components */
+/* eslint-disable react/prop-types */
 import{ createContext, useState, useEffect, useContext } from 'react'
 import {auth} from '../../Firebase'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import {  onAuthStateChanged } from 'firebase/auth'
 
 
 export const AuthContext = createContext()
@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
   if (user) {
     // User is signed in, see docs for a list of available properties
     // https://firebase.google.com/docs/reference/js/auth.user
-   setIsAuthenticated(!!user)
+   setIsAuthenticated(true)
     // ...
   } else {
     // User is signed out
