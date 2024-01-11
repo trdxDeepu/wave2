@@ -5,33 +5,14 @@ import { RightOutlined } from '@ant-design/icons'
 import { HiUserCircle } from 'react-icons/hi'
 import './headermodal.css'
 import { useFormContext } from '../../hooks/FormContext'
-import { useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 /* This is the modal for opning the navbar modal to signout and to check the profile */
 
 const HeaderModal = props => {
-  const { open, setOpen } = props
+  const { open} = props
   const { onSignout, userDataDB } = useFormContext()
-
-  // const ref = useRef()
-  // useEffect(() => {
-  //   const checkIfClickedOutside = e => {
-  //     if (ref.current && !ref.current.contains(e.target)) {
-  //       setOpen(false)
-  //     }
-  //   }
-  //   document.addEventListener('click', checkIfClickedOutside)
-  //   return () => {
-  //     document.removeEventListener('click', checkIfClickedOutside)
-  //   }
-  // }, [setOpen])
-
-  // useEffect(() => {
-  //   document.body.style.overflow = 'hidden'
-  //   return () => {
-  //     document.body.style.overflow = 'auto'
-  //   }
-  // }, [])
 
   return (
     <div className='dropdown'>
@@ -42,14 +23,16 @@ const HeaderModal = props => {
           padding: '12px',
           gap: '53px'
         }}
-        onClick={() => setOpen(!open)}
+     
         // ref={ref}
       >
         {props.children}
       </div>
 
       {open && (
-        <div className='dropdown_menu'>
+        <div className='dropdown_menu'
+        // onClick={e=>e.stopPropagation()}
+        >
           <div className='setting_menu'>
             <p className='setting_menu_header'>
               <span className='setting_menu_header_icon'>
@@ -83,9 +66,13 @@ const HeaderModal = props => {
                 <span id='user_email'>{userDataDB.email}</span>
               </span>
             </p>
-            <a className='busines_class' id='businesInter'>
+            <Link
+              to='/profile-edit'
+              className='busines_class'
+              id='businesInter'
+            >
               Profile Settings
-            </a>
+            </Link>
             <span
               onClick={onSignout}
               className='busines_class'

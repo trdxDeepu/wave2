@@ -15,6 +15,7 @@ import Success from './pages/paymentSetups/Success'
 import Cancel from './pages/paymentSetups/Cancel'
 import ProtectedRoute from './routes/ProtectedRoute'
 import CustomerStateMent from './pages/coustomerstatements/CustomerStateMent'
+import ProfileEdit from './pages/profileEditor/ProfileEdit'
 
 const App = () => {
   return (
@@ -33,6 +34,10 @@ const App = () => {
       <Route
         path='/customer-statements'
         element={<AppLayout content={<CustomerStateMent />} />}
+      />
+      <Route
+        path='/profile-edit'
+        element={<AppLayout content={<ProfileEdit />} />}
       />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/signup' element={<SignupPage />} />

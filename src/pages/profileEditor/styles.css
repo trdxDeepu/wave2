@@ -1,0 +1,85 @@
+.profile_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-top: 10=px; */
+  /* gap: 40rem; */
+}
+
+.profile_sidebar {
+  margin-top: 20px;
+  margin-right: 11rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 20px;
+  min-width: 200px;
+  /* padding: 0px 12px; */
+  border-right: 1px solid #d4dde3;
+  height: 100%;
+}
+.profile_sidebar_title {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 0px 20px;
+}
+
+.profile_list {
+  margin-top: 5px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.profile_list_li {
+  font-size: 15px;
+  color: #2046cf;
+  font-weight: 600;
+  padding: 10px 20px;
+  min-width: 100%;
+}
+.profile_list_li:hover {
+  cursor: pointer;
+  background-color: #e6f3ff;
+  border-radius: 8px;
+}
+
+.profile_rightside {
+  margin-bottom: 12rem;
+  margin-right: 10rem;
+}
+
+.profile_rightside_title{
+  font-size: 23px;
+  text-transform: capitalize;
+  color: #1c252c;
+
+}
+
+.profile_rightside_subtitle{
+  margin-top: 25px;
+  font-size: 15px;
+  color: #1c252c;
+}
+.profile_rightside_inputs{
+ margin-top: 40px;
+padding: 0px 40px;
+
+}
+.firstName_inputs{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+label{
+  color: #68757d;
+  font-size: 14px;
+  margin-right: 10px;
+  text-transform: capitalize;
+  font-weight: 700;
+}

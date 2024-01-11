@@ -21,6 +21,7 @@ const Navbar = () => {
         top: 0,
         zIndex: 100
       }}
+      
     >
       <Flex align='center' justify='space-between' className='navbar'>
         <div className=''>
@@ -29,7 +30,9 @@ const Navbar = () => {
           </a>
         </div>
         <div>
-          <div className='navbar-button'>
+          <div className='navbar-button'
+            onClick={()=>setOpen(!open)}
+          >
             <NavbarModal setOpen={setOpen} open={open}>
               <span>{userDataDB.name}</span>
               <span>
