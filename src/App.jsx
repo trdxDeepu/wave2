@@ -13,7 +13,7 @@ import Checkout from './pages/checkouts/Checkout'
 import PaymentSetup from './pages/paymentSetups/PaymentSetup'
 import Success from './pages/paymentSetups/Success'
 import Cancel from './pages/paymentSetups/Cancel'
-
+import ProtectedRoute from './routes/ProtectedRoute'
 
 const App = () => {
   // const stripePromise = loadStripe(
@@ -26,29 +26,54 @@ const App = () => {
 
   return (
     // <Elements stripe={stripePromise} options={options}>
-      <Routes>
-        <Route path='/' element={<AppLayout content={<HeroSection />} />} />
-        <Route
-          path='/recurring-invoices'
-          element={<AppLayout content={<RecuringInvoice />} />}
-        />
-        <Route path='/receipts' element={<AppLayout content={<Receipt />} />} />
-        <Route
-          path='/checkouts'
-          element={<AppLayout content={<Checkout />} />}
-        />
-        <Route
-          path='/payment-setup'
-          element={<AppLayout content={<PaymentSetup />} />}
-        />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/signup' element={<SignupPage />} />
-        <Route path='/onboarding' element={<OnBoarding />} />
-        <Route path='/success' element={<Success />} />
-        <Route path='/cancel' element={<Cancel />} />
-
-        <Route path='*' element={<ErrorPage />} />
-      </Routes>
+    <Routes>
+      <Route
+        path='/'
+        element={
+          <ProtectedRoute
+            Component={() => <AppLayout content={<HeroSection />} />}
+          />
+        }
+      />
+      <Route
+        path='/recurring-invoices'
+        element={
+          <ProtectedRoute
+            Component={() => <AppLayout content={<RecuringInvoice />} />}
+          />
+        }
+      />
+      <Route
+        path='/receipts'
+        element={
+          <ProtectedRoute
+            Component={() => <AppLayout content={<Receipt />} />}
+          />
+        }
+      />
+      <Route
+        path='/checkouts'
+        element={
+          <ProtectedRoute
+            Component={() => <AppLayout content={<Checkout />} />}
+          />
+        }
+      />
+      <Route
+        path='/payment-setup'
+        element={
+          <ProtectedRoute
+            Component={() => <AppLayout content={<PaymentSetup />} />}
+          />
+        }
+      />
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='/signup' element={<SignupPage />} />
+      <Route path='/onboarding' element={<OnBoarding />} />
+      <Route path='/success' element={<Success />} />
+      <Route path='/cancel' element={<Cancel />} />
+      <Route path='*' element={<ErrorPage />} />
+    </Routes>
     // </Elements>
   )
 }
