@@ -1,6 +1,6 @@
 .modal-window {
-    position: fixed;
-    border-radius: 16px 0 0 16px;
+  position: fixed;
+  border-radius: 16px 0 0 16px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -12,19 +12,22 @@
 
 .modal-window-open {
   position: relative;
-  transform: translate(0, 0);
+  /* transform: translate(5%, 50%); */
   z-index: 10021;
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
-  padding: 0 12px;
+  padding: 0 18px;
 }
 
 .dialog-box {
+  position: absolute;
+  top: 3%;
+  left: 100px;
   margin: 36px auto;
-  box-shadow: 0 10px 20px -5px #47545c;
+  box-shadow: 0px 5px 10px -5px #47545c;
   min-width: 320px;
-  max-width: 640px;
+  max-width: 660px;
   position: relative;
 }
 
@@ -39,9 +42,9 @@
 
 .dialog-header_title {
   margin: 0;
-  padding: 20px 48px 20px 24px;
-  font-size: 19px;
-  font-weight: 600;
+  padding: 20px 48px;
+  font-size: 21px;
+  font-weight: 900;
 }
 
 #icon_cross {
@@ -64,37 +67,73 @@
 }
 .nav_items_nav {
   position: relative;
-  margin: 16px 0;
+  margin: 18px 0;
   width: 100%;
   text-align: center;
 }
 
 .wvmodal {
   background: #fff;
-  padding: 12px 24px;
+  padding: 10px 32px;
 }
 
-.wvmodal_nav {
-  background: #fff;
-  margin-left: -24px;
-  margin-right: -24px;
-  padding-left: 16px;
-}
+
 
 .nav_item_ul {
   display: flex;
-
-  background: #f1f5fe;
-  padding: 4px;
-  letter-spacing: 0;
+  padding: 8px;
   list-style: none;
   align-items: center;
-  background: #fff;
-  margin-left: -24px;
-  margin-right: -24px;
-  padding-left: 16px;
   justify-content: space-evenly;
+  background-color: #f1f5fe;
+  border-radius: 12px;
 }
 
-#nav_item_li{
+.nav_item_li {
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+.nav_item_li:active {
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: black;
+ background-color: #dee8fc;
+
+
+}
+.nav_item_li:hover {
+  /* padding: 5px 10px; */
+  border-radius: 8px;
+  color: black;
+  background-color: #dee8fc;
+}
+.active_li{
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  
+}
+.active_li:hover{
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+  
+}
+.nav_item_li:focus {
+  padding: 5px 10px;
+  border-radius: 8px;
+  color: black;
+ background-color: #fff;
+box-shadow: 10px 2px 30px 10px solid #fff;
+}
+
+.outlet{
+margin: 20px auto;
+padding: 0px 60px;
+ 
 }
